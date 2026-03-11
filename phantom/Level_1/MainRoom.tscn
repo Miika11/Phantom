@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=13 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
@@ -14,7 +14,7 @@ size = Vector2(411, 242)
 size = Vector2(522, 227)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kilnq"]
-size = Vector2(502, 231.5)
+size = Vector2(502, 231)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8hsoe"]
 size = Vector2(85, 197)
@@ -28,13 +28,16 @@ size = Vector2(409, 53.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s140b"]
 size = Vector2(427, 41)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gip5"]
+size = Vector2(181, 29)
+
 [node name="MainRoom" type="Node2D"]
 
 [node name="Node2D" parent="." instance=ExtResource("1_prgri")]
-position = Vector2(-490, 39)
+position = Vector2(-4, 299)
 
 [node name="Door" parent="." instance=ExtResource("2_8hsoe")]
-position = Vector2(1, 336)
+position = Vector2(-602, 46)
 TargetScene = "res://Level_1/QuestRoom.tscn"
 
 [node name="Door2" parent="." instance=ExtResource("2_8hsoe")]
@@ -47,7 +50,7 @@ z_index = -1
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = -1
 position = Vector2(576, 324)
-scale = Vector2(0.80222845, 0.7120879)
+scale = Vector2(0.8022284, 0.71208787)
 texture = ExtResource("3_kilnq")
 
 [node name="TopWallRight" type="CollisionShape2D" parent="StaticBody2D"]
@@ -63,7 +66,7 @@ position = Vector2(891, 534.5)
 shape = SubResource("RectangleShape2D_adu6t")
 
 [node name="BottomWallLeft" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(251, 532.75)
+position = Vector2(251, 532.5)
 shape = SubResource("RectangleShape2D_kilnq")
 
 [node name="TopLeftBuffer1" type="CollisionShape2D" parent="StaticBody2D"]
@@ -81,3 +84,7 @@ shape = SubResource("RectangleShape2D_y7q2k")
 [node name="BottomRightBuffer" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(939.5, 403.5)
 shape = SubResource("RectangleShape2D_s140b")
+
+[node name="BottomBlock" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(569.5, 662.5)
+shape = SubResource("RectangleShape2D_7gip5")
