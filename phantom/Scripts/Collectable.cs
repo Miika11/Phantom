@@ -20,9 +20,9 @@ public partial class Collectable : Area2D
         BodyEntered -= OnBodyEntered;
     }
 
-	private void OnBodyEntered(Node2D Body)
+	private void OnBodyEntered(Node2D body)
 	{
-		if (Body is CharacterController2 characterController2)
+		if (body is CharacterController2 characterController2)
 		{
 		_isCollected = true;
 		Collect(characterController2);

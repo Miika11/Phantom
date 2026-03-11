@@ -15,6 +15,10 @@ run/main_scene="uid://wgofbr78ok3g"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://art/icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/GameManager.cs"
+
 [dotnet]
 
 project/assembly_name="Phantom"

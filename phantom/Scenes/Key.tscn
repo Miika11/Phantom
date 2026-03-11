@@ -6,9 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nogi"]
 size = Vector2(45, 24)
 
-[node name="Node2D" type="Area2D"]
+[node name="Key" type="Area2D"]
 collision_layer = 8
-collision_mask = 2
 script = ExtResource("1_i3td7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=14 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
 [ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://art/NewLevel1.png" id="3_kilnq"]
+[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_8hsoe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
 size = Vector2(421, 241)
@@ -88,3 +89,11 @@ shape = SubResource("RectangleShape2D_s140b")
 [node name="BottomBlock" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(569.5, 662.5)
 shape = SubResource("RectangleShape2D_7gip5")
+
+[node name="Keys" type="Node2D" parent="."]
+
+[node name="Key" parent="Keys" instance=ExtResource("4_8hsoe")]
+position = Vector2(462, 447)
+
+[node name="Key2" parent="Keys" instance=ExtResource("4_8hsoe")]
+position = Vector2(460, 373)

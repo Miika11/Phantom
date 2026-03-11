@@ -8,7 +8,8 @@ public partial class Key : Collectable
 
 	protected override void Collect(CharacterController2 characterController2)
 	{
-		GD.Print($"Kerättiin avain, pisteet: {_score}");
+		GD.Print($"Kerättiin avain: {_score}");
+		GameManager.Instance.AddScore(_score);
 	}
 
 }
