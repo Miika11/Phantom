@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://cdjicnefnr82f"]
+
+[ext_resource type="Texture2D" uid="uid://dji01qtnk25xa" path="res://Art/NewLevel1.png" id="1_pridb"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://scenes/Character2.tscn" id="2_pridb"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://scenes/Door.tscn" id="3_emxlu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ecpk"]
+size = Vector2(409, 238)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pridb"]
+size = Vector2(414, 238)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emxlu"]
+size = Vector2(499.5, 228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sk72d"]
+size = Vector2(510, 225)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw0r4"]
+size = Vector2(82, 191.1875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2s24"]
+size = Vector2(98, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko2d8"]
+size = Vector2(408, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1waa"]
+size = Vector2(418, 39)
+
+[node name="QuestRoom" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 1)
+physics_material_override = SubResource("PhysicsMaterial_h6gye")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(575.9859, 324.00284)
+scale = Vector2(0.8022273, 0.7121196)
+texture = ExtResource("1_pridb")
+
+[node name="TopWallLeft" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(204.5, 119)
+shape = SubResource("RectangleShape2D_2ecpk")
+
+[node name="TopWallRight" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(945, 119)
+shape = SubResource("RectangleShape2D_pridb")
+
+[node name="BottomWallLeft" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(250.25, 535)
+shape = SubResource("RectangleShape2D_emxlu")
+
+[node name="BottomWallRight" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(896, 535.5)
+shape = SubResource("RectangleShape2D_sk72d")
+
+[node name="TopLeftBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(451, 94.40625)
+shape = SubResource("RectangleShape2D_cw0r4")
+
+[node name="TopRightBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(680, 96)
+shape = SubResource("RectangleShape2D_i2s24")
+
+[node name="BottomLeftBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(204, 404.5)
+shape = SubResource("RectangleShape2D_ko2d8")
+
+[node name="BottomRightBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(943, 403.5)
+shape = SubResource("RectangleShape2D_a1waa")
+
+[node name="Node2D" parent="." instance=ExtResource("2_pridb")]
+position = Vector2(-15, -169)
+
+[node name="Door" parent="." instance=ExtResource("3_emxlu")]
+position = Vector2(558, 36)
+TargetScene = "res://Level_1/MainRoom.tscn"

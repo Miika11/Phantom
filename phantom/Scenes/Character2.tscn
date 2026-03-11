@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpxkeptkblxfr"]
+
+[ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://script/CharacterController2.cs" id="1_6ludh"]
+[ext_resource type="Texture2D" uid="uid://b6r7x0lrvtyx1" path="res://Art/Päähahmo_konsepti2.png" id="2_4s2po"]
+[ext_resource type="Texture2D" uid="uid://c0ph8eq2641w7" path="res://Art/Päähahmo_konspeti.png" id="2_de3c1"]
+[ext_resource type="Texture2D" uid="uid://bddereh1jr5te" path="res://Art/Päähahmo_vasen2.png" id="3_5fbij"]
+[ext_resource type="Texture2D" uid="uid://fnckv6bgmix6" path="res://Art/Päähahmo_oikea2.png" id="3_7mwfr"]
+[ext_resource type="Texture2D" uid="uid://bwm3mhwrx3cb5" path="res://Art/Päähahmo_oikea3.png" id="4_b5dv8"]
+[ext_resource type="Texture2D" uid="uid://bq3nl6kceekx6" path="res://Art/Päähahmo_vasen3.png" id="4_qdqpc"]
+[ext_resource type="Texture2D" uid="uid://cvpf3peoexbrx" path="res://Art/Päähahmo_vasen4.png" id="5_d6o2a"]
+[ext_resource type="Texture2D" uid="uid://bpvrcyo1bduam" path="res://Art/Päähahmo_oikea4.png" id="5_nbeo7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4s2po"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_de3c1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.71,
+"texture": ExtResource("2_de3c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7mwfr")
+}, {
+"duration": 0.71,
+"texture": ExtResource("4_b5dv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nbeo7")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.71,
+"texture": ExtResource("2_4s2po")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5fbij")
+}, {
+"duration": 0.71,
+"texture": ExtResource("4_qdqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d6o2a")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.71,
+"texture": ExtResource("2_de3c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7mwfr")
+}, {
+"duration": 0.71,
+"texture": ExtResource("4_b5dv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nbeo7")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.71,
+"texture": ExtResource("2_de3c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7mwfr")
+}, {
+"duration": 0.71,
+"texture": ExtResource("4_b5dv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nbeo7")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x4kb"]
+radius = 23.0
+height = 78.0
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_6ludh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 304)
+scale = Vector2(0.103703715, 0.082098775)
+sprite_frames = SubResource("SpriteFrames_4s2po")
+animation = &"move_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(572, 303)
+shape = SubResource("CapsuleShape2D_7x4kb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 305)
+zoom = Vector2(2, 2)
