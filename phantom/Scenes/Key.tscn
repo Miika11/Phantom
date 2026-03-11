@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bks4q36l13lc7"]
+
+[ext_resource type="Script" uid="uid://dn5s27vwupcso" path="res://Scripts/Key.cs" id="1_i3td7"]
+[ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="2_vmsh4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nogi"]
+size = Vector2(45, 24)
+
+[node name="Node2D" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_i3td7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(101, 57)
+texture = ExtResource("2_vmsh4")
+region_enabled = true
+region_rect = Rect2(201.26614, 134.13995, 47.2153, 27.80777)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(100.5, 57)
+shape = SubResource("RectangleShape2D_3nogi")
