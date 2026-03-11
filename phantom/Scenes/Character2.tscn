@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://bpxkeptkblxfr"]
 
-[ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://script/CharacterController2.cs" id="1_6ludh"]
-[ext_resource type="Texture2D" uid="uid://b6r7x0lrvtyx1" path="res://Art/Päähahmo_konsepti2.png" id="2_4s2po"]
-[ext_resource type="Texture2D" uid="uid://c0ph8eq2641w7" path="res://Art/Päähahmo_konspeti.png" id="2_de3c1"]
-[ext_resource type="Texture2D" uid="uid://bddereh1jr5te" path="res://Art/Päähahmo_vasen2.png" id="3_5fbij"]
-[ext_resource type="Texture2D" uid="uid://fnckv6bgmix6" path="res://Art/Päähahmo_oikea2.png" id="3_7mwfr"]
-[ext_resource type="Texture2D" uid="uid://bwm3mhwrx3cb5" path="res://Art/Päähahmo_oikea3.png" id="4_b5dv8"]
-[ext_resource type="Texture2D" uid="uid://bq3nl6kceekx6" path="res://Art/Päähahmo_vasen3.png" id="4_qdqpc"]
-[ext_resource type="Texture2D" uid="uid://cvpf3peoexbrx" path="res://Art/Päähahmo_vasen4.png" id="5_d6o2a"]
-[ext_resource type="Texture2D" uid="uid://bpvrcyo1bduam" path="res://Art/Päähahmo_oikea4.png" id="5_nbeo7"]
+[ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://Scripts/CharacterController2.cs" id="1_6ludh"]
+[ext_resource type="Texture2D" uid="uid://bf26lxviilccd" path="res://Art/Päähahmo_konsepti2.png" id="2_4s2po"]
+[ext_resource type="Texture2D" uid="uid://c22lspp7hrtcq" path="res://Art/Päähahmo_konspeti.png" id="2_de3c1"]
+[ext_resource type="Texture2D" uid="uid://jokkggglmo5j" path="res://Art/Päähahmo_vasen2.png" id="3_5fbij"]
+[ext_resource type="Texture2D" uid="uid://dp2lv5ifduyk" path="res://Art/Päähahmo_oikea2.png" id="3_7mwfr"]
+[ext_resource type="Texture2D" uid="uid://cgvt073g1skit" path="res://Art/Päähahmo_oikea3.png" id="4_b5dv8"]
+[ext_resource type="Texture2D" uid="uid://cqkx5o3ay4jln" path="res://Art/Päähahmo_vasen3.png" id="4_qdqpc"]
+[ext_resource type="Texture2D" uid="uid://b6c51rla1p6yx" path="res://Art/Päähahmo_vasen4.png" id="5_d6o2a"]
+[ext_resource type="Texture2D" uid="uid://b3y0lphinsh82" path="res://Art/Päähahmo_oikea4.png" id="5_nbeo7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4s2po"]
 animations = [{
@@ -108,4 +108,4 @@ shape = SubResource("CapsuleShape2D_7x4kb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 305)
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
