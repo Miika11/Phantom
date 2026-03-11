@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cdjicnefnr82f"]
 
-[ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://Art/NewLevel1.png" id="1_pridb"]
+[ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://art/NewLevel1.png" id="1_pridb"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_pridb"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_emxlu"]
 
@@ -75,8 +75,8 @@ position = Vector2(943, 403.5)
 shape = SubResource("RectangleShape2D_a1waa")
 
 [node name="Node2D" parent="." instance=ExtResource("2_pridb")]
-position = Vector2(-15, -169)
+position = Vector2(486, 22)
 
 [node name="Door" parent="." instance=ExtResource("3_emxlu")]
-position = Vector2(-5, -269)
+position = Vector2(635, 45)
 TargetScene = "res://Level_1/MainRoom.tscn"
