@@ -7,11 +7,14 @@
 size = Vector2(118, 76)
 
 [node name="Door" type="Area2D"]
+disable_mode = 2
 script = ExtResource("1_yfgsh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(564, 301)
 scale = Vector2(0.921875, 0.60156256)
 texture = ExtResource("2_mw28t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(564, 301)
 shape = SubResource("RectangleShape2D_eyv6f")
