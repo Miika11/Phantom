@@ -15,7 +15,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        _Movement = Input.GetVector("MoveLeft", "MoveRight", "MoveForward", "MoveBackwards");
+        _Movement = Input.GetVector(ConfigInput.InputLeft, ConfigInput.InputRight, ConfigInput.InputForward, ConfigInput.InputBackward);
         GD.Print("Movement: " + _Movement);
 
         Vector2 velocity;
