@@ -18,8 +18,11 @@ public partial class Key : Collectable
 
     protected override void Collect(CharacterController2 characterController2)
     {
-        GD.Print($"Kerättiin avain: {_score}");
-        GameManager.Instance.AddScore(_score);
+    
+    characterController2.AddKey(_score);
+
+    
+    GameManager.Instance.AddScore(_score);
 
         QueueFree(); 
     }

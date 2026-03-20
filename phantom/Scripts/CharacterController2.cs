@@ -6,21 +6,32 @@ public partial class CharacterController2 : CharacterBody2D
 
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
+
     [Export] public HeartsUI HeartsUI;
+    [Export] public KeyUI KeyUI;
+
+    private int _keys = 0;
 
     [Export] public int MaxHealth = 3;
-
     private int _currentHealth;
 
     public override void _Ready()
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
-        
         _currentHealth = MaxHealth;
         HeartsUI?.UpdateHearts(_currentHealth);
 
+        KeyUI?.CallDeferred("UpdateKeys", _keys);
+
         GD.Print("Elämät: " + _currentHealth);
+    }
+
+    public void AddKey(int amount = 1)
+    {
+        _keys += amount;
+        GD.Print("Keys: " + _keys);
+        KeyUI?.UpdateKeys(_keys);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -32,19 +43,11 @@ public partial class CharacterController2 : CharacterBody2D
             ConfigInput.InputBackward
         );
 
-        Vector2 velocity;
-
-        if (!Mathf.IsZeroApprox(_Movement.Length()))
-        {
-            velocity = _Movement.Normalized() * Speed;
-        }
-        else
-        {
-            velocity = Vector2.Zero;
-        }
+        Vector2 velocity = _Movement.Length() > 0 ? _Movement.Normalized() * Speed : Vector2.Zero;
 
         Velocity = velocity;
         MoveAndSlide();
+
         UpdateAnimation(_Movement);
     }
 
@@ -56,44 +59,30 @@ public partial class CharacterController2 : CharacterBody2D
         }
         else if (Mathf.Abs(direction.X) > Mathf.Abs(direction.Y))
         {
-            if (direction.X > 0)
-                _player.Play(ConfigAnimation.MoveRight);
-            else
-                _player.Play(ConfigAnimation.MoveLeft);
+            _player.Play(direction.X > 0 ? ConfigAnimation.MoveRight : ConfigAnimation.MoveLeft);
         }
         else
         {
-            if (direction.Y > 0)
-                _player.Play(ConfigAnimation.MoveDown);
-            else
-                _player.Play(ConfigAnimation.MoveUp);
+            _player.Play(direction.Y > 0 ? ConfigAnimation.MoveDown : ConfigAnimation.MoveUp);
         }
     }
 
-    
     public void TakeDamage(int damage)
-{
-    _currentHealth -= damage;
-
-    if (_currentHealth < 0)
-        _currentHealth = 0;
-
-    GD.Print("Elämät: " + _currentHealth);
-
-    
-    HeartsUI?.UpdateHearts(_currentHealth);
-
-    if (_currentHealth <= 0)
     {
-        Die();
-    }
-}
+        _currentHealth -= damage;
+        _currentHealth = Mathf.Max(_currentHealth, 0);
 
-    // Scene alkaa alusta kuollessa
+        GD.Print("Elämät: " + _currentHealth);
+
+        HeartsUI?.UpdateHearts(_currentHealth);
+
+        if (_currentHealth <= 0)
+            Die();
+    }
+
     private void Die()
     {
         GD.Print("Pelaaja kuoli!");
-
         GetTree().CallDeferred("reload_current_scene");
     }
 }
