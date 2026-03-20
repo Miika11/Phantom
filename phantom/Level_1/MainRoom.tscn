@@ -1,10 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=19 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
 [ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://art/NewLevel1.png" id="3_kilnq"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_8hsoe"]
 [ext_resource type="PackedScene" uid="uid://dwo4x7s3lkek6" path="res://Scenes/enemy_shooter.tscn" id="5_2lgeq"]
+[ext_resource type="PackedScene" uid="uid://123wreb2dvmm" path="res://Scenes/enemy.tscn" id="6_y7q2k"]
+[ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Level_1/HeartsUI.cs" id="7_7gip5"]
+[ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="8_noq5v"]
+[ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="9_imoki"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
 size = Vector2(421, 241)
@@ -35,8 +39,9 @@ size = Vector2(181, 29)
 
 [node name="MainRoom" type="Node2D"]
 
-[node name="Node2D" parent="." instance=ExtResource("1_prgri")]
+[node name="Node2D" parent="." node_paths=PackedStringArray("HeartsUI") instance=ExtResource("1_prgri")]
 position = Vector2(-4, 299)
+HeartsUI = NodePath("../CanvasLayer/HeartsContainer")
 
 [node name="Door" parent="." instance=ExtResource("2_8hsoe")]
 position = Vector2(-602, 46)
@@ -100,3 +105,38 @@ position = Vector2(188, 162)
 
 [node name="EnemyShooter" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
 position = Vector2(352, 488)
+
+[node name="EnemyShooter2" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
+position = Vector2(761, 479)
+
+[node name="EnemyShooter3" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
+position = Vector2(363, 223)
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(363, 223)
+
+[node name="Enemy" parent="Node2D2" instance=ExtResource("6_y7q2k")]
+position = Vector2(34, -376)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 129.0
+offset_bottom = 43.0
+script = ExtResource("7_7gip5")
+FullHeart = ExtResource("8_noq5v")
+EmptyHeart = ExtResource("9_imoki")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("8_noq5v")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("8_noq5v")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("8_noq5v")

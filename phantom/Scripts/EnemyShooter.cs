@@ -15,7 +15,7 @@ public partial class EnemyShooter : Node2D
         _timer.Start();
     }
 
-    // metodi joka luo ampuu bulletin random suuntaan
+    // metodi joka luo ja ampuu bulletin random suuntaan
     private void ShootBullet()
     {
         var bullet = BulletScene.Instantiate<Bullet>();

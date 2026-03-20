@@ -2,14 +2,13 @@ using Godot;
 
 public partial class CharacterController2 : CharacterBody2D
 {
-    [Export]
-    public float Speed = 100.0f;
+    [Export] public float Speed = 100.0f;
 
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
+    [Export] public HeartsUI HeartsUI;
 
-    [Export]
-    public int MaxHealth = 3;
+    [Export] public int MaxHealth = 3;
 
     private int _currentHealth;
 
@@ -19,6 +18,7 @@ public partial class CharacterController2 : CharacterBody2D
 
         
         _currentHealth = MaxHealth;
+        HeartsUI?.UpdateHearts(_currentHealth);
 
         GD.Print("Elämät: " + _currentHealth);
     }
@@ -72,22 +72,28 @@ public partial class CharacterController2 : CharacterBody2D
 
     
     public void TakeDamage(int damage)
+{
+    _currentHealth -= damage;
+
+    if (_currentHealth < 0)
+        _currentHealth = 0;
+
+    GD.Print("Elämät: " + _currentHealth);
+
+    
+    HeartsUI?.UpdateHearts(_currentHealth);
+
+    if (_currentHealth <= 0)
     {
-        _currentHealth -= damage;
-
-        GD.Print("Elämät: " + _currentHealth);
-
-        if (_currentHealth <= 0)
-        {
-            Die();
-        }
+        Die();
     }
+}
 
     // Scene alkaa alusta kuollessa
     private void Die()
     {
         GD.Print("Pelaaja kuoli!");
 
-        GetTree().ReloadCurrentScene();
+        GetTree().CallDeferred("reload_current_scene");
     }
 }
