@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5rvs5xugna5c"]
+
+[ext_resource type="Script" uid="uid://ili1ug7rqxg" path="res://Scripts/DialogueUI.cs" id="1_07r7s"]
+[ext_resource type="Texture2D" uid="uid://lm8mhtfdk057" path="res://art/mentortext.png" id="2_0hlf7"]
+
+[node name="DialogueUi" type="CanvasLayer"]
+script = ExtResource("1_07r7s")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 268.0
+offset_top = 174.0
+offset_right = 878.0
+offset_bottom = 528.6101
+scale = Vector2(1, 0.9954595)
+
+[node name="BackgroundImage" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = -114.99999
+offset_top = 1.0045679
+offset_right = 4453.2534
+offset_bottom = 1352.7228
+scale = Vector2(0.19110149, 0.2608539)
+texture = ExtResource("2_0hlf7")
+
+[node name="QuestionLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 25.0
+offset_right = 299.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Jos saisin valita yhden lahjan mentorilta..."
+
+[node name="AnswerA" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 115.52455
+offset_right = 209.0
+offset_bottom = 154.70244
+
+[node name="AnswerB" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -95.0
+offset_top = 180.82103
+offset_right = 205.0
+offset_bottom = 224.01717
+
+[node name="AnswerC" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = 246.1175
+offset_right = 250.0
+offset_bottom = 293.25323
+
+[node name="ResultLabel" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

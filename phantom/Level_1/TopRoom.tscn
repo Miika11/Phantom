@@ -1,8 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cliian5uad5qo"]
+[gd_scene load_steps=15 format=3 uid="uid://cliian5uad5qo"]
 
 [ext_resource type="Texture2D" uid="uid://djsrd7adhb22" path="res://art/Level1TopRoomStairs.png" id="1_j2me4"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_d8h1x"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_if0v0"]
+[ext_resource type="PackedScene" uid="uid://buq5seaws1025" path="res://Level_1/NPC_Desert.tscn" id="4_d8h1x"]
+[ext_resource type="PackedScene" uid="uid://crl35b24ry6dv" path="res://Scenes/DialogueUI.tscn" id="5_if0v0"]
+[ext_resource type="PackedScene" uid="uid://dfwi6m6eksryx" path="res://Level_1/NPC_Ice.tscn" id="6_yrwtj"]
+[ext_resource type="PackedScene" uid="uid://bw6gnjw4cnopq" path="res://Level_1/NPC_Fire.tscn" id="7_m8ty7"]
+[ext_resource type="PackedScene" uid="uid://xbqcnlwmybr2" path="res://Level_1/Result_Npc.tscn" id="8_2jiu2"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
 
@@ -76,3 +81,22 @@ position = Vector2(580, 556)
 
 [node name="SpawnFromMainRoom2" type="Marker2D" parent="."]
 position = Vector2(581, 143)
+
+[node name="NPC_Desert" parent="." instance=ExtResource("4_d8h1x")]
+position = Vector2(-155, 187)
+DialogueUIPath = NodePath("../DialogueUi")
+
+[node name="DialogueUi" parent="." instance=ExtResource("5_if0v0")]
+visible = false
+
+[node name="NPC_Ice" parent="." instance=ExtResource("6_yrwtj")]
+position = Vector2(-168, -124)
+DialogueUIPath = NodePath("../DialogueUi")
+
+[node name="NPC_Fire" parent="." instance=ExtResource("7_m8ty7")]
+position = Vector2(362, -111)
+DialogueUIPath = NodePath("../DialogueUi")
+
+[node name="Result_Npc" parent="." instance=ExtResource("8_2jiu2")]
+position = Vector2(426, 167)
+DialogueUIPath = NodePath("../DialogueUi")

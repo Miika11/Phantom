@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xbqcnlwmybr2"]
+
+[ext_resource type="Script" uid="uid://dyorvbtidyv01" path="res://Scripts/ResultNPC.cs" id="1_ro6cc"]
+[ext_resource type="Texture2D" uid="uid://dovsyso24wvwf" path="res://art/oldmentor_original.png" id="2_yuxt8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68jwh"]
+size = Vector2(134, 171)
+
+[node name="Result_Npc" type="Node2D"]
+script = ExtResource("1_ro6cc")
+
+[node name="Mentori" type="Sprite2D" parent="."]
+position = Vector2(434, 320)
+scale = Vector2(0.26174223, 0.253668)
+texture = ExtResource("2_yuxt8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(421, 323)
+shape = SubResource("RectangleShape2D_68jwh")
