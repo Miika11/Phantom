@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://duxmvcdvhfymk"]
+[gd_scene load_steps=11 format=3 uid="uid://duxmvcdvhfymk"]
+
+[ext_resource type="Texture2D" uid="uid://bu47lf4vnxtt1" path="res://art/MainRoomIce.png" id="1_0tmu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfoem"]
+size = Vector2(421, 241)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qo18q"]
+size = Vector2(411, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh4ni"]
+size = Vector2(522, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_teuyq"]
+size = Vector2(502, 231)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8cq3"]
+size = Vector2(85, 197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcd08"]
+size = Vector2(81, 198)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5onla"]
+size = Vector2(409, 53.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56nsf"]
+size = Vector2(427, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iu5p"]
+size = Vector2(181, 29)
 
 [node name="MainRoom2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(576, 344.7945)
+scale = Vector2(0.75000006, 0.6714736)
+texture = ExtResource("1_0tmu4")
+
+[node name="TopWallRight" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(941.5, 120.5)
+shape = SubResource("RectangleShape2D_vfoem")
+
+[node name="TopWallLeft" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(205.5, 121)
+shape = SubResource("RectangleShape2D_qo18q")
+
+[node name="BottomWallRight" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(891, 534.5)
+shape = SubResource("RectangleShape2D_xh4ni")
+
+[node name="BottomWallLeft" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(251, 532.5)
+shape = SubResource("RectangleShape2D_teuyq")
+
+[node name="TopLeftBuffer1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(453.5, 97.5)
+shape = SubResource("RectangleShape2D_l8cq3")
+
+[node name="TopRightBuffer1" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(677.5, 98)
+shape = SubResource("RectangleShape2D_vcd08")
+
+[node name="BottomLeftBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(204.5, 412.75)
+shape = SubResource("RectangleShape2D_5onla")
+
+[node name="BottomRightBuffer" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(939.5, 403.5)
+shape = SubResource("RectangleShape2D_56nsf")
+
+[node name="BottomBlock" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(569.5, 662.5)
+shape = SubResource("RectangleShape2D_8iu5p")

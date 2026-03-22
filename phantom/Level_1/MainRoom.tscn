@@ -44,8 +44,9 @@ position = Vector2(-47, 385)
 TargetScene = "res://Level_1/QuestRoom.tscn"
 
 [node name="Door2" parent="." instance=ExtResource("2_8hsoe")]
-position = Vector2(561, 68)
-TargetScene = "res://Level_2/MainRoom2.tscn"
+position = Vector2(561, 34)
+TargetScene = "res://Level_1/TopRoom.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom"
 
 [node name="Door3" parent="." instance=ExtResource("2_8hsoe")]
 position = Vector2(1166, 381)
@@ -122,6 +123,9 @@ position = Vector2(34, -376)
 
 [node name="SpawnFromQuestRoom" type="Marker2D" parent="."]
 position = Vector2(42, 345)
+
+[node name="SpawnFromTopRoom" type="Marker2D" parent="."]
+position = Vector2(562, 130)
 
 [node name="SpawnFromRightRoom" type="Marker2D" parent="."]
 position = Vector2(1080, 342)
