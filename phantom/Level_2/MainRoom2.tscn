@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://duxmvcdvhfymk"]
+[gd_scene load_steps=12 format=3 uid="uid://duxmvcdvhfymk"]
 
 [ext_resource type="Texture2D" uid="uid://bu47lf4vnxtt1" path="res://art/MainRoomIce.png" id="1_0tmu4"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_vfoem"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_qo18q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfoem"]
 size = Vector2(421, 241)
@@ -25,9 +27,6 @@ size = Vector2(409, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56nsf"]
 size = Vector2(427, 41)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iu5p"]
-size = Vector2(181, 29)
 
 [node name="MainRoom2" type="Node2D"]
 
@@ -72,6 +71,14 @@ shape = SubResource("RectangleShape2D_5onla")
 position = Vector2(939.5, 403.5)
 shape = SubResource("RectangleShape2D_56nsf")
 
-[node name="BottomBlock" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(569.5, 662.5)
-shape = SubResource("RectangleShape2D_8iu5p")
+[node name="SpawnFromTopRoom" type="Marker2D" parent="."]
+position = Vector2(570, 595)
+scale = Vector2(0.75000006, 0.6714736)
+
+[node name="Node2D" parent="." instance=ExtResource("2_vfoem")]
+position = Vector2(568, 609)
+
+[node name="Door" parent="." instance=ExtResource("3_qo18q")]
+position = Vector2(572, 751)
+TargetScene = "res://Level_1/TopRoom.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom2"
