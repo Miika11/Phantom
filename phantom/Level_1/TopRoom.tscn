@@ -66,6 +66,7 @@ TargetScene = "res://Level_1/MainRoom.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom"
 
 [node name="Door2" parent="." instance=ExtResource("3_if0v0")]
+visible = false
 position = Vector2(586, 21)
 TargetScene = "res://Level_2/MainRoom2.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom"

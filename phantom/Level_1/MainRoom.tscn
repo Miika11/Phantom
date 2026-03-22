@@ -36,14 +36,23 @@ size = Vector2(181, 29)
 
 [node name="MainRoom" type="Node2D"]
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(558, 52)
+scale = Vector2(1.9815562, 1.6763767)
+texture = ExtResource("6_s140b")
+region_enabled = true
+region_rect = Rect2(183, 193.5, 64, 60)
+
 [node name="Node2D" parent="." instance=ExtResource("1_prgri")]
 position = Vector2(567, 620)
 
 [node name="Door" parent="." instance=ExtResource("2_8hsoe")]
+visible = false
 position = Vector2(-47, 385)
 TargetScene = "res://Level_1/QuestRoom.tscn"
 
 [node name="Door2" parent="." instance=ExtResource("2_8hsoe")]
+visible = false
 position = Vector2(561, 34)
 TargetScene = "res://Level_1/TopRoom.tscn"
 TargetSpawnPoint = "SpawnFromMainRoom"
@@ -51,6 +60,7 @@ KeysRequired = 2
 ConsumeKeysOnOpen = true
 
 [node name="Door3" parent="." instance=ExtResource("2_8hsoe")]
+visible = false
 position = Vector2(1166, 381)
 TargetScene = "res://Level_1/EnemyRoomRight.tscn"
 
@@ -133,10 +143,3 @@ position = Vector2(1080, 342)
 
 [node name="SpawnFromIntro" type="Marker2D" parent="."]
 position = Vector2(567, 637)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(558, 52)
-scale = Vector2(1.9815562, 1.6763767)
-texture = ExtResource("6_s140b")
-region_enabled = true
-region_rect = Rect2(183, 193.5, 64, 60)
