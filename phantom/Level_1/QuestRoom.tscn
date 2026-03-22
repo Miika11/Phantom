@@ -75,8 +75,11 @@ position = Vector2(943, 403.5)
 shape = SubResource("RectangleShape2D_a1waa")
 
 [node name="Node2D" parent="." instance=ExtResource("2_pridb")]
-position = Vector2(486, 22)
 
 [node name="Door" parent="." instance=ExtResource("3_emxlu")]
-position = Vector2(635, 45)
+position = Vector2(1197, 390)
 TargetScene = "res://Level_1/MainRoom.tscn"
+TargetSpawnPoint = "SpawnFromQuestRoom"
+
+[node name="SpawnFromMainRoom" type="Marker2D" parent="."]
+position = Vector2(1074, 352)

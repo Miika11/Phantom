@@ -36,6 +36,8 @@ public partial class GameManager : Node
 			GD.Print($"Avaimia on nyt: {Score}");
 		}
 	}
+
+	public string SpawnPoint { get; set; } = "StartSpawn";
 	#endregion
 
 	public bool AddScore(int amount)
@@ -44,7 +46,7 @@ public partial class GameManager : Node
 		{
 			return false;
 		}
-		
+
 		Score += amount;
 		return true;
 	}
@@ -55,7 +57,7 @@ public partial class GameManager : Node
 		{
 			return false;
 		}
-		
+
 		Score -= amount;
 		return true;
 	}
