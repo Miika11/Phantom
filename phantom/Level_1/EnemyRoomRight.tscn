@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdjicnefnr82f"]
+[gd_scene load_steps=10 format=3 uid="uid://dovl7ttwbgqpq"]
 
-[ext_resource type="Texture2D" uid="uid://cftg20s1tkdrb" path="res://art/Level1leftroom.png" id="1_pridb"]
-[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_pridb"]
-[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_emxlu"]
+[ext_resource type="Texture2D" uid="uid://cftg20s1tkdrb" path="res://art/Level1leftroom.png" id="1_y7wgy"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_5ymmy"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_30thy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
 
@@ -31,7 +31,7 @@ physics_material_override = SubResource("PhysicsMaterial_h6gye")
 z_index = -1
 position = Vector2(575.99994, 324)
 scale = Vector2(0.90196073, 0.7941177)
-texture = ExtResource("1_pridb")
+texture = ExtResource("1_y7wgy")
 
 [node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(576.5, 51)
@@ -57,10 +57,9 @@ shape = SubResource("RectangleShape2D_a1waa")
 position = Vector2(1127, 495)
 shape = SubResource("RectangleShape2D_a1waa")
 
-[node name="Node2D" parent="." instance=ExtResource("2_pridb")]
-position = Vector2(1071, 387)
+[node name="Node2D" parent="." instance=ExtResource("2_5ymmy")]
 
-[node name="Door" parent="." instance=ExtResource("3_emxlu")]
+[node name="Door" parent="." instance=ExtResource("3_30thy")]
 position = Vector2(1197, 390)
 TargetScene = "res://Level_1/MainRoom.tscn"
 TargetSpawnPoint = "SpawnFromQuestRoom"

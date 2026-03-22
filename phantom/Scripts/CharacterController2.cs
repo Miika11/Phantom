@@ -7,8 +7,8 @@ public partial class CharacterController2 : CharacterBody2D
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
 
-    [Export] public HeartsUI HeartsUI;
-    [Export] public KeyUI KeyUI;
+    private HeartsUI HeartsUI;
+    private KeyUI KeyUI;
 
     private int _keys = 0;
 
@@ -19,10 +19,17 @@ public partial class CharacterController2 : CharacterBody2D
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
+        
+        var uiRoot = GetNode("/root/UI"); // UI singleton Autoload
+        HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
+        KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
+
+        GD.Print("HeartsUI: ", HeartsUI);
+        GD.Print("KeyUI: ", KeyUI);
+
         _currentHealth = MaxHealth;
         HeartsUI?.UpdateHearts(_currentHealth);
-
-        KeyUI?.CallDeferred("UpdateKeys", _keys);
+        KeyUI?.UpdateKeys(_keys);
 
         GD.Print("Elämät: " + _currentHealth);
 
@@ -31,7 +38,6 @@ public partial class CharacterController2 : CharacterBody2D
         {
             GlobalPosition = marker.GlobalPosition;
         }
-
     }
 
     public void AddKey(int amount = 1)

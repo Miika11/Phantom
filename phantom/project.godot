@@ -18,6 +18,7 @@ config/icon="res://art/icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/GameManager.cs"
+UI="*res://Scenes/UI.tscn"
 
 [dotnet]
 

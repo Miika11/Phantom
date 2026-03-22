@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyy42xcfm4wwr"]
+
+[ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Level_1/HeartsUI.cs" id="1_w371h"]
+[ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="2_qwshj"]
+[ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="3_48q88"]
+[ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="4_xjg7p"]
+[ext_resource type="Texture2D" uid="uid://b1sd2edj5rnke" path="res://art/firekey1.png" id="5_mg6lk"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HeartsContainer" type="HBoxContainer" parent="."]
+offset_right = 146.0
+offset_bottom = 42.0
+script = ExtResource("1_w371h")
+FullHeart = ExtResource("2_qwshj")
+EmptyHeart = ExtResource("3_48q88")
+
+[node name="TextureRect" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_qwshj")
+
+[node name="TextureRect2" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_qwshj")
+
+[node name="TextureRect3" type="TextureRect" parent="HeartsContainer"]
+layout_mode = 2
+texture = ExtResource("2_qwshj")
+
+[node name="KeyUI" type="HBoxContainer" parent="."]
+offset_left = 7.0
+offset_top = 44.0
+offset_right = 75.0
+offset_bottom = 84.0
+script = ExtResource("4_xjg7p")
+
+[node name="KeyIcon" type="TextureRect" parent="KeyUI"]
+layout_mode = 2
+texture = ExtResource("5_mg6lk")
+
+[node name="KeyLabel" type="Label" parent="KeyUI"]
+layout_mode = 2
+text = "x0"

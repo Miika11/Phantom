@@ -6,11 +6,14 @@ public partial class KeyUI : HBoxContainer
 
     public override void _Ready()
     {
+        
         _label = GetNode<Label>("KeyLabel");
+        GD.Print("_label: ", _label); 
     }
 
     public void UpdateKeys(int amount)
     {
-        _label.Text = "x" + amount;
+        if (_label != null) 
+            _label.Text = "x" + amount;
     }
 }

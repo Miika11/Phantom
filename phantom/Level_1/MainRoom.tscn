@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=16 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
@@ -6,11 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_8hsoe"]
 [ext_resource type="PackedScene" uid="uid://dwo4x7s3lkek6" path="res://Scenes/enemy_shooter.tscn" id="5_2lgeq"]
 [ext_resource type="PackedScene" uid="uid://123wreb2dvmm" path="res://Scenes/enemy.tscn" id="6_y7q2k"]
-[ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Level_1/HeartsUI.cs" id="7_7gip5"]
-[ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="8_noq5v"]
-[ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="9_imoki"]
-[ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="10_w3van"]
-[ext_resource type="Texture2D" uid="uid://b1sd2edj5rnke" path="res://art/firekey1.png" id="11_noq5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
 size = Vector2(421, 241)
@@ -47,7 +42,6 @@ position = Vector2(567, 620)
 [node name="Door" parent="." instance=ExtResource("2_8hsoe")]
 position = Vector2(-47, 385)
 TargetScene = "res://Level_1/QuestRoom.tscn"
-TargetSpawnPoint = "SpawnFromMainRoom"
 
 [node name="Door2" parent="." instance=ExtResource("2_8hsoe")]
 position = Vector2(561, 68)
@@ -121,42 +115,6 @@ position = Vector2(363, 223)
 position = Vector2(34, -376)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HeartsContainer" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 129.0
-offset_bottom = 43.0
-script = ExtResource("7_7gip5")
-FullHeart = ExtResource("8_noq5v")
-EmptyHeart = ExtResource("9_imoki")
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("8_noq5v")
-
-[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("8_noq5v")
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/HeartsContainer"]
-layout_mode = 2
-texture = ExtResource("8_noq5v")
-
-[node name="KeyUI" type="HBoxContainer" parent="CanvasLayer"]
-offset_left = 12.0
-offset_top = 49.0
-offset_right = 80.0
-offset_bottom = 89.0
-script = ExtResource("10_w3van")
-
-[node name="KeyIcon" type="TextureRect" parent="CanvasLayer/KeyUI"]
-layout_mode = 2
-texture = ExtResource("11_noq5v")
-
-[node name="KeyLabel" type="Label" parent="CanvasLayer/KeyUI"]
-layout_mode = 2
-text = "x0"
 
 [node name="SpawnFromQuestRoom" type="Marker2D" parent="."]
 position = Vector2(42, 345)
