@@ -47,6 +47,10 @@ TargetScene = "res://Level_1/QuestRoom.tscn"
 position = Vector2(561, 68)
 TargetScene = "res://Level_2/MainRoom2.tscn"
 
+[node name="Door3" parent="." instance=ExtResource("2_8hsoe")]
+position = Vector2(1166, 381)
+TargetScene = "res://Level_1/EnemyRoomRight.tscn"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 z_index = -1
 
@@ -118,6 +122,9 @@ position = Vector2(34, -376)
 
 [node name="SpawnFromQuestRoom" type="Marker2D" parent="."]
 position = Vector2(42, 345)
+
+[node name="SpawnFromRightRoom" type="Marker2D" parent="."]
+position = Vector2(1080, 342)
 
 [node name="SpawnFromIntro" type="Marker2D" parent="."]
 position = Vector2(567, 637)

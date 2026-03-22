@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dovl7ttwbgqpq"]
 
-[ext_resource type="Texture2D" uid="uid://cftg20s1tkdrb" path="res://art/Level1leftroom.png" id="1_y7wgy"]
+[ext_resource type="Texture2D" uid="uid://ncjngnk72cwl" path="res://art/Level1Rightroom.png" id="1_y7wgy"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_5ymmy"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_30thy"]
 
@@ -29,7 +29,7 @@ physics_material_override = SubResource("PhysicsMaterial_h6gye")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = -1
-position = Vector2(575.99994, 324)
+position = Vector2(576.00006, 322)
 scale = Vector2(0.90196073, 0.7941177)
 texture = ExtResource("1_y7wgy")
 
@@ -46,23 +46,24 @@ position = Vector2(889.5, 621.5)
 shape = SubResource("RectangleShape2D_sk72d")
 
 [node name="BottomLeftBuffer" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(22, 348.5)
+position = Vector2(1132, 349)
 shape = SubResource("RectangleShape2D_ko2d8")
 
 [node name="BottomRightBuffer" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1130, 183)
+position = Vector2(22, 202)
 shape = SubResource("RectangleShape2D_a1waa")
 
 [node name="BottomRightBuffer2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1127, 495)
+position = Vector2(23, 498)
 shape = SubResource("RectangleShape2D_a1waa")
 
 [node name="Node2D" parent="." instance=ExtResource("2_5ymmy")]
+position = Vector2(124, 392)
 
 [node name="Door" parent="." instance=ExtResource("3_30thy")]
-position = Vector2(1197, 390)
+position = Vector2(-9, 384)
 TargetScene = "res://Level_1/MainRoom.tscn"
-TargetSpawnPoint = "SpawnFromQuestRoom"
+TargetSpawnPoint = "SpawnFromRightRoom"
 
 [node name="SpawnFromMainRoom" type="Marker2D" parent="."]
-position = Vector2(1074, 352)
+position = Vector2(78, 347)
