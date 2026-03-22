@@ -1,11 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=14 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
 [ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://art/NewLevel1.png" id="3_kilnq"]
-[ext_resource type="PackedScene" uid="uid://dwo4x7s3lkek6" path="res://Scenes/enemy_shooter.tscn" id="5_2lgeq"]
 [ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="6_s140b"]
-[ext_resource type="PackedScene" uid="uid://123wreb2dvmm" path="res://Scenes/enemy.tscn" id="6_y7q2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
 size = Vector2(421, 241)
@@ -112,23 +110,6 @@ shape = SubResource("RectangleShape2D_7gip5")
 [node name="TopBlock" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(567, -15)
 shape = SubResource("RectangleShape2D_7gip5")
-
-[node name="EnemyMage" type="Node2D" parent="."]
-
-[node name="EnemyShooter" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
-position = Vector2(352, 488)
-
-[node name="EnemyShooter2" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
-position = Vector2(761, 479)
-
-[node name="EnemyShooter3" parent="EnemyMage" instance=ExtResource("5_2lgeq")]
-position = Vector2(363, 223)
-
-[node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(363, 223)
-
-[node name="Enemy" parent="Node2D2" instance=ExtResource("6_y7q2k")]
-position = Vector2(34, -376)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dovl7ttwbgqpq"]
+[gd_scene load_steps=12 format=3 uid="uid://dovl7ttwbgqpq"]
 
 [ext_resource type="Texture2D" uid="uid://ncjngnk72cwl" path="res://art/Level1Rightroom.png" id="1_y7wgy"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_5ymmy"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_30thy"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_5ymmy"]
+[ext_resource type="PackedScene" uid="uid://123wreb2dvmm" path="res://Scenes/enemy.tscn" id="5_30thy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
 
@@ -71,3 +72,6 @@ position = Vector2(78, 347)
 
 [node name="Key" parent="." instance=ExtResource("4_5ymmy")]
 position = Vector2(175, 178)
+
+[node name="Enemy" parent="." instance=ExtResource("5_30thy")]
+position = Vector2(2, 3)

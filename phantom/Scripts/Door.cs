@@ -55,7 +55,7 @@ public partial class Door : Area2D
             else
             {
                 // Not enough keys
-                GD.Print($"Tarvitse {KeysRequired} avainta avataksesi oven. Sinulla on {playerKeys}.");
+                GD.Print($"Tarvitset {KeysRequired} avainta avataksesi oven. Sinulla on {playerKeys}.");
             }
         }
     }
