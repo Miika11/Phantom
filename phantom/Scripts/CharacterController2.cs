@@ -27,9 +27,10 @@ public partial class CharacterController2 : CharacterBody2D
         GD.Print("HeartsUI: ", HeartsUI);
         GD.Print("KeyUI: ", KeyUI);
 
-        _currentHealth = MaxHealth;
-        HeartsUI?.UpdateHearts(_currentHealth);
-        KeyUI?.UpdateKeys(_keys);
+        _currentHealth = GameManager.Instance.CurrentHealth;
+        _keys = GameManager.Instance.Keys;
+        HeartsUI.UpdateHearts(_currentHealth);
+        KeyUI.UpdateKeys(_keys);
 
         GD.Print("Elämät: " + _currentHealth);
 
@@ -42,9 +43,9 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void AddKey(int amount = 1)
     {
-        _keys += amount;
-        GD.Print("Keys: " + _keys);
-        KeyUI?.UpdateKeys(_keys);
+        _keys++;
+        GameManager.Instance.Keys = _keys;
+        KeyUI.UpdateKeys(_keys);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -84,6 +85,8 @@ public partial class CharacterController2 : CharacterBody2D
     {
         _currentHealth -= damage;
         _currentHealth = Mathf.Max(_currentHealth, 0);
+        GameManager.Instance.CurrentHealth = _currentHealth;
+        HeartsUI.UpdateHearts(_currentHealth);
 
         GD.Print("Elämät: " + _currentHealth);
 
@@ -96,6 +99,10 @@ public partial class CharacterController2 : CharacterBody2D
     private void Die()
     {
         GD.Print("Pelaaja kuoli!");
+
+        // Reset health to full before reloading
+        GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth;
+
         GetTree().CallDeferred("reload_current_scene");
     }
 }
