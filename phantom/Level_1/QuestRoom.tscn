@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdjicnefnr82f"]
+[gd_scene load_steps=11 format=3 uid="uid://cdjicnefnr82f"]
 
 [ext_resource type="Texture2D" uid="uid://cftg20s1tkdrb" path="res://art/Level1leftroom.png" id="1_pridb"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_pridb"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_emxlu"]
+[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_emxlu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
 
@@ -67,3 +68,6 @@ TargetSpawnPoint = "SpawnFromQuestRoom"
 
 [node name="SpawnFromMainRoom" type="Marker2D" parent="."]
 position = Vector2(1074, 352)
+
+[node name="Key" parent="." instance=ExtResource("4_emxlu")]
+position = Vector2(165, 176)

@@ -24,8 +24,8 @@ public partial class CharacterController2 : CharacterBody2D
         HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
         KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
 
-        GD.Print("HeartsUI: ", HeartsUI);
-        GD.Print("KeyUI: ", KeyUI);
+        // GD.Print("HeartsUI: ", HeartsUI); // For debugging
+        // GD.Print("KeyUI: ", KeyUI); // For debugging
 
         _currentHealth = GameManager.Instance.CurrentHealth;
         _keys = GameManager.Instance.Keys;

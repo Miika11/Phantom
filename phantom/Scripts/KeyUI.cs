@@ -8,7 +8,7 @@ public partial class KeyUI : HBoxContainer
     {
         
         _label = GetNode<Label>("KeyLabel");
-        GD.Print("_label: ", _label); 
+        // GD.Print("_label: ", _label); // for debugging
     }
 
     public void UpdateKeys(int amount)

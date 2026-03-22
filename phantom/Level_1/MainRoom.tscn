@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
 [ext_resource type="Texture2D" uid="uid://c81ybk7u0aoxa" path="res://art/NewLevel1.png" id="3_kilnq"]
-[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_8hsoe"]
 [ext_resource type="PackedScene" uid="uid://dwo4x7s3lkek6" path="res://Scenes/enemy_shooter.tscn" id="5_2lgeq"]
+[ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="6_s140b"]
 [ext_resource type="PackedScene" uid="uid://123wreb2dvmm" path="res://Scenes/enemy.tscn" id="6_y7q2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
@@ -47,6 +47,8 @@ TargetScene = "res://Level_1/QuestRoom.tscn"
 position = Vector2(561, 34)
 TargetScene = "res://Level_1/TopRoom.tscn"
 TargetSpawnPoint = "SpawnFromMainRoom"
+KeysRequired = 2
+ConsumeKeysOnOpen = true
 
 [node name="Door3" parent="." instance=ExtResource("2_8hsoe")]
 position = Vector2(1166, 381)
@@ -97,10 +99,9 @@ shape = SubResource("RectangleShape2D_s140b")
 position = Vector2(569.5, 662.5)
 shape = SubResource("RectangleShape2D_7gip5")
 
-[node name="Keys" type="Node2D" parent="."]
-
-[node name="Key" parent="Keys" instance=ExtResource("4_8hsoe")]
-position = Vector2(195, 169)
+[node name="TopBlock" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(567, -15)
+shape = SubResource("RectangleShape2D_7gip5")
 
 [node name="EnemyMage" type="Node2D" parent="."]
 
@@ -132,3 +133,10 @@ position = Vector2(1080, 342)
 
 [node name="SpawnFromIntro" type="Marker2D" parent="."]
 position = Vector2(567, 637)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(558, 52)
+scale = Vector2(1.9815562, 1.6763767)
+texture = ExtResource("6_s140b")
+region_enabled = true
+region_rect = Rect2(183, 193.5, 64, 60)
