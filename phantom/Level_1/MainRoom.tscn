@@ -41,17 +41,16 @@ size = Vector2(181, 29)
 
 [node name="MainRoom" type="Node2D"]
 
-[node name="Node2D" parent="." node_paths=PackedStringArray("HeartsUI", "KeyUI") instance=ExtResource("1_prgri")]
-position = Vector2(-4, 299)
-HeartsUI = NodePath("../CanvasLayer/HeartsContainer")
-KeyUI = NodePath("../CanvasLayer/KeyUI")
+[node name="Node2D" parent="." instance=ExtResource("1_prgri")]
+position = Vector2(567, 620)
 
 [node name="Door" parent="." instance=ExtResource("2_8hsoe")]
-position = Vector2(-602, 46)
+position = Vector2(-47, 385)
 TargetScene = "res://Level_1/QuestRoom.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom"
 
 [node name="Door2" parent="." instance=ExtResource("2_8hsoe")]
-position = Vector2(-5, -274)
+position = Vector2(561, 68)
 TargetScene = "res://Level_2/MainRoom2.tscn"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -158,3 +157,9 @@ texture = ExtResource("11_noq5v")
 [node name="KeyLabel" type="Label" parent="CanvasLayer/KeyUI"]
 layout_mode = 2
 text = "x0"
+
+[node name="SpawnFromQuestRoom" type="Marker2D" parent="."]
+position = Vector2(42, 345)
+
+[node name="SpawnFromIntro" type="Marker2D" parent="."]
+position = Vector2(567, 637)

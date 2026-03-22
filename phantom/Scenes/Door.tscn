@@ -11,10 +11,10 @@ disable_mode = 2
 script = ExtResource("1_yfgsh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(564, 301)
+position = Vector2(0, -39)
 scale = Vector2(0.921875, 0.60156256)
 texture = ExtResource("2_mw28t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(564, 301)
+position = Vector2(0, -39)
 shape = SubResource("RectangleShape2D_eyv6f")

@@ -50,8 +50,9 @@ position = Vector2(573, 659.5)
 shape = SubResource("RectangleShape2D_y72e6")
 
 [node name="Node2D" parent="." instance=ExtResource("2_ayt76")]
-position = Vector2(4, 258)
+position = Vector2(576, 641)
 
 [node name="Door" parent="." instance=ExtResource("3_7a8ye")]
-position = Vector2(14, -335)
+position = Vector2(578, 13)
 TargetScene = "res://Level_1/MainRoom.tscn"
+TargetSpawnPoint = "SpawnFromIntro"

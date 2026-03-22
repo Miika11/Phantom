@@ -25,6 +25,13 @@ public partial class CharacterController2 : CharacterBody2D
         KeyUI?.CallDeferred("UpdateKeys", _keys);
 
         GD.Print("Elämät: " + _currentHealth);
+
+        Node spawnPoint = GetTree().CurrentScene.FindChild(GameManager.Instance.SpawnPoint);
+        if (spawnPoint is Marker2D marker)
+        {
+            GlobalPosition = marker.GlobalPosition;
+        }
+
     }
 
     public void AddKey(int amount = 1)
