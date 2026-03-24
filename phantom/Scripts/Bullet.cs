@@ -24,6 +24,7 @@ public partial class Bullet : Area2D
     public void SetDirection(Vector2 direction)
     {
         _direction = direction.Normalized();
+        Rotation = _direction.Angle(); // Bulletti image menee nyt ampumis suuntaan
     }
 
     // luodin osuminen pelaajaan
