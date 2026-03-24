@@ -14,9 +14,9 @@ script = ExtResource("1_b2c2x")
 
 [node name="Handle" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 200.00003
-offset_bottom = 200.0
+offset_left = 77.0
+offset_top = 20.0
+offset_right = 327.0
+offset_bottom = 270.0
 scale = Vector2(0.371234, 0.23079813)
 texture = ExtResource("2_aegyi")
