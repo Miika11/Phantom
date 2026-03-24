@@ -19,21 +19,21 @@ public partial class CharacterController2 : CharacterBody2D
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 
-        
-        var uiRoot = GetNode("/root/UI"); // UI singleton Autoload
+        // UI from autoload to all scenes
+        var uiRoot = GetNode("/root/UI");
         HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
         KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
 
-        // GD.Print("HeartsUI: ", HeartsUI); // For debugging
-        // GD.Print("KeyUI: ", KeyUI); // For debugging
 
+        // Get saved values from gamemanager and update ui to show correct values
         _currentHealth = GameManager.Instance.CurrentHealth;
         _keys = GameManager.Instance.Keys;
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
 
-        GD.Print("Elämät: " + _currentHealth);
+        GD.Print("Elämät: " + _currentHealth); 
 
+        // Move player to spawnpoint
         Node spawnPoint = GetTree().CurrentScene.FindChild(GameManager.Instance.SpawnPoint);
         if (spawnPoint is Marker2D marker)
         {
@@ -43,6 +43,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void AddKey(int amount = 1)
     {
+        // Add key to player, save it to gamemanager and update ui
         _keys++;
         GameManager.Instance.Keys = _keys;
         KeyUI.UpdateKeys(_keys);
@@ -50,6 +51,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        // WASD Movement
         _Movement = Input.GetVector(
             ConfigInput.InputLeft,
             ConfigInput.InputRight,
@@ -83,16 +85,16 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage;
-        _currentHealth = Mathf.Max(_currentHealth, 0);
-        GameManager.Instance.CurrentHealth = _currentHealth;
-        HeartsUI.UpdateHearts(_currentHealth);
+        _currentHealth -= damage; // reduce health
+        _currentHealth = Mathf.Max(_currentHealth, 0); // So player health doesnt go below 0
+        GameManager.Instance.CurrentHealth = _currentHealth; // save health to gamemanager
+        HeartsUI.UpdateHearts(_currentHealth); // UI health update
 
         GD.Print("Elämät: " + _currentHealth);
 
         HeartsUI?.UpdateHearts(_currentHealth);
 
-        if (_currentHealth <= 0)
+        if (_currentHealth <= 0) // if health goes to 0 player dies
             Die();
     }
 
@@ -100,9 +102,8 @@ public partial class CharacterController2 : CharacterBody2D
     {
         GD.Print("Pelaaja kuoli!");
 
-        // Reset health to full before reloading
-        GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth;
+        GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth; // Reset health to full before reloading
 
-        GetTree().CallDeferred("reload_current_scene");
+        GetTree().CallDeferred("reload_current_scene"); // Reload scene (restart level)
     }
 }
