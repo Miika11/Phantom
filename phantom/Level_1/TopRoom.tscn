@@ -83,20 +83,20 @@ position = Vector2(580, 556)
 position = Vector2(581, 143)
 
 [node name="NPC_Desert" parent="." instance=ExtResource("4_d8h1x")]
-position = Vector2(-155, 187)
+position = Vector2(249, 548)
 DialogueUIPath = NodePath("../DialogueUi")
 
 [node name="DialogueUi" parent="." instance=ExtResource("5_if0v0")]
 visible = false
 
 [node name="NPC_Ice" parent="." instance=ExtResource("6_yrwtj")]
-position = Vector2(-168, -124)
+position = Vector2(291, 310)
 DialogueUIPath = NodePath("../DialogueUi")
 
 [node name="NPC_Fire" parent="." instance=ExtResource("7_m8ty7")]
-position = Vector2(362, -111)
+position = Vector2(850, 299)
 DialogueUIPath = NodePath("../DialogueUi")
 
 [node name="Result_Npc" parent="." instance=ExtResource("8_2jiu2")]
-position = Vector2(426, 167)
+position = Vector2(878, 544)
 DialogueUIPath = NodePath("../DialogueUi")

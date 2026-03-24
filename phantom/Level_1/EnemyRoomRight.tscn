@@ -71,7 +71,7 @@ TargetSpawnPoint = "SpawnFromRightRoom"
 position = Vector2(78, 347)
 
 [node name="Key" parent="." instance=ExtResource("4_5ymmy")]
-position = Vector2(175, 178)
+position = Vector2(513, 321)
 
 [node name="Enemy" parent="." instance=ExtResource("5_30thy")]
-position = Vector2(2, 3)
+position = Vector2(440, 474)

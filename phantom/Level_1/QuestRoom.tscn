@@ -72,7 +72,7 @@ TargetSpawnPoint = "SpawnFromQuestRoom"
 position = Vector2(1074, 352)
 
 [node name="Key" parent="." instance=ExtResource("4_emxlu")]
-position = Vector2(271, 173)
+position = Vector2(602, 334)
 
 [node name="EnemyShooter" parent="." instance=ExtResource("5_sk72d")]
 position = Vector2(616, 477)

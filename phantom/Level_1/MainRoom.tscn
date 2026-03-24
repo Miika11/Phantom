@@ -117,10 +117,10 @@ shape = SubResource("RectangleShape2D_7gip5")
 position = Vector2(42, 345)
 
 [node name="SpawnFromTopRoom" type="Marker2D" parent="."]
-position = Vector2(562, 130)
+position = Vector2(563, 108)
 
 [node name="SpawnFromRightRoom" type="Marker2D" parent="."]
-position = Vector2(1080, 342)
+position = Vector2(1080, 353)
 
 [node name="SpawnFromIntro" type="Marker2D" parent="."]
 position = Vector2(567, 637)
