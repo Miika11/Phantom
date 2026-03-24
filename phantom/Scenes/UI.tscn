@@ -9,8 +9,10 @@
 [node name="UI" type="CanvasLayer"]
 
 [node name="HeartsContainer" type="HBoxContainer" parent="."]
-offset_right = 146.0
-offset_bottom = 42.0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 156.0
+offset_bottom = 46.0
 script = ExtResource("1_w371h")
 FullHeart = ExtResource("2_qwshj")
 EmptyHeart = ExtResource("3_48q88")
@@ -28,9 +30,9 @@ layout_mode = 2
 texture = ExtResource("2_qwshj")
 
 [node name="KeyUI" type="HBoxContainer" parent="."]
-offset_left = -6.0
+offset_left = 10.0
 offset_top = 40.0
-offset_right = 98.0
+offset_right = 114.0
 offset_bottom = 80.0
 script = ExtResource("4_xjg7p")
 
