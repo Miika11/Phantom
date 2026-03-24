@@ -69,9 +69,17 @@ MoveBackwards={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [layer_names]
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Collectables"
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true

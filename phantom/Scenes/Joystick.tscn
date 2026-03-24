@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu4rte6cof6r1"]
+
+[ext_resource type="Script" uid="uid://bly6jd5so7oex" path="res://Scripts/Joystick.cs" id="1_b2c2x"]
+[ext_resource type="Texture2D" uid="uid://c5bikwyw0xaq0" path="res://art/Joystick.png" id="2_aegyi"]
+
+[node name="Joystick" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_b2c2x")
+
+[node name="Handle" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 206.99998
+offset_top = 512.0
+offset_right = 384.12338
+offset_bottom = 666.2798
+scale = Vector2(0.371234, 0.23079813)
+texture = ExtResource("2_aegyi")

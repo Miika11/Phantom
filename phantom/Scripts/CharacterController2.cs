@@ -3,9 +3,11 @@ using Godot;
 public partial class CharacterController2 : CharacterBody2D
 {
     [Export] public float Speed = 100.0f;
+    [Export] public NodePath JoystickPath;
 
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
+    private Joystick _joystick; 
 
     private HeartsUI HeartsUI;
     private KeyUI KeyUI;
@@ -18,6 +20,7 @@ public partial class CharacterController2 : CharacterBody2D
     public override void _Ready()
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+        _joystick = GetNode<Joystick>(JoystickPath);
 
         // UI from autoload to all scenes
         var uiRoot = GetNode("/root/UI");
@@ -51,17 +54,9 @@ public partial class CharacterController2 : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
-        // WASD Movement
-        _Movement = Input.GetVector(
-            ConfigInput.InputLeft,
-            ConfigInput.InputRight,
-            ConfigInput.InputForward,
-            ConfigInput.InputBackward
-        );
+       _Movement = _joystick.GetDirection();
 
-        Vector2 velocity = _Movement.Length() > 0 ? _Movement.Normalized() * Speed : Vector2.Zero;
-
-        Velocity = velocity;
+        Velocity = _Movement.Length() > 0 ? _Movement.Normalized() * Speed : Vector2.Zero;
         MoveAndSlide();
 
         UpdateAnimation(_Movement);
