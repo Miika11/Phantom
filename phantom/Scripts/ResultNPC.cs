@@ -21,7 +21,7 @@ public partial class ResultNPC : Node2D
         {
             if (GameManager.Instance.PlayerAnswers.Count < 6)
             {
-                GD.Print("Answer all questions first!");
+                GD.Print("Vastaa kaikkiin kysymyksiin ensin!");
                 return;
             }
 
