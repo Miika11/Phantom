@@ -5,8 +5,7 @@ public partial class EnemyShooter : Node2D
     [Export]
     public PackedScene BulletScene;
 
-    // Timeri joka ampuu tietyn välin jälkeen
-    private Timer _timer;
+    private Timer _timer; // Timer that controls how often enemy shoots
 
     public override void _Ready()
     {
@@ -15,7 +14,7 @@ public partial class EnemyShooter : Node2D
         _timer.Start();
     }
 
-    // metodi joka luo ja ampuu bulletin random suuntaan
+    // Creates and shoots the bullet
     private void ShootBullet()
     {
         var bullet = BulletScene.Instantiate<Bullet>();
@@ -24,7 +23,7 @@ public partial class EnemyShooter : Node2D
 
         bullet.GlobalPosition = GlobalPosition;
 
-		Vector2 randomDirection = new Vector2(
+		Vector2 randomDirection = new Vector2( // Bullets go in random direction
 			(float)GD.RandRange(-1.0, 1.0),
 			(float)GD.RandRange(-1.0, 1.0)
 		).Normalized();
