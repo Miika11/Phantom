@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="2_qwshj"]
 [ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="3_48q88"]
 [ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="4_xjg7p"]
-[ext_resource type="Texture2D" uid="uid://b1sd2edj5rnke" path="res://art/firekey1.png" id="5_mg6lk"]
+[ext_resource type="Texture2D" uid="uid://dca2yw7g505yi" path="res://art/key1.png" id="5_qwshj"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -28,15 +28,15 @@ layout_mode = 2
 texture = ExtResource("2_qwshj")
 
 [node name="KeyUI" type="HBoxContainer" parent="."]
-offset_left = 7.0
-offset_top = 44.0
-offset_right = 75.0
-offset_bottom = 84.0
+offset_left = -6.0
+offset_top = 40.0
+offset_right = 98.0
+offset_bottom = 80.0
 script = ExtResource("4_xjg7p")
 
 [node name="KeyIcon" type="TextureRect" parent="KeyUI"]
 layout_mode = 2
-texture = ExtResource("5_mg6lk")
+texture = ExtResource("5_qwshj")
 
 [node name="KeyLabel" type="Label" parent="KeyUI"]
 layout_mode = 2
