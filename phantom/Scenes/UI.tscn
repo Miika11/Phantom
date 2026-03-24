@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyy42xcfm4wwr"]
 
-[ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Level_1/HeartsUI.cs" id="1_w371h"]
+[ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Scripts/HeartsUI.cs" id="1_w371h"]
 [ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="2_qwshj"]
 [ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="3_48q88"]
 [ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="4_xjg7p"]
