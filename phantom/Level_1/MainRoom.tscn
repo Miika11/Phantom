@@ -80,7 +80,7 @@ position = Vector2(205.5, 121)
 shape = SubResource("RectangleShape2D_prgri")
 
 [node name="BottomWallRight" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(891, 534.5)
+position = Vector2(892, 532)
 shape = SubResource("RectangleShape2D_adu6t")
 
 [node name="BottomWallLeft" type="CollisionShape2D" parent="StaticBody2D"]

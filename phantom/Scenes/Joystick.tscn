@@ -6,17 +6,17 @@
 [node name="Joystick" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 168.0
-offset_top = 465.0
-offset_right = 168.0
-offset_bottom = 465.0
+offset_left = 306.0
+offset_top = 428.0
+offset_right = 306.0
+offset_bottom = 428.0
 script = ExtResource("1_b2c2x")
 
 [node name="Handle" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 20.0
-offset_right = 327.0
-offset_bottom = 270.0
+offset_left = 917.00006
+offset_top = 32.999992
+offset_right = 1288.2173
+offset_bottom = 434.64758
 scale = Vector2(0.371234, 0.23079813)
 texture = ExtResource("2_aegyi")
