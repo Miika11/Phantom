@@ -9,35 +9,35 @@ script = ExtResource("1_853f1")
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="PLAY" type="Button" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 421.0
-offset_top = 462.0
-offset_right = 726.0
-offset_bottom = 574.0
+offset_left = 509.0
+offset_top = 561.0
+offset_right = 779.0
+offset_bottom = 673.0
 theme_override_font_sizes/font_size = 46
 text = "PLAY"
 
 [node name="SETTINGS" type="Button" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 856.0
-offset_top = 462.0
-offset_right = 1118.0
-offset_bottom = 576.0
+offset_left = 933.0
+offset_top = 558.0
+offset_right = 1184.0
+offset_bottom = 677.0
 theme_override_font_sizes/font_size = 46
 text = "SETTINGS"
 
 [node name="QUIT" type="Button" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 895.0
+offset_left = 931.0
 offset_top = 18.0
-offset_right = 1109.0
+offset_right = 1187.0
 offset_bottom = 123.0
 theme_override_font_sizes/font_size = 46
 text = "QUIT"
@@ -48,6 +48,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Mainmenu3" type="Sprite2D" parent="Control"]
-position = Vector2(576, 324)
-scale = Vector2(0.10511907, 0.08372094)
+position = Vector2(640.00006, 360)
+scale = Vector2(0.116798975, 0.09302326)
 texture = ExtResource("1_tt5f1")
