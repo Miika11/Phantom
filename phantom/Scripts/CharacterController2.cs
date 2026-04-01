@@ -29,7 +29,7 @@ public partial class CharacterController2 : CharacterBody2D
     private float _rechargeTimer = 0f;
 
     private TextureProgressBar BoostBar;
-    private Button BoostButton;
+    private TextureButton BoostButton;
 
     public override void _Ready()
     {
@@ -42,9 +42,9 @@ public partial class CharacterController2 : CharacterBody2D
         HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
         KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
         BoostBar = uiRoot.GetNode<TextureProgressBar>("BoostBar");
-        BoostButton = uiRoot.GetNode<Button>("BoostButton");
+        BoostButton = uiRoot.GetNode<TextureButton>("BoostButton");
 
-        BoostButton.Pressed += StartBoost;
+        BoostButton.ButtonDown += StartBoost;
         BoostButton.ButtonUp += StopBoost;
 
         // Load values from GameManager
@@ -78,14 +78,14 @@ public partial class CharacterController2 : CharacterBody2D
         KeyUI.UpdateKeys(_keys);
     }
 
-        public override void _PhysicsProcess(double delta)
+            public override void _PhysicsProcess(double delta)
     {
         float dt = (float)delta;
 
         _Movement = _joystick.GetDirection();
 
-        // keyboard testing boost
-        _isBoosting = Input.IsActionPressed("boost");
+        // Mobile boost input
+        _isBoosting = BoostButton.ButtonPressed;
 
         HandleBoost(dt);
 
