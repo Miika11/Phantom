@@ -9,7 +9,7 @@ public partial class Enemy : Area2D
     private int _currentWaypoint = 0;
     private bool _waiting = false;
     private bool _hasDamaged = false;
-    private AnimatedSprite2D _sprite;  // ← add this
+    private AnimatedSprite2D _sprite;
 
     public override void _Ready()
     {

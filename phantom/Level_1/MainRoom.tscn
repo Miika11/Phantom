@@ -120,7 +120,7 @@ position = Vector2(42, 345)
 position = Vector2(563, 108)
 
 [node name="SpawnFromRightRoom" type="Marker2D" parent="."]
-position = Vector2(1080, 353)
+position = Vector2(1003, 343)
 
 [node name="SpawnFromIntro" type="Marker2D" parent="."]
 position = Vector2(567, 637)

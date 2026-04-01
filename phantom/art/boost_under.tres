@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cb4r1menjqax7"]
+
+[ext_resource type="Texture2D" uid="uid://c81c1tncxh0dy" path="res://art/progressbar.png" id="1_h522s"]
+
+[resource]
+atlas = ExtResource("1_h522s")
+region = Rect2(170.49255, 171.52267, 2481.2866, 261.9136)
