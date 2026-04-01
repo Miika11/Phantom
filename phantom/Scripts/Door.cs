@@ -45,7 +45,7 @@ public partial class Door : Area2D
                     var keyUI = uiRoot.GetNode<KeyUI>("KeyUI");
                     keyUI.UpdateKeys(GameManager.Instance.Keys);
                 }
-
+                GameManager.Instance.KeysOnRoomEnter = GameManager.Instance.Keys; // Lock the keys if when player succesfully leaves the room
                 // Set spawn point for the next scene
                 GameManager.Instance.SpawnPoint = TargetSpawnPoint;
 

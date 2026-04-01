@@ -29,8 +29,11 @@ public partial class CharacterController2 : CharacterBody2D
 
 
         // Get saved values from gamemanager and update ui to show correct values
-        _currentHealth = GameManager.Instance.CurrentHealth;
+         _currentHealth = GameManager.Instance.CurrentHealth;
         _keys = GameManager.Instance.Keys;
+
+        GameManager.Instance.KeysOnRoomEnter = _keys;
+
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
 
@@ -47,7 +50,7 @@ public partial class CharacterController2 : CharacterBody2D
     public void AddKey(int amount = 1)
     {
         // Add key to player, save it to gamemanager and update ui
-        _keys++;
+        _keys += amount; 
         GameManager.Instance.Keys = _keys;
         KeyUI.UpdateKeys(_keys);
     }
@@ -98,7 +101,7 @@ public partial class CharacterController2 : CharacterBody2D
         GD.Print("Pelaaja kuoli!");
 
         GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth; // Reset health to full before reloading
-
+        GameManager.Instance.Keys = GameManager.Instance.KeysOnRoomEnter;
         GetTree().CallDeferred("reload_current_scene"); // Reload scene (restart level)
     }
 }
