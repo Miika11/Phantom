@@ -6,10 +6,10 @@
 [node name="Joystick" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 154.0
-offset_top = 458.0
-offset_right = 154.0
-offset_bottom = 458.0
+offset_left = 311.0
+offset_top = 460.0
+offset_right = 311.0
+offset_bottom = 460.0
 script = ExtResource("1_b2c2x")
 
 [node name="Handle" type="TextureRect" parent="."]
