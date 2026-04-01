@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dca2yw7g505yi" path="res://art/key1.png" id="5_qwshj"]
 [ext_resource type="Texture2D" uid="uid://cana03lclq5w5" path="res://art/boost_progress.tres" id="8_j04uc"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="CanvasLayer" groups=["GameHUD"]]
 
 [node name="HeartsContainer" type="HBoxContainer" parent="."]
 offset_left = 10.0
