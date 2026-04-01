@@ -71,7 +71,36 @@ TargetSpawnPoint = "SpawnFromRightRoom"
 position = Vector2(78, 347)
 
 [node name="Key" parent="." instance=ExtResource("4_5ymmy")]
-position = Vector2(513, 321)
+position = Vector2(933, 354)
 
 [node name="Enemy" parent="." instance=ExtResource("5_30thy")]
-position = Vector2(440, 474)
+position = Vector2(960, 164)
+
+[node name="Marker2D" parent="Enemy" index="2"]
+position = Vector2(-272, 132)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_30thy")]
+position = Vector2(987, 542)
+
+[node name="Marker2D" parent="Enemy2" index="2"]
+position = Vector2(-299, -105)
+
+[node name="Marker2D2" parent="Enemy2" index="3"]
+position = Vector2(6, -4)
+
+[node name="Enemy3" parent="." instance=ExtResource("5_30thy")]
+position = Vector2(190, 144)
+
+[node name="Marker2D" parent="Enemy3" index="2"]
+position = Vector2(448, 407)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_30thy")]
+position = Vector2(131, 524)
+
+[node name="Marker2D" parent="Enemy4" index="2"]
+position = Vector2(950, -182)
+
+[editable path="Enemy"]
+[editable path="Enemy2"]
+[editable path="Enemy3"]
+[editable path="Enemy4"]
