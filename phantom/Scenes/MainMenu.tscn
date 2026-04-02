@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://br6kj0ub0tcdd"]
 
-[ext_resource type="Script" uid="uid://cl60gv2sb5jf0" path="res://Scenes/MainMenu.cs" id="1_853f1"]
+[ext_resource type="Script" uid="uid://cl60gv2sb5jf0" path="res://Scripts/MainMenu.cs" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://60pl8ffncwra" path="res://art/mainmenu3.png" id="1_tt5f1"]
 
 [node name="MainMenu" type="Node2D"]

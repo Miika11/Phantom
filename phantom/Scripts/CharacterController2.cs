@@ -7,8 +7,8 @@ public partial class CharacterController2 : CharacterBody2D
 
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
-    private Joystick _joystick; 
-
+    private Joystick _joystick;
+    private PauseMenu _pauseMenu;
     private HeartsUI HeartsUI;
     private KeyUI KeyUI;
 
@@ -34,7 +34,7 @@ public partial class CharacterController2 : CharacterBody2D
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
 
-        GD.Print("Elämät: " + _currentHealth); 
+        GD.Print("Elämät: " + _currentHealth);
 
         // Move player to spawnpoint
         Node spawnPoint = GetTree().CurrentScene.FindChild(GameManager.Instance.SpawnPoint);
@@ -42,8 +42,23 @@ public partial class CharacterController2 : CharacterBody2D
         {
             GlobalPosition = marker.GlobalPosition;
         }
+
+        _pauseMenu = GetNode<PauseMenu>("PauseMenu");
+        GetNode<TextureButton>("CanvasLayer/TextureButton").Pressed += OnPausePressed;
     }
 
+    private void OnPausePressed()
+    {
+        _pauseMenu.TogglePause();
+    }
+
+    public override void _Process(double delta)
+    {
+        if (Input.IsActionJustPressed("ui_cancel"))
+        {
+            _pauseMenu.TogglePause();
+        }
+    }
     public void AddKey(int amount = 1)
     {
         // Add key to player, save it to gamemanager and update ui

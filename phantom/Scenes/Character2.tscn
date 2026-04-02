@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bpxkeptkblxfr"]
+[gd_scene load_steps=15 format=3 uid="uid://bpxkeptkblxfr"]
 
 [ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://Scripts/CharacterController2.cs" id="1_6ludh"]
 [ext_resource type="Texture2D" uid="uid://bf26lxviilccd" path="res://art/Päähahmo_konsepti2.png" id="2_4s2po"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b6c51rla1p6yx" path="res://art/Päähahmo_vasen4.png" id="5_d6o2a"]
 [ext_resource type="Texture2D" uid="uid://b3y0lphinsh82" path="res://art/Päähahmo_oikea4.png" id="5_nbeo7"]
 [ext_resource type="PackedScene" uid="uid://bu4rte6cof6r1" path="res://Scenes/Joystick.tscn" id="10_11r81"]
+[ext_resource type="Texture2D" uid="uid://b11tdc22sk17j" path="res://art/icon.svg" id="11_clqaf"]
+[ext_resource type="PackedScene" uid="uid://b8hhm0g76182m" path="res://Scenes/PauseMenu.tscn" id="12_qk2y7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4s2po"]
 animations = [{
@@ -119,3 +121,15 @@ limit_bottom = 652
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Joystick" parent="CanvasLayer" instance=ExtResource("10_11r81")]
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = -1
+anchor_bottom = 0.082
+offset_left = 1114.0
+offset_top = 19.0
+offset_right = 1242.0
+offset_bottom = 87.96
+texture_normal = ExtResource("11_clqaf")
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_qk2y7")]
