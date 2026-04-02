@@ -80,6 +80,7 @@ public partial class GameManager : Node
     public int CurrentHealth { get; set; } = 3;
 
     public int Keys { get; set; } = 0;
+    public int KeysOnRoomEnter { get; set; } = 0;
 
     #endregion
 

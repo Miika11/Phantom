@@ -8,7 +8,11 @@ public partial class CharacterController2 : CharacterBody2D
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
     private Joystick _joystick;
+<<<<<<< HEAD
     private PauseMenu _pauseMenu;
+=======
+
+>>>>>>> 73f0cab4c5afa3b9ea45d056ee331d9ddc2cb1f1
     private HeartsUI HeartsUI;
     private KeyUI KeyUI;
 
@@ -17,23 +21,53 @@ public partial class CharacterController2 : CharacterBody2D
     [Export] public int MaxHealth = 3;
     private int _currentHealth;
 
+    
+    [Export] public float BoostMultiplier = 1.8f;
+    [Export] public float MaxBoost = 100f;
+    [Export] public float BoostDrain = 40f;
+    [Export] public float BoostRecharge = 25f;
+    [Export] public float RechargeDelay = 1.0f;
+
+    private float _boost;
+    private bool _isBoosting = false;
+    private float _rechargeTimer = 0f;
+
+    private TextureProgressBar BoostBar;
+    private TextureButton BoostButton;
+
     public override void _Ready()
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _joystick = GetNode<Joystick>(JoystickPath);
 
-        // UI from autoload to all scenes
+        // UI from autoload
         var uiRoot = GetNode("/root/UI");
+
         HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
         KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
+        BoostBar = uiRoot.GetNode<TextureProgressBar>("BoostBar");
+        BoostButton = uiRoot.GetNode<TextureButton>("BoostButton");
 
+        BoostButton.ButtonDown += StartBoost;
+        BoostButton.ButtonUp += StopBoost;
 
-        // Get saved values from gamemanager and update ui to show correct values
+        // Load values from GameManager
         _currentHealth = GameManager.Instance.CurrentHealth;
         _keys = GameManager.Instance.Keys;
+
+        GameManager.Instance.KeysOnRoomEnter = _keys;
+
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
 
+<<<<<<< HEAD
+=======
+        
+        _boost = MaxBoost;
+        BoostBar.MaxValue = MaxBoost;
+        BoostBar.Value = _boost;
+
+>>>>>>> 73f0cab4c5afa3b9ea45d056ee331d9ddc2cb1f1
         GD.Print("Elämät: " + _currentHealth);
 
         // Move player to spawnpoint
@@ -61,20 +95,77 @@ public partial class CharacterController2 : CharacterBody2D
     }
     public void AddKey(int amount = 1)
     {
-        // Add key to player, save it to gamemanager and update ui
-        _keys++;
+        _keys += amount;
         GameManager.Instance.Keys = _keys;
         KeyUI.UpdateKeys(_keys);
     }
 
-    public override void _PhysicsProcess(double delta)
+            public override void _PhysicsProcess(double delta)
     {
-       _Movement = _joystick.GetDirection();
+        float dt = (float)delta;
 
-        Velocity = _Movement.Length() > 0 ? _Movement.Normalized() * Speed : Vector2.Zero;
+        _Movement = _joystick.GetDirection();
+
+        // Mobile boost input
+        _isBoosting = BoostButton.ButtonPressed;
+
+        HandleBoost(dt);
+
+        float currentSpeed = Speed;
+
+        if (_isBoosting && _boost > 0 && _Movement != Vector2.Zero)
+        {
+            currentSpeed *= BoostMultiplier;
+        }
+
+        Velocity = _Movement.Length() > 0 ? _Movement.Normalized() * currentSpeed : Vector2.Zero;
+
         MoveAndSlide();
 
         UpdateAnimation(_Movement);
+    }
+
+    private void HandleBoost(float delta)
+    {
+        if (_isBoosting && _boost > 0 && _Movement != Vector2.Zero)
+        {
+            _boost -= BoostDrain * delta;
+            _rechargeTimer = RechargeDelay;
+        }
+        else
+        {
+            if (_rechargeTimer > 0)
+            {
+                _rechargeTimer -= delta;
+            }
+            else
+            {
+                _boost += BoostRecharge * delta;
+            }
+        }
+
+        _boost = Mathf.Clamp(_boost, 0, MaxBoost);
+
+        if (_boost <= 0)
+            _isBoosting = false;
+
+        BoostBar.Value = _boost;
+
+
+        if (_boost < MaxBoost * 0.2f)
+            BoostBar.Modulate = Colors.Red;
+        else
+            BoostBar.Modulate = Colors.White;
+    }
+
+    public void StartBoost()
+    {
+        _isBoosting = true;
+    }
+
+    public void StopBoost()
+    {
+        _isBoosting = false;
     }
 
     private void UpdateAnimation(Vector2 direction)
@@ -95,16 +186,15 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void TakeDamage(int damage)
     {
-        _currentHealth -= damage; // reduce health
-        _currentHealth = Mathf.Max(_currentHealth, 0); // So player health doesnt go below 0
-        GameManager.Instance.CurrentHealth = _currentHealth; // save health to gamemanager
-        HeartsUI.UpdateHearts(_currentHealth); // UI health update
+        _currentHealth -= damage;
+        _currentHealth = Mathf.Max(_currentHealth, 0);
+
+        GameManager.Instance.CurrentHealth = _currentHealth;
+        HeartsUI.UpdateHearts(_currentHealth);
 
         GD.Print("Elämät: " + _currentHealth);
 
-        HeartsUI?.UpdateHearts(_currentHealth);
-
-        if (_currentHealth <= 0) // if health goes to 0 player dies
+        if (_currentHealth <= 0)
             Die();
     }
 
@@ -112,8 +202,9 @@ public partial class CharacterController2 : CharacterBody2D
     {
         GD.Print("Pelaaja kuoli!");
 
-        GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth; // Reset health to full before reloading
+        GameManager.Instance.CurrentHealth = GameManager.Instance.MaxHealth;
+        GameManager.Instance.Keys = GameManager.Instance.KeysOnRoomEnter;
 
-        GetTree().CallDeferred("reload_current_scene"); // Reload scene (restart level)
+        GetTree().CallDeferred("reload_current_scene");
     }
 }

@@ -1,19 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://123wreb2dvmm"]
+[gd_scene load_steps=8 format=3 uid="uid://123wreb2dvmm"]
 
 [ext_resource type="Script" uid="uid://djjixdswsusxd" path="res://Scripts/Enemy.cs" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://b0sdwpkh4b7s2" path="res://art/rocketskatingdemon_original.png" id="2_qi2p4"]
+[ext_resource type="Texture2D" uid="uid://cvc6yyb5dkiyw" path="res://art/demonidle.png" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://04leum8aaiq8" path="res://art/demonmoving.png" id="3_287tu"]
+[ext_resource type="Texture2D" uid="uid://cp1t3ya7w3of2" path="res://art/demonidleright.png" id="3_0830c"]
+[ext_resource type="Texture2D" uid="uid://daoattag8g7ge" path="res://art/demonmovingright.png" id="5_ghaa6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
-size = Vector2(138, 62.5)
+size = Vector2(81, 62.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0830c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_afpow")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0830c")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_287tu")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ghaa6")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="Area2D"]
+position = Vector2(960, 234)
 script = ExtResource("1_4gyqm")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(24, -32)
-scale = Vector2(0.33000004, 0.28428572)
-texture = ExtResource("2_qi2p4")
+Speed = 150.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(29, -32.75)
+position = Vector2(-28.5, 0)
 shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.31944847, 0.30827823)
+sprite_frames = SubResource("SpriteFrames_0830c")
+animation = &"idle_left"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-305, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="."]

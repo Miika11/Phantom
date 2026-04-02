@@ -22,7 +22,6 @@ public partial class Key : Collectable
     characterController2.AddKey(_score);
 
     
-    GameManager.Instance.AddScore(_score);
 
         QueueFree(); 
     }
