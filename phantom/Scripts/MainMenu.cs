@@ -7,8 +7,8 @@ public partial class MainMenu : Node2D
 	public override void _Ready()
 	{
 		GetTree().CallGroup("GameHUD", "hide"); // hide ui when menu starts
-		GetNode<Button>("Control/PLAY").Pressed += OnPlayPressed;
-		GetNode<Button>("Control/QUIT").Pressed += OnQuitPressed;
+        GetNode<TextureButton>("Control/PlayButton").Pressed += OnPlayPressed;
+        GetNode<TextureButton>("Control/QuitButton").Pressed += OnQuitPressed;
 	}
 
 	private void OnPlayPressed()

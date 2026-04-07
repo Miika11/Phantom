@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://cliian5uad5qo"]
 
-[ext_resource type="Texture2D" uid="uid://djsrd7adhb22" path="res://art/Level1TopRoomStairs.png" id="1_j2me4"]
+[ext_resource type="Texture2D" uid="uid://bjqaoijcwfb1l" path="res://art/TopRoomFinal.png" id="1_2jiu2"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_d8h1x"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_if0v0"]
 [ext_resource type="PackedScene" uid="uid://buq5seaws1025" path="res://Level_1/NPC_Desert.tscn" id="4_d8h1x"]
@@ -34,9 +34,9 @@ physics_material_override = SubResource("PhysicsMaterial_h6gye")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 z_index = -1
-position = Vector2(576, 324)
-scale = Vector2(0.90196073, 0.7941177)
-texture = ExtResource("1_j2me4")
+position = Vector2(576, 323)
+scale = Vector2(0.73516273, 0.6440678)
+texture = ExtResource("1_2jiu2")
 
 [node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(243, 50)
