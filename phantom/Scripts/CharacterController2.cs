@@ -8,11 +8,8 @@ public partial class CharacterController2 : CharacterBody2D
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
     private Joystick _joystick;
-<<<<<<< HEAD
     private PauseMenu _pauseMenu;
-=======
 
->>>>>>> 73f0cab4c5afa3b9ea45d056ee331d9ddc2cb1f1
     private HeartsUI HeartsUI;
     private KeyUI KeyUI;
 
@@ -60,14 +57,11 @@ public partial class CharacterController2 : CharacterBody2D
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
 
-<<<<<<< HEAD
-=======
         
         _boost = MaxBoost;
         BoostBar.MaxValue = MaxBoost;
         BoostBar.Value = _boost;
 
->>>>>>> 73f0cab4c5afa3b9ea45d056ee331d9ddc2cb1f1
         GD.Print("Elämät: " + _currentHealth);
 
         // Move player to spawnpoint

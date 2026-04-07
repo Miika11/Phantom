@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xj86fofmi12w"]
+
+[ext_resource type="Script" uid="uid://cxy2f7vxxflfl" path="res://Scripts/NoticeBoard.cs" id="1_wx6as"]
+[ext_resource type="Texture2D" uid="uid://b11tdc22sk17j" path="res://art/icon.svg" id="2_47k2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47k2o"]
+size = Vector2(392.5, 272)
+
+[node name="NoticeBoard" type="Node2D"]
+script = ExtResource("1_wx6as")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_47k2o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(35.75, 17)
+shape = SubResource("RectangleShape2D_47k2o")

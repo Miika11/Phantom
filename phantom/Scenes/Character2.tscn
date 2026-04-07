@@ -96,7 +96,7 @@ animations = [{
 radius = 23.0
 height = 78.0
 
-[node name="Node2D" type="CharacterBody2D" groups=["Player"]]
+[node name="Node2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_6ludh")
 JoystickPath = NodePath("CanvasLayer/Joystick")
 

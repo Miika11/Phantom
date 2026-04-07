@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw6ic3jljqssl"]
+[gd_scene load_steps=12 format=3 uid="uid://dw6ic3jljqssl"]
 
 [ext_resource type="Texture2D" uid="uid://ctmdlrni4ob3k" path="res://art/GameIntro.png" id="1_s2ta7"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ayt76"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_7a8ye"]
+[ext_resource type="PackedScene" uid="uid://xj86fofmi12w" path="res://Scenes/Noticeboard.tscn" id="4_0a7ni"]
+[ext_resource type="PackedScene" uid="uid://i43663bsq2f5" path="res://Scenes/UINoticeBoard.tscn" id="5_y72e6"]
+[ext_resource type="Texture2D" uid="uid://dhkxnnhngle4u" path="res://art/ilmoitustaulufinal.png" id="6_u2rf6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2ta7"]
 size = Vector2(32, 681)
@@ -56,3 +59,11 @@ position = Vector2(576, 641)
 position = Vector2(578, 13)
 TargetScene = "res://Level_1/MainRoom.tscn"
 TargetSpawnPoint = "SpawnFromIntro"
+
+[node name="NoticePopup" parent="." instance=ExtResource("5_y72e6")]
+visible = false
+
+[node name="NoticeBoard" parent="." node_paths=PackedStringArray("NoticeUI") instance=ExtResource("4_0a7ni")]
+position = Vector2(623, 101)
+NoticeTexture = ExtResource("6_u2rf6")
+NoticeUI = NodePath("../NoticePopup")
