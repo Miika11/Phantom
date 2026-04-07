@@ -11,6 +11,8 @@ public partial class MainMenu : Node2D
 		GetNode<Button>("Control/QUIT").Pressed += OnQuitPressed;
 		GetNode<Button>("Control/SUOMI").Pressed += () => TranslationServer.SetLocale("fi");
 		GetNode<Button>("Control/ENGLISH").Pressed += () => TranslationServer.SetLocale("en");
+        GetNode<TextureButton>("Control/PlayButton").Pressed += OnPlayPressed;
+        GetNode<TextureButton>("Control/QuitButton").Pressed += OnQuitPressed;
 	}
 
 	private void OnPlayPressed()
