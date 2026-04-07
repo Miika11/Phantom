@@ -1,27 +1,59 @@
-[gd_scene load_steps=17 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=25 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
-[ext_resource type="Texture2D" uid="uid://rxwdslfjf8h7" path="res://art/Mainroom1.png" id="4_y7q2k"]
-[ext_resource type="Texture2D" uid="uid://uvfltx7ebkml" path="res://art/Mainroom2.png" id="5_s140b"]
-[ext_resource type="Texture2D" uid="uid://rhqete8kr1my" path="res://art/Mainroom3.png" id="6_7gip5"]
+[ext_resource type="Texture2D" uid="uid://cg7i7rn7ktkvr" path="res://art/firemain1.png" id="4_1ojp0"]
+[ext_resource type="Texture2D" uid="uid://bl1nrojd3h5v8" path="res://art/firemain2.png" id="5_36by6"]
+[ext_resource type="Texture2D" uid="uid://c586bap7km70l" path="res://art/firemain3.png" id="6_ptm8v"]
 [ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="6_s140b"]
+[ext_resource type="Texture2D" uid="uid://bbdkio52wevy" path="res://art/firemain4.png" id="7_bt02d"]
+[ext_resource type="Texture2D" uid="uid://creey0fa2i1d4" path="res://art/firemain5.png" id="8_cykdy"]
+[ext_resource type="Texture2D" uid="uid://bpbdutsmmg2tl" path="res://art/firemain6.png" id="9_mgl7k"]
+[ext_resource type="Texture2D" uid="uid://te25y77kg1mu" path="res://art/firemain7.png" id="10_ys1r4"]
+[ext_resource type="Texture2D" uid="uid://co07joio3bah8" path="res://art/firemain8.png" id="11_d3ftr"]
+[ext_resource type="Texture2D" uid="uid://cb6ofbtpwcmeq" path="res://art/firemain9.png" id="12_4rbl8"]
+[ext_resource type="Texture2D" uid="uid://7a33s4tw4e33" path="res://art/firemain10.png" id="13_dg0to"]
+[ext_resource type="Texture2D" uid="uid://cd33a0qd336l" path="res://art/firemain11.png" id="14_7o33w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7q2k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_y7q2k")
+"texture": ExtResource("4_1ojp0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_s140b")
+"texture": ExtResource("5_36by6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_7gip5")
+"texture": ExtResource("6_ptm8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bt02d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cykdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mgl7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ys1r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_d3ftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4rbl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_dg0to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7o33w")
 }],
 "loop": true,
 "name": &"mainroom",
-"speed": 1.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3cbu"]
@@ -91,7 +123,7 @@ scale = Vector2(0.8022284, 0.71208787)
 sprite_frames = SubResource("SpriteFrames_y7q2k")
 animation = &"mainroom"
 autoplay = "mainroom"
-frame_progress = 0.2995234
+frame_progress = 0.8906813
 
 [node name="TopWallRight" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(941.5, 120.5)

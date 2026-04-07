@@ -1,26 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdpx8pdndixd5"]
+[gd_scene load_steps=2 format=3 uid="uid://bdpx8pdndixd5"]
 
-[ext_resource type="Script" uid="uid://ili1ug7rqxg" path="res://Scripts/DialogueUI.cs" id="1_kqmaj"]
-[ext_resource type="Texture2D" uid="uid://lm8mhtfdk057" path="res://art/mentortext.png" id="2_6gya2"]
+[ext_resource type="Texture2D" uid="uid://d1550jfr6nqvt" path="res://art/mentortextpieni.png" id="2_kqmaj"]
 
 [node name="DialogueUi" type="CanvasLayer"]
-script = ExtResource("1_kqmaj")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 268.0
-offset_top = 174.0
-offset_right = 878.0
-offset_bottom = 528.6101
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -372.5
+offset_top = -176.30048
+offset_right = 372.5
+offset_bottom = 176.30048
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1, 0.9954595)
 
 [node name="BackgroundImage" type="TextureRect" parent="Panel"]
-layout_mode = 0
-offset_left = -114.99999
-offset_top = 1.0045679
-offset_right = 4453.2534
-offset_bottom = 1352.7228
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.027
+anchor_right = -0.027
+offset_left = -19.385015
+offset_top = -24.81219
+offset_right = 4085.7634
+offset_bottom = 1422.0253
 scale = Vector2(0.19110149, 0.2608539)
-texture = ExtResource("2_6gya2")
+texture = ExtResource("2_kqmaj")
 
 [node name="QuestionLabel" type="Label" parent="Panel"]
 layout_mode = 0
@@ -32,29 +40,36 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 
 [node name="AnswerA" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -96.0
-offset_top = 115.52455
-offset_right = 209.0
-offset_bottom = 154.70244
+offset_left = -3.0
+offset_top = 105.47894
+offset_right = 302.0
+offset_bottom = 144.65683
 
 [node name="AnswerB" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -95.0
-offset_top = 180.82103
-offset_right = 205.0
-offset_bottom = 224.01717
+offset_left = 10.0
+offset_top = 172.78455
+offset_right = 310.0
+offset_bottom = 215.98068
 
 [node name="AnswerC" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -96.0
+offset_left = 10.0
 offset_top = 246.1175
-offset_right = 250.0
+offset_right = 356.0
 offset_bottom = 293.25323
 
 [node name="ResultLabel" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = -91.0
-offset_top = 21.095787
-offset_right = 379.0
-offset_bottom = 158.72067
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -237.0
+offset_top = -63.487785
+offset_right = 233.0
+offset_bottom = 74.137085
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)

@@ -7,18 +7,18 @@
 script = ExtResource("1_n6t0h")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 268.0
-offset_top = 174.0
-offset_right = 878.0
-offset_bottom = 528.6101
+offset_left = 409.0
+offset_top = 193.0
+offset_right = 1138.0
+offset_bottom = 528.52344
 scale = Vector2(1, 0.9954595)
 
 [node name="BackgroundImage" type="TextureRect" parent="Panel"]
 layout_mode = 0
-offset_left = -114.99999
-offset_top = 1.0045679
-offset_right = 4453.2534
-offset_bottom = 1352.7228
+offset_left = -3.9999924
+offset_top = 4.0182476
+offset_right = 3972.9446
+offset_bottom = 1282.5665
 scale = Vector2(0.19110149, 0.2608539)
 texture = ExtResource("2_jsu1r")
 
@@ -33,24 +33,24 @@ text = "Tällä hetkellä kaipaan eniten..."
 
 [node name="AnswerA" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -96.0
-offset_top = 115.52455
-offset_right = 209.0
-offset_bottom = 154.70244
+offset_left = 9.0
+offset_top = 88.4014
+offset_right = 314.0
+offset_bottom = 127.579285
 
 [node name="AnswerB" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -95.0
-offset_top = 180.82103
-offset_right = 205.0
-offset_bottom = 224.01717
+offset_left = 14.0
+offset_top = 171.77998
+offset_right = 314.0
+offset_bottom = 214.97612
 
 [node name="AnswerC" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = -96.0
-offset_top = 246.1175
-offset_right = 250.0
-offset_bottom = 293.25323
+offset_left = 12.0
+offset_top = 245.11293
+offset_right = 358.0
+offset_bottom = 292.24866
 
 [node name="ResultLabel" type="Label" parent="Panel"]
 visible = false

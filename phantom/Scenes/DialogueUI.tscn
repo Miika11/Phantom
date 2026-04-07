@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://crl35b24ry6dv"]
 
 [ext_resource type="Script" uid="uid://ili1ug7rqxg" path="res://Scripts/DialogueUI.cs" id="1_dhjsg"]
-[ext_resource type="Texture2D" uid="uid://lm8mhtfdk057" path="res://art/mentortext.png" id="1_vbmao"]
+[ext_resource type="Texture2D" uid="uid://bues55evtuv3n" path="res://art/firementortalks.png" id="2_dhjsg"]
 
 [node name="DialogueUi" type="CanvasLayer"]
 script = ExtResource("1_dhjsg")
@@ -15,24 +15,27 @@ scale = Vector2(1, 0.9954595)
 
 [node name="BackgroundImage" type="TextureRect" parent="Panel"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.018000001
-anchor_top = -0.16800001
-anchor_right = -0.018000001
-anchor_bottom = -0.16800001
-offset_left = 0.28200054
-offset_top = 79.12729
-offset_right = 4568.5356
-offset_bottom = 1827.5035
-scale = Vector2(0.19110149, 0.2608539)
-texture = ExtResource("1_vbmao")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -630.5
+offset_top = -573.1021
+offset_right = 1773.7859
+offset_bottom = 1131.0737
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5599726, 0.6334369)
+texture = ExtResource("2_dhjsg")
+expand_mode = 1
 
 [node name="QuestionLabel" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 30.136843
-offset_right = 385.0
-offset_bottom = 67.13684
+layout_mode = 1
+offset_left = 15.0
+offset_top = 48.218906
+offset_right = 293.0
+offset_bottom = 71.2189
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Kun mietin elämääni tällä hetkellä..."
 
@@ -58,7 +61,17 @@ offset_right = 388.0
 offset_bottom = 404.75955
 
 [node name="ResultLabel" type="Label" parent="Panel"]
-visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 211.0
+offset_top = 108.49263
+offset_right = 251.0
+offset_bottom = 131.49263
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 2.0091233
+offset_right = 887.0
+offset_bottom = 85.38771
+theme_override_font_sizes/font_size = 31
+text = "CLOSE"
