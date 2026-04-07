@@ -9,6 +9,8 @@ public partial class MainMenu : Node2D
 		GetTree().CallGroup("GameHUD", "hide"); // hide ui when menu starts
 		GetNode<Button>("Control/PLAY").Pressed += OnPlayPressed;
 		GetNode<Button>("Control/QUIT").Pressed += OnQuitPressed;
+		GetNode<Button>("Control/SUOMI").Pressed += () => TranslationServer.SetLocale("fi");
+		GetNode<Button>("Control/ENGLISH").Pressed += () => TranslationServer.SetLocale("en");
 	}
 
 	private void OnPlayPressed()

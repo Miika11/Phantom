@@ -85,6 +85,10 @@ boost={
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Scripts/translations.en.translation", "res://Scripts/translations.fi.translation")
+
 [layer_names]
 
 2d_physics/layer_1="World"

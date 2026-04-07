@@ -8,30 +8,31 @@ public partial class NPC_Desert : Node2D
     private DialogueUI _dialogueUI;
     private bool _used = false;
 
-    private List<Question> _questions = new List<Question>()
-    {
-        new Question(
-            "Kun mietin elämääni tällä hetkellä...",
-            new[] {
-                "En ole ihan varma, mihin suuntaan olen menossa.",
-                "Tiedän, mitä haluan – mutta kaipaan rakennetta ja fokusta.",
-                "Minulla on idea, jonka haluaisin muuttaa joksikin konkreettiseksi."
-            }),
-
-        new Question(
-            "Tärkein syyni hakeutua mentorointiin on...",
-            new[] {
-                "Itsetuntemuksen ja oman suunnan selkeyttäminen.",
-                "Eteneminen kohti tavoitteita mahdollisimman tehokkaasti.",
-                "Halu kehittää omaa juttua, ehkä jopa liiketoimintaa."
-            })
-    };
+    private List<Question> _questions;
 
     public override void _Ready()
     {
         _area = GetNode<Area2D>("Area2D");
         _area.BodyEntered += OnBodyEntered;
         _dialogueUI = GetNode<DialogueUI>(DialogueUIPath);
+
+        _questions = new List<Question>()
+        {
+            new Question(
+                Tr("NPC_DESERT_Q1"),
+                new[] {
+                    Tr("NPC_DESERT_Q1_A1"),
+                    Tr("NPC_DESERT_Q1_A2"),
+                    Tr("NPC_DESERT_Q1_A3")
+                }),
+            new Question(
+                Tr("NPC_DESERT_Q2"),
+                new[] {
+                    Tr("NPC_DESERT_Q2_A1"),
+                    Tr("NPC_DESERT_Q2_A2"),
+                    Tr("NPC_DESERT_Q2_A3")
+                })
+        };
     }
 
     private void OnBodyEntered(Node2D body)

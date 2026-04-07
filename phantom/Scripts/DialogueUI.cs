@@ -6,7 +6,7 @@ public partial class DialogueUI : CanvasLayer
     private Label _questionLabel;
     private Button _a, _b, _c;
     private Label _resultLabel;
-    
+
 
     private List<Question> _questions;
     private int _currentQuestion = 0;
@@ -69,34 +69,25 @@ public partial class DialogueUI : CanvasLayer
     {
         Show();
 
-        _questionLabel.Text = "Tuloksesi on:";
+        _questionLabel.Text = Tr("RESULT_LABEL");
         _a.Hide(); _b.Hide(); _c.Hide();
 
         _resultLabel.Show();
 
 			if (result == "ETSIJÄ")
 	{
-		_resultLabel.Text =
-			"🌱 ETSIJÄN POLKU\n\n" +
-			"Sinua kutsuu sisäinen matka.\n" +
-			"Tämä polku auttaa sinua kirkastamaan kuka olet\n" +
-			"ja mitä oikeasti haluat.";
+		_resultLabel.Text = Tr("RESULT_SEEKER_TITLE") + "\n\n" + Tr("RESULT_SEEKER_TEXT");
+
 	}
 	else if (result == "ETENIJÄ")
 	{
-		_resultLabel.Text =
-			"🚀 ETENEMISEN POLKU\n\n" +
-			"Olet valmis etenemään.\n" +
-			"Tämä polku auttaa sinua etenemään kohti\n" +
-			"konkreettisia tavoitteita tehokkaasti.";
+		_resultLabel.Text = Tr("RESULT_ADVANCER_TITLE") + "\n\n" + Tr("RESULT_ADVANCER_TEXT");
+
 	}
 	else
 	{
-		_resultLabel.Text =
-			"🔥 IDEAN POLKU\n\n" +
-			"Sinussa on kipinä luoda.\n" +
-			"Tämä polku antaa rohkaisua, konkretiaa\n" +
-			"ja tukea oman idean kehittämiseen.";
+		_resultLabel.Text = Tr("RESULT_IDEA_TITLE") + "\n\n" + Tr("RESULT_IDEA_TEXT");
+
 	}
 		_resultLabel.AddThemeColorOverride("font_color", Colors.Black); //Godot user issue made me do this. This can also be added in inspector if pro godot user.
 		//TODO Add something to close the last interface

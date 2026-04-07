@@ -1,0 +1,49 @@
+keys,fi,en
+PLAY,PELAA,PLAY
+QUIT,LOPETA,QUIT
+SETTINGS,ASETUKSET,SETTINGS
+CONTINUE,JATKA,CONTINUE
+MAIN MENU,PÄÄVALIKKO,MAIN MENU
+NPC_Fire_Q1,Jos saisin valita yhden lahjan mentorilta...,If I could choose one gift from the mentor...
+NPC_Fire_Q1_A1,Syvällisiä kysymyksiä ja turvallisen tilan omien ajatusten tutkimiseen.,Deep questions and a safe space to explore my own thoughts.
+NPC_Fire_Q1_A2,"Suunnitelman, deadlinet ja napakan tsempin.","A plan, deadlines and firm encouragement."
+NPC_Fire_Q1_A3,"Rehellistä palautetta, bisnesnkökulmaa ja rohkaisua kokeilla.","Honest feedback, business perspective and encouragement to try."
+NPC_Fire_Q2,Millä lauseella tiivistäisit fiiliksesi?,How would you summarize your feeling?
+NPC_Fire_Q2_A1,"Olen liikkeellä, mutta en vielä tiedä, minne tie vie.","I am moving but don't yet know where the road leads."
+NPC_Fire_Q2_A2,Tiedän minne haluan mennä – nyt tarttis vaan mennä.,I know where I want to go – I just need to go.
+NPC_Fire_Q2_A3,Minulla on idea – mutta miten siitä tulee totta?,I have an idea – but how do I make it real?
+NPC_ICE_Q1,Tällä hetkellä kaipaan eniten...,Right now I need most...
+NPC_ICE_Q1_A1,Tilaa pohtia kuka minä olen ja mitä oikeasti haluan.,Space to reflect on who I am and what I truly want.
+NPC_ICE_Q1_A2,Sparrausta ja suunnitelmaa jonka avulla saavutan päämääräni.,Sparring and a plan to help me reach my goals.
+NPC_ICE_Q1_A3,Konkreettisia askelia ja rohkaisua kokeilla jotain omaa.,Concrete steps and encouragement to try something of my own.
+NPC_ICE_Q2,Minulle on tällä hetkellä haastavaa...,Right now I find it challenging...
+NPC_ICE_Q2_A1,"Tietää mikä olisi ""se oikea suunta"" tai valinta.","Knowing what would be ""the right direction"" or choice."
+NPC_ICE_Q2_A2,Saada asiat etenemään järjestelmällisesti.,Getting things to move forward in an organized way.
+NPC_ICE_Q2_A3,Uskoa omaan ideaani ja löytää tapa toteuttaa sitä.,Believing in my own idea and finding a way to make it happen.
+NPC_DESERT_Q1,Kun mietin elämääni tällä hetkellä...,When I think about my life right now...
+NPC_DESERT_Q1_A1,En ole ihan varma mihin suuntaan olen menossa.,I'm not quite sure which direction I'm heading.
+NPC_DESERT_Q1_A2,Tiedän mitä haluan – mutta kaipaan rakennetta ja fokusta.,I know what I want – but I need structure and focus.
+NPC_DESERT_Q1_A3,Minulla on idea jonka haluaisin muuttaa joksikin konkreettiseksi.,I have an idea that I would like to turn into something concrete.
+NPC_DESERT_Q2,Tärkein syyni hakeutua mentorointiin on...,The main reason I'm seeking mentoring is...
+NPC_DESERT_Q2_A1,Itsetuntemuksen ja oman suunnan selkeyttäminen.,Clarifying self-knowledge and my own direction.
+NPC_DESERT_Q2_A2,Eteneminen kohti tavoitteita mahdollisimman tehokkaasti.,Moving towards my goals as effectively as possible.
+NPC_DESERT_Q2_A3,Halu kehittää omaa juttua ehkä jopa liiketoimintaa.,The desire to develop my own thing perhaps even a business.
+RESULT_LABEL,Tuloksesi on:,Your result is:
+RESULT_SEEKER_TITLE,🌱 ETSIJÄN POLKU,🌱 SEEKER'S PATH
+RESULT_SEEKER_TEXT,"Sinua kutsuu sisäinen matka.
+Tämä polku auttaa sinua kirkastamaan kuka olet
+ja mitä oikeasti haluat.","You are called to an inner journey.
+This path helps you clarify who you are
+and what you truly want."
+RESULT_ADVANCER_TITLE,🚀 ETENEMISEN POLKU,🚀 PATH OF PROGRESS
+RESULT_ADVANCER_TEXT,"Olet valmis etenemään.
+Tämä polku auttaa sinua etenemään kohti
+konkreettisia tavoitteita tehokkaasti.","You are ready to move forward.
+This path helps you progress towards
+concrete goals effectively."
+RESULT_IDEA_TITLE,🔥 IDEAN POLKU,🔥 PATH OF IDEAS
+RESULT_IDEA_TEXT,"Sinussa on kipinä luoda.
+Tämä polku antaa rohkaisua konkretiaa
+ja tukea oman idean kehittämiseen.","You have a spark to create.
+This path gives encouragement concrete steps
+and support for developing your own idea."
