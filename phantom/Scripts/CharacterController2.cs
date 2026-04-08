@@ -101,7 +101,7 @@ public partial class CharacterController2 : CharacterBody2D
         _Movement = _joystick.GetDirection();
 
         // Mobile boost input
-        _isBoosting = BoostButton.ButtonPressed;
+        
 
         HandleBoost(dt);
 
