@@ -7,8 +7,8 @@ public partial class UINoticeBoard : CanvasLayer
 
     public override void _Ready()
     {
-        noticeImage = GetNode<TextureRect>("Panel/NoticeImage");
-        closeButton = GetNode<Button>("Panel/CloseButton");
+        noticeImage = GetNode<TextureRect>("NoticeImage");
+        closeButton = GetNode<Button>("CloseButton");
 
         closeButton.Pressed += OnClosePressed;
 

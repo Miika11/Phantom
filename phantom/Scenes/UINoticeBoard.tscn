@@ -7,32 +7,25 @@
 [node name="NoticePopup" type="CanvasLayer"]
 script = ExtResource("1_la57b")
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = -1.0
-offset_top = 9.0
-offset_right = 1281.0
-offset_bottom = 723.0
-
-[node name="NoticeImage" type="TextureRect" parent="Panel"]
-layout_mode = 1
+[node name="NoticeImage" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = -7.0
-offset_right = 4.0
-offset_bottom = -7.0
+offset_left = 3.0
+offset_top = -68.33334
+offset_right = 3.0
+offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3ixsv")
-expand_mode = 1
+expand_mode = 5
+stretch_mode = 4
 
-[node name="CloseButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 1129.0
-offset_top = 8.0
+[node name="CloseButton" type="Button" parent="."]
+offset_left = 1128.0
+offset_top = 17.0
 offset_right = 1259.0
-offset_bottom = 86.0
+offset_bottom = 95.0
 theme_override_font_sizes/font_size = 40
 text = "CLOSE"
 script = ExtResource("1_sr7a2")
