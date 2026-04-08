@@ -5,6 +5,7 @@ public partial class ResultNPC : Node2D
     private Area2D _area;
 
     [Export] public NodePath DialogueUIPath;
+    [Export] public Texture2D DialogueBackground;
     private DialogueUI _dialogueUI;
 
     public override void _Ready()
@@ -26,6 +27,11 @@ public partial class ResultNPC : Node2D
             }
 
             string result = GameManager.Instance.GetResult();
+
+
+            _dialogueUI.SetBackground(DialogueBackground);
+
+
             _dialogueUI.ShowFinalResult(result);
         }
     }

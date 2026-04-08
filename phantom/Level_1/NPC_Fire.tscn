@@ -1,18 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://bw6gnjw4cnopq"]
+[gd_scene load_steps=13 format=3 uid="uid://bw6gnjw4cnopq"]
 
 [ext_resource type="Script" uid="uid://r63fbht20cgu" path="res://Scripts/NPC_Fire.cs" id="1_viquf"]
-[ext_resource type="Texture2D" uid="uid://dovsyso24wvwf" path="res://art/oldmentor_original.png" id="2_pcf5t"]
+[ext_resource type="Texture2D" uid="uid://bues55evtuv3n" path="res://art/firementortalks.png" id="2_pkd2i"]
+[ext_resource type="Texture2D" uid="uid://ctwan3vrdikk7" path="res://art/mentorhumanoid.png" id="2_t37tk"]
+[ext_resource type="Texture2D" uid="uid://bpmb6tyb2o46n" path="res://art/mentorhumanoid2.png" id="3_pkd2i"]
+[ext_resource type="Texture2D" uid="uid://dhqwjd8jaj7iu" path="res://art/mentorhumanoid3.png" id="4_8hsb3"]
+[ext_resource type="Texture2D" uid="uid://bkfw2nsxs8sht" path="res://art/mentorhumanoid4.png" id="5_ntd5a"]
+[ext_resource type="Texture2D" uid="uid://f058eebr23mg" path="res://art/mentorhumanoid5.png" id="6_adkb1"]
+[ext_resource type="Texture2D" uid="uid://cr1we55dya15" path="res://art/mentorhumanoid6.png" id="7_h8ibh"]
+[ext_resource type="Texture2D" uid="uid://bb5m3w7wjh6sv" path="res://art/mentorhumanoid7.png" id="8_palo6"]
+[ext_resource type="Texture2D" uid="uid://4e2loctxluhh" path="res://art/mentorhumanoid8.png" id="9_mkkx0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0htb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t37tk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pkd2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8hsb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ntd5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_adkb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h8ibh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_palo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mkkx0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jwh"]
 size = Vector2(134, 171)
 
 [node name="NPC_Fire" type="Node2D"]
 script = ExtResource("1_viquf")
+DialogueBackground = ExtResource("2_pkd2i")
 
-[node name="Mentori" type="Sprite2D" parent="."]
+[node name="Mentori" type="AnimatedSprite2D" parent="."]
 position = Vector2(20, -74.99999)
 scale = Vector2(0.26174223, 0.253668)
-texture = ExtResource("2_pcf5t")
+sprite_frames = SubResource("SpriteFrames_n0htb")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.22679514
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,18 +1,69 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfwi6m6eksryx"]
+[gd_scene load_steps=15 format=3 uid="uid://dfwi6m6eksryx"]
 
 [ext_resource type="Script" uid="uid://7ca8nkcv16my" path="res://Scripts/NPC_Ice.cs" id="1_xrq4l"]
-[ext_resource type="Texture2D" uid="uid://dovsyso24wvwf" path="res://art/oldmentor_original.png" id="2_nnk5b"]
+[ext_resource type="Texture2D" uid="uid://bdq28nbxim4tn" path="res://art/youngmentor.png" id="2_lulag"]
+[ext_resource type="Texture2D" uid="uid://cmaloirw38jcv" path="res://art/icementortalks.png" id="2_n36j1"]
+[ext_resource type="Texture2D" uid="uid://5r5c2aaijlnh" path="res://art/youngmentor2.png" id="3_n36j1"]
+[ext_resource type="Texture2D" uid="uid://8dsbbr7gww32" path="res://art/youngmentor3.png" id="4_ig1uo"]
+[ext_resource type="Texture2D" uid="uid://di4vduigmqmi4" path="res://art/youngmentor4.png" id="5_a44re"]
+[ext_resource type="Texture2D" uid="uid://bb0b4ivbmvtgf" path="res://art/youngmentor5.png" id="6_aaug2"]
+[ext_resource type="Texture2D" uid="uid://nod4ybp1hqsi" path="res://art/youngmentor6.png" id="7_rxwfm"]
+[ext_resource type="Texture2D" uid="uid://cxejant3xaicj" path="res://art/youngmentor7.png" id="8_se7hd"]
+[ext_resource type="Texture2D" uid="uid://cw07uhhjbpxky" path="res://art/youngmentor8.png" id="9_niluk"]
+[ext_resource type="Texture2D" uid="uid://c88bmabgbm7qf" path="res://art/youngmentor9.png" id="10_2vq11"]
+[ext_resource type="Texture2D" uid="uid://clo83yy0w01e6" path="res://art/youngmentor10.png" id="11_al3ss"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cosrb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lulag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n36j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ig1uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a44re")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aaug2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rxwfm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_se7hd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_niluk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_2vq11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_al3ss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jwh"]
 size = Vector2(134, 171)
 
 [node name="NPC_Ice" type="Node2D"]
 script = ExtResource("1_xrq4l")
+DialogueBackground = ExtResource("2_n36j1")
 
-[node name="Mentori" type="Sprite2D" parent="."]
-position = Vector2(18, -74.99999)
-scale = Vector2(0.26174223, 0.253668)
-texture = ExtResource("2_nnk5b")
+[node name="Mentori" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.7888494, -96.97181)
+scale = Vector2(0.37951976, 0.32995903)
+sprite_frames = SubResource("SpriteFrames_cosrb")
+autoplay = "default"
+frame_progress = 0.07829793
 
 [node name="Area2D" type="Area2D" parent="."]
 

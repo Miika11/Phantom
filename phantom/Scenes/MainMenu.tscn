@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://4ga1k2t8j1xf"]
 
 [ext_resource type="Script" uid="uid://cl60gv2sb5jf0" path="res://Scripts/MainMenu.cs" id="1_853f1"]
-[ext_resource type="Texture2D" uid="uid://60pl8ffncwra" path="res://art/mainmenu3.png" id="1_tt5f1"]
 [ext_resource type="Texture2D" uid="uid://bee5d85f4bv6g" path="res://art/startgame.png" id="2_8saeu"]
 [ext_resource type="Texture2D" uid="uid://hyua11el1r33" path="res://art/menusettings.png" id="3_8um5k"]
 [ext_resource type="Texture2D" uid="uid://dr2dtnwt6o67x" path="res://art/exitgame.png" id="3_ghw46"]
 [ext_resource type="Texture2D" uid="uid://djwoqn1nadtna" path="res://art/menucredits.png" id="5_xim88"]
+[ext_resource type="Texture2D" uid="uid://bq42c1x5mbisi" path="res://art/mainmenupyramid.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://b2d4firodbb1b" path="res://art/poelogo.png" id="7_xim88"]
 
 [node name="MainMenu" type="Node2D"]
@@ -20,9 +20,9 @@ offset_bottom = 720.0
 [node name="PlayButton" type="TextureButton" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 160.0
+offset_left = 85.0
 offset_top = 525.0
-offset_right = 430.0
+offset_right = 355.0
 offset_bottom = 719.0
 texture_normal = ExtResource("2_8saeu")
 texture_pressed = ExtResource("2_8saeu")
@@ -31,10 +31,10 @@ texture_hover = ExtResource("2_8saeu")
 [node name="SettingsButton" type="TextureButton" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 440.0
-offset_top = 525.0
-offset_right = 691.0
-offset_bottom = 719.0
+offset_left = 381.0
+offset_top = 526.0
+offset_right = 632.0
+offset_bottom = 720.0
 texture_normal = ExtResource("3_8um5k")
 texture_pressed = ExtResource("3_8um5k")
 texture_hover = ExtResource("3_8um5k")
@@ -42,9 +42,9 @@ texture_hover = ExtResource("3_8um5k")
 [node name="QuitButton" type="TextureButton" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 988.0
+offset_left = 983.0
 offset_top = 526.0
-offset_right = 1244.0
+offset_right = 1239.0
 offset_bottom = 720.0
 texture_normal = ExtResource("3_ghw46")
 texture_pressed = ExtResource("3_ghw46")
@@ -53,9 +53,9 @@ texture_hover = ExtResource("3_ghw46")
 [node name="CreditsButton" type="TextureButton" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 716.0
+offset_left = 691.0
 offset_top = 526.0
-offset_right = 972.0
+offset_right = 947.0
 offset_bottom = 720.0
 texture_normal = ExtResource("5_xim88")
 texture_pressed = ExtResource("5_xim88")
@@ -69,9 +69,10 @@ offset_bottom = 40.0
 [node name="Mainmenu3" type="Sprite2D" parent="Control"]
 position = Vector2(641, 362)
 scale = Vector2(0.116798975, 0.09302326)
-texture = ExtResource("1_tt5f1")
+texture = ExtResource("6_xim88")
 
 [node name="PLAY" type="Button" parent="Control"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 529.0
@@ -82,6 +83,7 @@ theme_override_font_sizes/font_size = 46
 text = "PLAY"
 
 [node name="QUIT" type="Button" parent="Control"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 951.0
@@ -94,23 +96,28 @@ text = "QUIT"
 [node name="SUOMI" type="Button" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 947.0
-offset_top = 418.0
-offset_right = 1220.0
-offset_bottom = 529.0
+offset_left = 981.0
+offset_top = 172.0
+offset_right = 1254.0
+offset_bottom = 283.0
+theme_override_colors/font_outline_color = Color(0, 0, 0.654902, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 46
 text = "SUOMI"
 
 [node name="ENGLISH" type="Button" parent="Control"]
 z_index = 1
 layout_mode = 0
-offset_left = 952.0
-offset_top = 561.0
-offset_right = 1221.0
-offset_bottom = 674.0
+offset_left = 984.0
+offset_top = 306.0
+offset_right = 1253.0
+offset_bottom = 419.0
+theme_override_colors/font_outline_color = Color(0.81181264, 0.21958452, 0.28099573, 1)
+theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 46
 text = "ENGLISH"
+
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(659, 69)
-scale = Vector2(0.5724808, 0.67448187)
+position = Vector2(666.00006, 59)
+scale = Vector2(0.55616975, 0.5142744)
 texture = ExtResource("7_xim88")
