@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyy42xcfm4wwr"]
+[gd_scene load_steps=10 format=3 uid="uid://cyy42xcfm4wwr"]
 
 [ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Scripts/HeartsUI.cs" id="1_w371h"]
 [ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="2_qwshj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="4_xjg7p"]
 [ext_resource type="Texture2D" uid="uid://dca2yw7g505yi" path="res://art/key1.png" id="5_qwshj"]
 [ext_resource type="Texture2D" uid="uid://c8vosc727b2qa" path="res://art/boost_normal.tres" id="6_mg6lk"]
+[ext_resource type="Script" uid="uid://cqpxudahnwn2l" path="res://Scenes/BoostButton.cs" id="6_wunin"]
 [ext_resource type="Texture2D" uid="uid://bvhlrnmn505pm" path="res://art/boost_pressed.tres" id="7_wunin"]
 [ext_resource type="Texture2D" uid="uid://cana03lclq5w5" path="res://art/boost_progress.tres" id="8_j04uc"]
 
@@ -57,9 +58,18 @@ offset_right = 1027.0
 offset_bottom = 187.0
 grow_vertical = 0
 scale = Vector2(0.17793608, 0.19490999)
-action_mode = 0
-texture_normal = ExtResource("6_mg6lk")
-texture_pressed = ExtResource("7_wunin")
+script = ExtResource("6_wunin")
+NormalTexture = ExtResource("6_mg6lk")
+PressedTexture = ExtResource("7_wunin")
+
+[node name="TextureRect" type="TextureRect" parent="BoostButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="BoostBar" type="TextureProgressBar" parent="."]
 anchors_preset = 2
