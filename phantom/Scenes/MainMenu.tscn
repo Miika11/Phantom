@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://4ga1k2t8j1xf"]
+[gd_scene load_steps=9 format=3 uid="uid://4ga1k2t8j1xf"]
 
 [ext_resource type="Script" uid="uid://cl60gv2sb5jf0" path="res://Scripts/MainMenu.cs" id="1_853f1"]
 [ext_resource type="Texture2D" uid="uid://bee5d85f4bv6g" path="res://art/startgame.png" id="2_8saeu"]
@@ -7,74 +7,32 @@
 [ext_resource type="Texture2D" uid="uid://djwoqn1nadtna" path="res://art/menucredits.png" id="5_xim88"]
 [ext_resource type="Texture2D" uid="uid://bq42c1x5mbisi" path="res://art/mainmenupyramid.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://b2d4firodbb1b" path="res://art/poelogo.png" id="7_xim88"]
+[ext_resource type="PackedScene" uid="uid://d1baw26kjc38w" path="res://settings.tscn" id="8_koqhg"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("_play", "_quit", "_settings", "_settingsmenu")]
 script = ExtResource("1_853f1")
+_play = NodePath("PanelContainer/VBoxContainer/PlayButton")
+_quit = NodePath("PanelContainer/VBoxContainer/QuitButton")
+_settings = NodePath("PanelContainer/VBoxContainer/SettingsButton")
+_settingsmenu = NodePath("Node2D")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-
-[node name="PlayButton" type="TextureButton" parent="Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 85.0
-offset_top = 525.0
-offset_right = 355.0
-offset_bottom = 719.0
-texture_normal = ExtResource("2_8saeu")
-texture_pressed = ExtResource("2_8saeu")
-texture_hover = ExtResource("2_8saeu")
-
-[node name="SettingsButton" type="TextureButton" parent="Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 381.0
-offset_top = 526.0
-offset_right = 632.0
-offset_bottom = 720.0
-texture_normal = ExtResource("3_8um5k")
-texture_pressed = ExtResource("3_8um5k")
-texture_hover = ExtResource("3_8um5k")
-
-[node name="QuitButton" type="TextureButton" parent="Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 983.0
-offset_top = 526.0
-offset_right = 1239.0
-offset_bottom = 720.0
-texture_normal = ExtResource("3_ghw46")
-texture_pressed = ExtResource("3_ghw46")
-texture_hover = ExtResource("3_ghw46")
-
-[node name="CreditsButton" type="TextureButton" parent="Control"]
-z_index = 1
-layout_mode = 0
-offset_left = 691.0
-offset_top = 526.0
-offset_right = 947.0
-offset_bottom = 720.0
-texture_normal = ExtResource("5_xim88")
-texture_pressed = ExtResource("5_xim88")
-texture_hover = ExtResource("5_xim88")
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Mainmenu3" type="Sprite2D" parent="Control"]
-position = Vector2(641, 362)
-scale = Vector2(0.116798975, 0.09302326)
+[node name="Mainmenu3" type="TextureRect" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -71.0
+offset_right = 4.0
+offset_bottom = 117.46594
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("6_xim88")
+expand_mode = 5
+stretch_mode = 4
 
-[node name="PLAY" type="Button" parent="Control"]
+[node name="PLAY" type="Button" parent="."]
 visible = false
 z_index = 1
-layout_mode = 0
 offset_left = 529.0
 offset_top = 551.0
 offset_right = 799.0
@@ -82,10 +40,9 @@ offset_bottom = 663.0
 theme_override_font_sizes/font_size = 46
 text = "PLAY"
 
-[node name="QUIT" type="Button" parent="Control"]
+[node name="QUIT" type="Button" parent="."]
 visible = false
 z_index = 1
-layout_mode = 0
 offset_left = 951.0
 offset_top = 29.0
 offset_right = 1222.0
@@ -93,9 +50,8 @@ offset_bottom = 142.0
 theme_override_font_sizes/font_size = 46
 text = "QUIT"
 
-[node name="SUOMI" type="Button" parent="Control"]
+[node name="SUOMI" type="Button" parent="."]
 z_index = 1
-layout_mode = 0
 offset_left = 981.0
 offset_top = 172.0
 offset_right = 1254.0
@@ -105,9 +61,8 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 46
 text = "SUOMI"
 
-[node name="ENGLISH" type="Button" parent="Control"]
+[node name="ENGLISH" type="Button" parent="."]
 z_index = 1
-layout_mode = 0
 offset_left = 984.0
 offset_top = 306.0
 offset_right = 1253.0
@@ -117,7 +72,78 @@ theme_override_constants/outline_size = 9
 theme_override_font_sizes/font_size = 46
 text = "ENGLISH"
 
-[node name="Sprite2D" type="Sprite2D" parent="Control"]
-position = Vector2(666.00006, 59)
-scale = Vector2(0.55616975, 0.5142744)
+[node name="PanelContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.002
+anchor_top = 0.74
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5600002
+offset_top = -28.799988
+offset_right = -2.0
+offset_bottom = -2.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayButton" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+z_index = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("2_8saeu")
+texture_pressed = ExtResource("2_8saeu")
+texture_hover = ExtResource("2_8saeu")
+
+[node name="SettingsButton" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("3_8um5k")
+texture_pressed = ExtResource("3_8um5k")
+texture_hover = ExtResource("3_8um5k")
+
+[node name="CreditsButton" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("5_xim88")
+texture_pressed = ExtResource("5_xim88")
+texture_hover = ExtResource("5_xim88")
+
+[node name="QuitButton" type="TextureButton" parent="PanelContainer/VBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("3_ghw46")
+texture_pressed = ExtResource("3_ghw46")
+texture_hover = ExtResource("3_ghw46")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 10
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = -44.0
+offset_right = 641.0
+offset_bottom = 182.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Title" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 texture = ExtResource("7_xim88")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Node2D" parent="." instance=ExtResource("8_koqhg")]

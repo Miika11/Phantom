@@ -13,10 +13,10 @@
 [node name="UI" type="CanvasLayer" groups=["GameHUD"]]
 
 [node name="HeartsContainer" type="HBoxContainer" parent="."]
-offset_left = 38.0
-offset_top = 10.0
-offset_right = 184.0
-offset_bottom = 52.0
+offset_left = 32.0
+offset_top = 12.0
+offset_right = 178.0
+offset_bottom = 54.0
 script = ExtResource("1_w371h")
 FullHeart = ExtResource("2_qwshj")
 EmptyHeart = ExtResource("3_48q88")
@@ -34,10 +34,10 @@ layout_mode = 2
 texture = ExtResource("2_qwshj")
 
 [node name="KeyUI" type="HBoxContainer" parent="."]
-offset_left = 42.0
-offset_top = 50.0
-offset_right = 146.0
-offset_bottom = 90.0
+offset_left = 40.0
+offset_top = 64.0
+offset_right = 144.0
+offset_bottom = 102.0
 script = ExtResource("4_xjg7p")
 
 [node name="KeyIcon" type="TextureRect" parent="KeyUI"]
@@ -48,13 +48,15 @@ texture = ExtResource("5_qwshj")
 layout_mode = 2
 text = "x0"
 
-[node name="BoostButton" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 151.0
-offset_top = 579.0
-offset_right = 981.0
-offset_bottom = 938.0
+[node name="BoostButton" type="TextureButton" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 197.0
+offset_top = -172.0
+offset_right = 1027.0
+offset_bottom = 187.0
+grow_vertical = 0
 scale = Vector2(0.17793608, 0.19490999)
 script = ExtResource("6_wunin")
 NormalTexture = ExtResource("6_mg6lk")
@@ -70,10 +72,14 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="BoostBar" type="TextureProgressBar" parent="."]
-offset_left = 48.999996
-offset_top = 94.0
-offset_right = 2530.0
-offset_bottom = 360.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 45.0
+offset_top = -580.0
+offset_right = 2406.96
+offset_bottom = -346.39996
+grow_vertical = 0
 scale = Vector2(0.047960404, 0.12247137)
 nine_patch_stretch = true
 texture_progress = ExtResource("8_j04uc")
