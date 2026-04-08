@@ -97,8 +97,7 @@ public partial class CharacterController2 : CharacterBody2D
         float dt = (float)delta;
 
 
-        // Mobile boost input
-        
+        _Movement = _joystick.GetDirection();
 
         HandleBoost(dt);
 
