@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bq42c1x5mbisi" path="res://art/mainmenupyramid.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://b2d4firodbb1b" path="res://art/poelogo.png" id="7_xim88"]
 
-[node name="MainMenu" type="Node2D"]
+[node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_853f1")
 
 [node name="Control" type="Control" parent="."]

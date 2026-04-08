@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class MainMenu : Node2D
+public partial class MainMenu : CanvasLayer
 {
 
 	public override void _Ready()
