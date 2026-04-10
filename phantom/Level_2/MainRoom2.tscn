@@ -79,6 +79,30 @@ scale = Vector2(0.75000006, 0.6714736)
 position = Vector2(568, 609)
 
 [node name="Door" parent="." instance=ExtResource("3_qo18q")]
+visible = false
 position = Vector2(572, 751)
 TargetScene = "res://Level_1/TopRoom.tscn"
 TargetSpawnPoint = "SpawnFromMainRoom2"
+
+[node name="Door2" parent="." instance=ExtResource("3_qo18q")]
+visible = false
+position = Vector2(-39, 375)
+TargetScene = "res://Level_2/QuestRoom2.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom2"
+
+[node name="Door3" parent="." instance=ExtResource("3_qo18q")]
+visible = false
+position = Vector2(1187, 377)
+TargetScene = "res://Level_2/RightRoom.tscn"
+
+[node name="Door4" parent="." instance=ExtResource("3_qo18q")]
+visible = false
+position = Vector2(573, 19)
+TargetScene = "res://Level2/TopRoom2.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom2"
+
+[node name="SpawnFromQuestRoom2" type="Marker2D" parent="."]
+position = Vector2(92, 337)
+
+[node name="SpawnFromRightRoom2" type="Marker2D" parent="."]
+position = Vector2(1065, 338)
