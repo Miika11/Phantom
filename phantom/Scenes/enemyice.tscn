@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://hcsjavg70w2g"]
+
+[ext_resource type="Script" uid="uid://djjixdswsusxd" path="res://Scripts/Enemy.cs" id="1_kqqyu"]
+[ext_resource type="Texture2D" uid="uid://dvvov1p12fjq0" path="res://art/icegolem_idle.png" id="2_vuvb2"]
+[ext_resource type="Texture2D" uid="uid://myiqursxnofb" path="res://art/icegolem_moving1.png" id="3_yswwo"]
+[ext_resource type="Texture2D" uid="uid://buhux1qpmk4di" path="res://art/icegolem_moving2.png" id="4_nuye1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7xb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yswwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nuye1")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(141, 149.25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vuvb2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yswwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nuye1")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vuvb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yswwo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nuye1")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 3.0
+}]
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(960, 234)
+script = ExtResource("1_kqqyu")
+Speed = 120.0
+EnemySpriteFrames = SubResource("SpriteFrames_c7xb2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 43.375)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.31944847, 0.30827823)
+sprite_frames = SubResource("SpriteFrames_vuvb2")
+animation = &"move_right"
+autoplay = "move_left"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-305, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="."]

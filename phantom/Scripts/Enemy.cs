@@ -4,6 +4,8 @@ public partial class Enemy : Area2D
 {
     [Export] public float Speed = 80f;
     [Export] public float WaitTime = 0.5f;
+    [Export] public int Damage = 1;
+    [Export] public SpriteFrames EnemySpriteFrames;
 
     private Vector2[] _waypoints;
     private int _currentWaypoint = 0;
@@ -16,7 +18,10 @@ public partial class Enemy : Area2D
         BodyEntered += OnBodyEntered;
         BodyExited += OnBodyExited;
 
-        _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");  
+        _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+
+        if (EnemySpriteFrames != null)
+            _sprite.SpriteFrames = EnemySpriteFrames;
 
         var waypointList = new System.Collections.Generic.List<Vector2>();
         foreach (Node child in GetChildren())
@@ -39,7 +44,7 @@ public partial class Enemy : Area2D
         {
             GlobalPosition = target;
             _waiting = true;
-            UpdateAnimation(Vector2.Zero);  // idle when waiting
+            UpdateAnimation(Vector2.Zero);
 
             var timer = GetTree().CreateTimer(WaitTime);
             timer.Timeout += () =>
@@ -51,7 +56,7 @@ public partial class Enemy : Area2D
         else
         {
             GlobalPosition += direction * Speed * (float)delta;
-            UpdateAnimation(direction);  //moving animation
+            UpdateAnimation(direction);
         }
     }
 
@@ -59,20 +64,17 @@ public partial class Enemy : Area2D
     {
         if (direction == Vector2.Zero)
         {
-            
-            string current = _sprite.Animation;
-            if (current == "move_left" || current == "idle_left")
-                _sprite.Play("idle_left");
-            else
-                _sprite.Play("idle_right");
+            _sprite.Play("idle");
         }
         else if (direction.X < 0)
         {
-            _sprite.Play("move_left");
+            _sprite.FlipH = false;
+            _sprite.Play("move");
         }
         else
         {
-            _sprite.Play("move_right");
+            _sprite.FlipH = true;
+            _sprite.Play("move");
         }
     }
 
@@ -81,7 +83,7 @@ public partial class Enemy : Area2D
         if (body is CharacterController2 player && !_hasDamaged)
         {
             _hasDamaged = true;
-            player.TakeDamage(1);
+            player.TakeDamage(Damage);
         }
     }
 

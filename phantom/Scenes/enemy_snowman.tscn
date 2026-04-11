@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqb21kox4if5x"]
+
+[ext_resource type="Script" uid="uid://bcq66pc1lja3v" path="res://Scripts/EnemySnowman.cs" id="1_0wlyh"]
+[ext_resource type="Texture2D" uid="uid://cmyy4miqvv885" path="res://art/snowman_punch1v2.png" id="2_g7apg"]
+[ext_resource type="Texture2D" uid="uid://nlj8ejk1dx64" path="res://art/snowman_idle.png" id="3_r2hdb"]
+[ext_resource type="Texture2D" uid="uid://b7ogg4yc0fjor" path="res://art/snowman_punch2.png" id="4_ur5ht"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(120, 116)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0830c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g7apg")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_r2hdb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ur5ht")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(960, 234)
+script = ExtResource("1_0wlyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 14)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.31944847, 0.30827823)
+sprite_frames = SubResource("SpriteFrames_0830c")
+animation = &"punch"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-305, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="."]

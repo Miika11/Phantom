@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://duxmvcdvhfymk"]
+[gd_scene load_steps=14 format=3 uid="uid://duxmvcdvhfymk"]
 
 [ext_resource type="Texture2D" uid="uid://bu47lf4vnxtt1" path="res://art/MainRoomIce.png" id="1_0tmu4"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_vfoem"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_qo18q"]
+[ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="4_xh4ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfoem"]
 size = Vector2(421, 241)
@@ -27,6 +28,9 @@ size = Vector2(409, 53.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56nsf"]
 size = Vector2(427, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8iu5p"]
+size = Vector2(173, 32)
 
 [node name="MainRoom2" type="Node2D"]
 
@@ -71,6 +75,10 @@ shape = SubResource("RectangleShape2D_5onla")
 position = Vector2(939.5, 403.5)
 shape = SubResource("RectangleShape2D_56nsf")
 
+[node name="DoorStopper" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(574.5, -2)
+shape = SubResource("RectangleShape2D_8iu5p")
+
 [node name="SpawnFromTopRoom" type="Marker2D" parent="."]
 position = Vector2(570, 595)
 scale = Vector2(0.75000006, 0.6714736)
@@ -97,12 +105,21 @@ TargetScene = "res://Level_2/RightRoom.tscn"
 
 [node name="Door4" parent="." instance=ExtResource("3_qo18q")]
 visible = false
-position = Vector2(573, 19)
+position = Vector2(574, 57)
 TargetScene = "res://Level2/TopRoom2.tscn"
 TargetSpawnPoint = "SpawnFromMainRoom2"
+KeysRequired = 2
+ConsumeKeysOnOpen = true
 
 [node name="SpawnFromQuestRoom2" type="Marker2D" parent="."]
 position = Vector2(92, 337)
 
 [node name="SpawnFromRightRoom2" type="Marker2D" parent="."]
 position = Vector2(1065, 338)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575.5, 24.500004)
+scale = Vector2(2.1551712, 1.0892856)
+texture = ExtResource("4_xh4ni")
+region_enabled = true
+region_rect = Rect2(111.12097, 194.0244, 58.10138, 56.829086)

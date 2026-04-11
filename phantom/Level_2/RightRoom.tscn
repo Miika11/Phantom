@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://1ig6yu0lid6s"]
+[gd_scene load_steps=13 format=3 uid="uid://1ig6yu0lid6s"]
 
 [ext_resource type="Texture2D" uid="uid://cpcpdphaxlpre" path="res://art/RightRoomLevel2.png" id="1_21vdg"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ok2jk"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_ledms"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_1xnkm"]
+[ext_resource type="PackedScene" uid="uid://hcsjavg70w2g" path="res://Scenes/enemyice.tscn" id="5_bvy25"]
+[ext_resource type="PackedScene" uid="uid://bqb21kox4if5x" path="res://Scenes/enemy_snowman.tscn" id="6_mblsu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2jk"]
 
@@ -66,3 +68,9 @@ position = Vector2(133, 319)
 
 [node name="Key" parent="." instance=ExtResource("4_1xnkm")]
 position = Vector2(981, 332)
+
+[node name="Enemy" parent="." instance=ExtResource("5_bvy25")]
+position = Vector2(774, 189)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_mblsu")]
+position = Vector2(672, 437)
