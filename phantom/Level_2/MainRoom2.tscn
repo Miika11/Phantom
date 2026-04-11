@@ -104,9 +104,8 @@ position = Vector2(1187, 377)
 TargetScene = "res://Level_2/RightRoom.tscn"
 
 [node name="Door4" parent="." instance=ExtResource("3_qo18q")]
-visible = false
 position = Vector2(574, 57)
-TargetScene = "res://Level2/TopRoom2.tscn"
+TargetScene = "res://Level_2/TopRoom2.tscn"
 TargetSpawnPoint = "SpawnFromMainRoom2"
 KeysRequired = 2
 ConsumeKeysOnOpen = true
