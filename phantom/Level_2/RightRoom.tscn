@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://1ig6yu0lid6s"]
+
+[ext_resource type="Texture2D" uid="uid://cpcpdphaxlpre" path="res://art/RightRoomLevel2.png" id="1_21vdg"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ok2jk"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_ledms"]
+[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_1xnkm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ok2jk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ledms"]
+size = Vector2(48, 673)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xnkm"]
+size = Vector2(1080, 48.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvy25"]
+size = Vector2(1098, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mblsu"]
+size = Vector2(105, 286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5ces"]
+size = Vector2(101, 271)
+
+[node name="RightRoom" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ok2jk")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(576, 331.225)
+scale = Vector2(0.794, 0.77699995)
+texture = ExtResource("1_21vdg")
+
+[node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1053, 329.5)
+shape = SubResource("RectangleShape2D_ledms")
+
+[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(563, 92.75)
+shape = SubResource("RectangleShape2D_1xnkm")
+
+[node name="BottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(575, 593)
+shape = SubResource("RectangleShape2D_bvy25")
+
+[node name="LeftBottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(81.5, 515)
+shape = SubResource("RectangleShape2D_mblsu")
+
+[node name="LeftTopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(80.5, 125.5)
+shape = SubResource("RectangleShape2D_i5ces")
+
+[node name="Node2D" parent="." instance=ExtResource("2_ok2jk")]
+position = Vector2(171, 354)
+
+[node name="Door" parent="." instance=ExtResource("3_ledms")]
+visible = false
+position = Vector2(-8, 355)
+TargetScene = "res://Level_2/MainRoom2.tscn"
+TargetSpawnPoint = "SpawnFromRightRoom2"
+
+[node name="SpawnFromMainRoom2" type="Marker2D" parent="."]
+position = Vector2(133, 319)
+
+[node name="Key" parent="." instance=ExtResource("4_1xnkm")]
+position = Vector2(981, 332)

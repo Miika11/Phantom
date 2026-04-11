@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://do5bi78sjkwxq"]
+
+[ext_resource type="Texture2D" uid="uid://b8lxyy18woffr" path="res://art/TopRoomLevel2.png" id="1_qkitx"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_6hc4v"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_4hf0f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q84hy"]
+size = Vector2(36.5, 578)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hc4v"]
+size = Vector2(42, 606)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hf0f"]
+size = Vector2(331, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krk0q"]
+size = Vector2(362, 102)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_frvto"]
+radius = 35.5
+height = 367.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkn2l"]
+radius = 35.0
+height = 382.0
+
+[node name="TopRoom2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(576, 327.364)
+scale = Vector2(0.644, 0.6354765)
+texture = ExtResource("1_qkitx")
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(146.75, 292)
+shape = SubResource("RectangleShape2D_q84hy")
+
+[node name="RigthWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1004, 304)
+shape = SubResource("RectangleShape2D_6hc4v")
+
+[node name="TopLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(325.5, 52.5)
+shape = SubResource("RectangleShape2D_4hf0f")
+
+[node name="TopRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(839, 52)
+shape = SubResource("RectangleShape2D_krk0q")
+
+[node name="BottomLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(315, 576)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_frvto")
+
+[node name="BottomRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(845, 576)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_lkn2l")
+
+[node name="Node2D" parent="." instance=ExtResource("2_6hc4v")]
+position = Vector2(567, 515)
+
+[node name="Door" parent="." instance=ExtResource("3_4hf0f")]
+position = Vector2(574, 666)
+TargetScene = "res://Level2/MainRoom2.tscn"
+TargetSpawnPoint = "SpawnFromTopRoom2"
+
+[node name="Door2" parent="." instance=ExtResource("3_4hf0f")]
+position = Vector2(570, 28)
+TargetScene = "res://Level3/MainRoom3.tscn"
+TargetSpawnPoint = "SpawnFromTopRoom2"
+
+[node name="SpawnFromMainRoom2" type="Marker2D" parent="."]
+position = Vector2(571, 525)
+
+[node name="SpawnFromMainRoom3" type="Marker2D" parent="."]
+position = Vector2(567, 89)

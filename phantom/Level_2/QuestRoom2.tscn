@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://dfxtxyol0alsb"]
+[gd_scene load_steps=11 format=3 uid="uid://dfxtxyol0alsb"]
+
+[ext_resource type="Texture2D" uid="uid://ulkepft3r4kq" path="res://art/Level2_QuestRoom.png" id="1_gvndk"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_8fcdl"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_hai6r"]
+[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_gfa76"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8fcdl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvndk"]
+size = Vector2(1135, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fcdl"]
+size = Vector2(33, 580)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hai6r"]
+size = Vector2(1148, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfa76"]
+size = Vector2(102, 189)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efeu3"]
+size = Vector2(100, 202)
 
 [node name="QuestRoom2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_8fcdl")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+z_index = -1
+position = Vector2(578, 332)
+scale = Vector2(0.82, 0.7734706)
+texture = ExtResource("1_gvndk")
+
+[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576.5, 67)
+shape = SubResource("RectangleShape2D_gvndk")
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(90.5, 374)
+shape = SubResource("RectangleShape2D_8fcdl")
+
+[node name="BottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(589, 599)
+shape = SubResource("RectangleShape2D_hai6r")
+
+[node name="RightTopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1089, 164.5)
+shape = SubResource("RectangleShape2D_gfa76")
+
+[node name="RightBottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1091, 471)
+shape = SubResource("RectangleShape2D_efeu3")
+
+[node name="Node2D" parent="." instance=ExtResource("2_8fcdl")]
+position = Vector2(976, 354)
+
+[node name="Door" parent="." instance=ExtResource("3_hai6r")]
+visible = false
+position = Vector2(1182, 354)
+TargetScene = "res://Level_2/MainRoom2.tscn"
+TargetSpawnPoint = "SpawnFromQuestRoom2"
+
+[node name="SpawnFromMainRoom2" type="Marker2D" parent="."]
+position = Vector2(1044, 316)
+
+[node name="Key" parent="." instance=ExtResource("4_gfa76")]
+position = Vector2(185, 334)
