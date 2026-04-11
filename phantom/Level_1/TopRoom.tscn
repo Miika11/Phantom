@@ -1,12 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cliian5uad5qo"]
+[gd_scene load_steps=16 format=3 uid="uid://cliian5uad5qo"]
 
 [ext_resource type="Texture2D" uid="uid://bjqaoijcwfb1l" path="res://art/TopRoomFinal.png" id="1_2jiu2"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_d8h1x"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_if0v0"]
 [ext_resource type="PackedScene" uid="uid://buq5seaws1025" path="res://Level_1/NPC_Desert.tscn" id="4_d8h1x"]
 [ext_resource type="PackedScene" uid="uid://crl35b24ry6dv" path="res://Scenes/DialogueUI.tscn" id="5_if0v0"]
+[ext_resource type="PackedScene" uid="uid://dfwi6m6eksryx" path="res://Level_1/NPC_Ice.tscn" id="6_yrwtj"]
 [ext_resource type="PackedScene" uid="uid://bw6gnjw4cnopq" path="res://Level_1/NPC_Fire.tscn" id="7_m8ty7"]
 [ext_resource type="PackedScene" uid="uid://xbqcnlwmybr2" path="res://Level_1/Result_Npc.tscn" id="8_2jiu2"]
+[ext_resource type="Texture2D" uid="uid://c412e257nshvm" path="res://art/finalmentor_talks.png" id="8_3yfqr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6gye"]
 
@@ -94,4 +96,9 @@ DialogueUIPath = NodePath("../DialogueUi")
 
 [node name="Result_Npc" parent="." instance=ExtResource("8_2jiu2")]
 position = Vector2(878, 544)
+DialogueUIPath = NodePath("../DialogueUi")
+DialogueBackground = ExtResource("8_3yfqr")
+
+[node name="NPC_Ice" parent="." instance=ExtResource("6_yrwtj")]
+position = Vector2(292, 315)
 DialogueUIPath = NodePath("../DialogueUi")

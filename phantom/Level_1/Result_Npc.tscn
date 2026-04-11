@@ -1,8 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://xbqcnlwmybr2"]
+[gd_scene load_steps=13 format=3 uid="uid://xbqcnlwmybr2"]
 
 [ext_resource type="Script" uid="uid://dyorvbtidyv01" path="res://Scripts/ResultNPC.cs" id="1_ro6cc"]
 [ext_resource type="Texture2D" uid="uid://lm8mhtfdk057" path="res://art/mentortext.png" id="2_n47lq"]
-[ext_resource type="Texture2D" uid="uid://dovsyso24wvwf" path="res://art/oldmentor_original.png" id="2_yuxt8"]
+[ext_resource type="Texture2D" uid="uid://cdoqct40i4scb" path="res://art/finalmentor1.png" id="3_a3cxg"]
+[ext_resource type="Texture2D" uid="uid://cfeb3jhdmfenx" path="res://art/finalmentor2.png" id="4_vcbwx"]
+[ext_resource type="Texture2D" uid="uid://bv4egcwtmm543" path="res://art/finalmentor3.png" id="5_s2vld"]
+[ext_resource type="Texture2D" uid="uid://oshdp74vl7vn" path="res://art/finalmentor4.png" id="6_sp3m2"]
+[ext_resource type="Texture2D" uid="uid://v4c61mf5itl4" path="res://art/finalmentor5.png" id="7_fdc72"]
+[ext_resource type="Texture2D" uid="uid://sv6ir1oteq51" path="res://art/finalmentor6.png" id="8_v15jw"]
+[ext_resource type="Texture2D" uid="uid://cp5qinx3r24up" path="res://art/finalmentor7.png" id="9_5276x"]
+[ext_resource type="Texture2D" uid="uid://xfy7l35p2hd1" path="res://art/finalmentor8.png" id="10_jdk1v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50hdq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a3cxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vcbwx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s2vld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sp3m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fdc72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v15jw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5276x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jdk1v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jwh"]
 size = Vector2(134, 171)
@@ -11,13 +50,16 @@ size = Vector2(134, 171)
 script = ExtResource("1_ro6cc")
 DialogueBackground = ExtResource("2_n47lq")
 
-[node name="Mentori" type="Sprite2D" parent="."]
-position = Vector2(18, -75)
-scale = Vector2(0.26174223, 0.253668)
-texture = ExtResource("2_yuxt8")
+[node name="Mentori" type="AnimatedSprite2D" parent="."]
+position = Vector2(18.404053, -72.513214)
+scale = Vector2(0.25997394, 0.2453649)
+sprite_frames = SubResource("SpriteFrames_50hdq")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.24294437
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, -86)
+position = Vector2(26, -69)
 shape = SubResource("RectangleShape2D_68jwh")
