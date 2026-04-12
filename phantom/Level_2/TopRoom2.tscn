@@ -65,11 +65,13 @@ shape = SubResource("CapsuleShape2D_lkn2l")
 position = Vector2(567, 515)
 
 [node name="Door" parent="." instance=ExtResource("3_4hf0f")]
+visible = false
 position = Vector2(574, 666)
 TargetScene = "res://Level2/MainRoom2.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom2"
 
 [node name="Door2" parent="." instance=ExtResource("3_4hf0f")]
+visible = false
 position = Vector2(570, 28)
 TargetScene = "res://Level3/MainRoom3.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom2"

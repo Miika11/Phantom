@@ -70,4 +70,22 @@ position = Vector2(1044, 316)
 position = Vector2(185, 334)
 
 [node name="EnemyShooter" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(480, 190)
+position = Vector2(263, 175)
+
+[node name="EnemyShooter2" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(448, 136)
+
+[node name="EnemyShooter3" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(621, 134)
+
+[node name="EnemyShooter4" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(863, 143)
+
+[node name="EnemyShooter5" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(328, 509)
+
+[node name="EnemyShooter6" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(556, 517)
+
+[node name="EnemyShooter7" parent="." instance=ExtResource("5_efeu3")]
+position = Vector2(747, 515)
