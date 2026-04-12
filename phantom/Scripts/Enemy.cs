@@ -68,12 +68,12 @@ public partial class Enemy : Area2D
         }
         else if (direction.X < 0)
         {
-            _sprite.FlipH = true;
+            _sprite.FlipH = false;
             _sprite.Play("move");
         }
         else
         {
-            _sprite.FlipH = false;
+            _sprite.FlipH = true;
             _sprite.Play("move");
         }
     }

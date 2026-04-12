@@ -70,7 +70,44 @@ position = Vector2(133, 319)
 position = Vector2(981, 332)
 
 [node name="Enemy" parent="." instance=ExtResource("5_bvy25")]
-position = Vector2(774, 189)
+position = Vector2(745, 142)
+Speed = 100.0
+
+[node name="Marker2D" parent="Enemy" index="2"]
+position = Vector2(1, 322)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_mblsu")]
-position = Vector2(672, 437)
+position = Vector2(361, 466)
+Speed = 50.0
+ChaseSpeed = 80.0
+DetectRange = 160.0
+AttackRange = 60.0
+AttackCooldown = 1.0
+
+[node name="Marker2D" parent="Enemy2" index="2"]
+position = Vector2(-14, -279)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_mblsu")]
+position = Vector2(541, 164)
+Speed = 50.0
+ChaseSpeed = 80.0
+DetectRange = 150.0
+AttackRange = 60.0
+
+[node name="Marker2D" parent="Enemy3" index="2"]
+position = Vector2(-14, 325)
+
+[node name="Enemy4" parent="." instance=ExtResource("6_mblsu")]
+position = Vector2(896, 157)
+Speed = 50.0
+ChaseSpeed = 80.0
+DetectRange = 150.0
+AttackRange = 60.0
+
+[node name="Marker2D" parent="Enemy4" index="2"]
+position = Vector2(-22, 313)
+
+[editable path="Enemy"]
+[editable path="Enemy2"]
+[editable path="Enemy3"]
+[editable path="Enemy4"]

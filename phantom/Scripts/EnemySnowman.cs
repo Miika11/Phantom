@@ -2,29 +2,28 @@ using Godot;
 
 public partial class EnemySnowman : Area2D
 {
-    [Export] public float Speed = 40f;          // patrol speed
-    [Export] public float DetectRange = 120f;   // How close to trigger attack
+    [Export] public float Speed = 40f;
+    [Export] public float ChaseSpeed = 70f;         // Faster when chasing
+    [Export] public float DetectRange = 120f;        // Range to start chasing
+    [Export] public float AttackRange = 40f;         // Range to trigger attack
     [Export] public int Damage = 1;
     [Export] public float AttackCooldown = 1.5f;
+
+    private enum State { Patrol, Chase, Attack, Cooldown }
+    private State _state = State.Patrol;
 
     private Vector2[] _waypoints;
     private int _currentWaypoint = 0;
     private bool _waiting = false;
-    private bool _isAttacking = false;
     private bool _hasDamaged = false;
-    private bool _onCooldown = false;
     private AnimatedSprite2D _sprite;
     private Node2D _player;
 
     public override void _Ready()
     {
-        BodyEntered += OnBodyEntered;
-        BodyExited += OnBodyExited;
-
         _sprite = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
         _sprite.AnimationFinished += OnAnimationFinished;
 
-        // Find player in the scene
         _player = GetTree().GetFirstNodeInGroup("player") as Node2D;
 
         var waypointList = new System.Collections.Generic.List<Vector2>();
@@ -38,23 +37,59 @@ public partial class EnemySnowman : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (_isAttacking || _onCooldown) return;
+        float distToPlayer = _player != null
+            ? GlobalPosition.DistanceTo(_player.GlobalPosition)
+            : float.MaxValue;
 
-        // Check if player is close enough to attack
-        if (_player != null && GlobalPosition.DistanceTo(_player.GlobalPosition) < DetectRange)
+        switch (_state)
         {
-            StartAttack();
-            return;
-        }
+            case State.Patrol:
+                // Transition: player entered detect range
+                if (distToPlayer < DetectRange)
+                {
+                    _waiting = false;
+                    _state = State.Chase;
+                    break;
+                }
+                DoPatrol(delta);
+                break;
 
-        // Otherwise patrol normally
+            case State.Chase:
+                // Transition: player escaped
+                if (distToPlayer >= DetectRange)
+                {
+                    _state = State.Patrol;
+                    break;
+                }
+                
+                if (distToPlayer < AttackRange)
+                {
+                    _state = State.Attack;
+                    StartAttack();
+                    break;
+                }
+                DoChase(delta);
+                break;
+
+            case State.Attack:
+            case State.Cooldown:
+                
+                if (_player != null)
+                    _sprite.FlipH = (_player.GlobalPosition.X - GlobalPosition.X) > 0;
+                break;
+        }
+    }
+
+  
+
+    private void DoPatrol(double delta)
+    {
         if (_waypoints.Length == 0 || _waiting) return;
 
         Vector2 target = _waypoints[_currentWaypoint];
         Vector2 direction = (target - GlobalPosition).Normalized();
-        float distanceToTarget = GlobalPosition.DistanceTo(target);
 
-        if (distanceToTarget < 4f)
+        if (GlobalPosition.DistanceTo(target) < 4f)
         {
             GlobalPosition = target;
             _waiting = true;
@@ -67,61 +102,94 @@ public partial class EnemySnowman : Area2D
                 _waiting = false;
             };
         }
-		else
-		{
-			GlobalPosition += direction * Speed * (float)delta;
-			_sprite.FlipH = direction.X > 0;
-			_sprite.Play("idle");
-		}
+        else
+        {
+            GlobalPosition += direction * Speed * (float)delta;  
+            _sprite.FlipH = direction.X > 0;
+            _sprite.Play("idle");
+        }
     }
 
-		private void StartAttack()
-		{
-			_isAttacking = true;
-			_hasDamaged = false;
+    
 
-			if (_player != null)
-				_sprite.FlipH = (_player.GlobalPosition.X - GlobalPosition.X) > 0;
+        private void DoChase(double delta)
+    {
+        Vector2 direction = (_player.GlobalPosition - GlobalPosition).Normalized();
+        GlobalPosition += direction * ChaseSpeed * (float)delta;
+        _sprite.FlipH = direction.X > 0;
+        _sprite.Play("charge"); // rushing toward player
+    }
 
-			_sprite.Play("charge");
+   
+    private void StartAttack()
+    {
+        _hasDamaged = false;
 
-			var chargeTimer = GetTree().CreateTimer(0.6f);
-			chargeTimer.Timeout += () =>
-			{
-				if (_isAttacking) // Only punch if still in attack state
-					_sprite.Play("punch");
-			};
+        if (_player != null)
+            _sprite.FlipH = (_player.GlobalPosition.X - GlobalPosition.X) > 0;
 
+        _sprite.Play("charge");
 
-			var safetyTimer = GetTree().CreateTimer(0.6f + 0.8f); // charge time + punch time
-			safetyTimer.Timeout += () =>
-			{
-				if (_isAttacking)
-				{
-					ResetAfterAttack();
-				}
-			};
-		}
+        var chargeTimer = GetTree().CreateTimer(0.6f);
+        chargeTimer.Timeout += () =>
+        {
+            if (!IsInsideTree()) return;
+            if (_state == State.Attack)
+                _sprite.Play("punch");
+        };
 
-		private void OnAnimationFinished()
-		{
-			if (_sprite.Animation == "punch")
-				ResetAfterAttack();
-		}
+        // Deal damage at the moment the punch lands
+        var damageTimer = GetTree().CreateTimer(0.6f + 0.3f);
+        damageTimer.Timeout += () =>
+        {
+            if (!IsInsideTree()) return;
+            if (_state == State.Attack && !_hasDamaged && _player != null)
+            {
+                if (GlobalPosition.DistanceTo(_player.GlobalPosition) < AttackRange * 1.2f)
+                {
+                    _hasDamaged = true;
+                    if (_player is CharacterController2 player)
+                        player.TakeDamage(Damage);
+                }
+            }
+        };
 
-		private void ResetAfterAttack()
-		{
-			_isAttacking = false;
-			_sprite.Play("idle");
+        var safetyTimer = GetTree().CreateTimer(0.6f + 0.8f);
+        safetyTimer.Timeout += () =>
+        {
+            if (!IsInsideTree()) return;
+            if (_state == State.Attack)
+                ResetAfterAttack();
+        };
+    }
 
-			_onCooldown = true;
-			var timer = GetTree().CreateTimer(AttackCooldown);
-			timer.Timeout += () => _onCooldown = false;
-		}
+    private void OnAnimationFinished()
+    {
+        if (_sprite.Animation == "punch")
+            ResetAfterAttack();
+    }
 
+    private void ResetAfterAttack()
+    {
+        _state = State.Cooldown;
+        _sprite.Play("idle");
+
+        var timer = GetTree().CreateTimer(AttackCooldown);
+        timer.Timeout += () =>
+        {
+            if (!IsInsideTree()) return;
+            float dist = _player != null
+                ? GlobalPosition.DistanceTo(_player.GlobalPosition)
+                : float.MaxValue;
+
+            _state = dist < DetectRange ? State.Chase : State.Patrol;
+        };
+    }
+
+   
     private void OnBodyEntered(Node body)
     {
-        if (body is CharacterController2 player && _isAttacking && !_hasDamaged)
+        if (body is CharacterController2 player && _state == State.Attack && !_hasDamaged)
         {
             _hasDamaged = true;
             player.TakeDamage(Damage);
