@@ -126,10 +126,10 @@ limit_bottom = 652
 z_index = 1
 anchors_preset = -1
 anchor_bottom = 0.082
-offset_left = 1295.0
-offset_top = 2.0
-offset_right = 1423.0
-offset_bottom = 70.96
+offset_left = 1196.0001
+offset_top = -2.0
+offset_right = 1324.0001
+offset_bottom = 66.96
 scale = Vector2(0.80185145, 0.7698188)
 texture_normal = ExtResource("11_qk2y7")
 

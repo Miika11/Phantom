@@ -1,19 +1,28 @@
 using Godot;
-using System;
 
 public partial class Settings : CanvasLayer
 {
-	[Export] public Button _mainmenu;
-	public override void _Ready()
-	{
-		_mainmenu.Pressed += OnMenuPressed;
-	}
+    private Button _mainmenu;
+    private Button _suomi;
+    private Button _english;
 
-	private void OnMenuPressed()
-	{
-		GetTree().ChangeSceneToFile("res://Scenes/MainMenu.tscn");
-	}
-	public override void _Process(double delta)
-	{
-	}
+    public override void _Ready()
+    {
+        _mainmenu = GetNode<Button>("ColorRect/BACKTOMENU");
+        _suomi = GetNode<Button>("ColorRect/SUOMI");
+        _english = GetNode<Button>("ColorRect/ENGLISH");
+
+        _mainmenu.Pressed += OnMenuPressed;
+        _suomi.Pressed += () => {
+            GlobalSettings.Instance.SetLocale("fi");
+        };
+        _english.Pressed += () => {
+            GlobalSettings.Instance.SetLocale("en");
+        };
+    }
+
+    private void OnMenuPressed()
+    {
+        Visible = false;
+    }
 }

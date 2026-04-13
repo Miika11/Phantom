@@ -8,9 +8,7 @@ public partial class NPC_Fire : Node2D
     [Export] public Texture2D DialogueBackground;
     private DialogueUI _dialogueUI;
     private bool _used = false;
-
     private List<Question> _questions;
-
 
     public override void _Ready()
     {
@@ -18,6 +16,17 @@ public partial class NPC_Fire : Node2D
         _area.BodyEntered += OnBodyEntered;
         _dialogueUI = GetNode<DialogueUI>(DialogueUIPath);
 
+        GlobalSettings.Instance.LocaleChanged += BuildQuestions;
+        BuildQuestions();
+    }
+
+    public override void _ExitTree()
+    {
+        GlobalSettings.Instance.LocaleChanged -= BuildQuestions;
+    }
+
+    private void BuildQuestions()
+    {
         _questions = new List<Question>()
         {
             new Question(
@@ -27,7 +36,6 @@ public partial class NPC_Fire : Node2D
                     Tr("NPC_Fire_Q1_A2"),
                     Tr("NPC_Fire_Q1_A3")
                 }),
-
             new Question(
                 Tr("NPC_Fire_Q2"),
                 new[] {

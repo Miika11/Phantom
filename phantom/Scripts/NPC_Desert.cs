@@ -8,7 +8,6 @@ public partial class NPC_Desert : Node2D
     [Export] public Texture2D DialogueBackground;
     private DialogueUI _dialogueUI;
     private bool _used = false;
-
     private List<Question> _questions;
 
     public override void _Ready()
@@ -17,6 +16,17 @@ public partial class NPC_Desert : Node2D
         _area.BodyEntered += OnBodyEntered;
         _dialogueUI = GetNode<DialogueUI>(DialogueUIPath);
 
+        GlobalSettings.Instance.LocaleChanged += BuildQuestions;
+        BuildQuestions();
+    }
+
+    public override void _ExitTree()
+    {
+        GlobalSettings.Instance.LocaleChanged -= BuildQuestions;
+    }
+
+    private void BuildQuestions()
+    {
         _questions = new List<Question>()
         {
             new Question(
@@ -41,9 +51,7 @@ public partial class NPC_Desert : Node2D
         if (!_used && body is CharacterBody2D)
         {
             _used = true;
-
-             _dialogueUI.SetBackground(DialogueBackground);
-             
+            _dialogueUI.SetBackground(DialogueBackground);
             _dialogueUI.StartDialogue(_questions);
         }
     }

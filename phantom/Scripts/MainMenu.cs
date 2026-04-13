@@ -1,42 +1,65 @@
 using Godot;
-using System;
 
 public partial class MainMenu : CanvasLayer
 {
-	[Export] public TextureButton _play;
-	[Export] public TextureButton _quit;
-	[Export] public TextureButton _settings;
-	[Export] public CanvasLayer _settingsmenu;
+    [Export] public TextureButton _play;
+    [Export] public TextureButton _quit;
+    [Export] public TextureButton _settings;
+    [Export] public TextureButton _credits;
+    [Export] public CanvasLayer _settingsmenu;
+
+    [Export] public Texture2D _playFI;
+    [Export] public Texture2D _quitFI;
+    [Export] public Texture2D _settingsFI;
+    [Export] public Texture2D _creditsFI;
+
+    [Export] public Texture2D _playEN;
+    [Export] public Texture2D _quitEN;
+    [Export] public Texture2D _settingsEN;
+    [Export] public Texture2D _creditsEN;
+
 	public override void _Ready()
 	{
-		GetTree().CallGroup("GameHUD", "hide"); // hide ui when menu starts
+		GetTree().CallGroup("GameHUD", "hide");
 		_settingsmenu.Visible = false;
 		_settings.Pressed += OnSettingsPressed;
-		// GetNode<Button>("Control/PLAY").Pressed += OnPlayPressed;
-		// GetNode<Button>("Control/QUIT").Pressed += OnQuitPressed;
-		// GetNode<Button>("Control/SUOMI").Pressed += () => TranslationServer.SetLocale("fi");
-		// GetNode<Button>("Control/ENGLISH").Pressed += () => TranslationServer.SetLocale("en");
-        // GetNode<TextureButton>("Control/PlayButton").Pressed += OnPlayPressed;
-        // GetNode<TextureButton>("Control/QuitButton").Pressed += OnQuitPressed;
 		_play.Pressed += OnPlayPressed;
 		_quit.Pressed += OnQuitPressed;
-	}
-	private void OnSettingsPressed()
-	{
-		_settingsmenu.Visible = true;
+
+		GlobalSettings.Instance.LocaleChanged += RefreshTextures;
+		RefreshTextures();
 	}
 
-	private void OnPlayPressed()
-	{
-		GetTree().CallGroup("GameHUD", "show"); // show ui in next scene
-		GetTree().ChangeSceneToFile("res://intro.tscn");
-	}
 
-	private void OnQuitPressed()
+	public override void _ExitTree()
 	{
-		GetTree().Quit();
-	}
-	public override void _Process(double delta)
-	{
-	}
+    GlobalSettings.Instance.LocaleChanged -= RefreshTextures;
+}
+
+    private void RefreshTextures()
+{
+    bool isFinnish = GlobalSettings.Instance.GetLocale() == "fi";
+    _play.TextureNormal = isFinnish ? _playFI : _playEN;
+    _quit.TextureNormal = isFinnish ? _quitFI : _quitEN;
+    _settings.TextureNormal = isFinnish ? _settingsFI : _settingsEN;
+    _credits.TextureNormal = isFinnish ? _creditsFI : _creditsEN;
+}
+
+    private void OnSettingsPressed()
+    {
+        _settingsmenu.Visible = true;
+    }
+
+    private void OnPlayPressed()
+    {
+        GetTree().CallGroup("GameHUD", "show");
+        GetTree().ChangeSceneToFile("res://intro.tscn");
+    }
+
+    private void OnQuitPressed() => GetTree().Quit();
+
+    // private void OnCreditsPressed()
+    // {
+    //     GetTree().ChangeSceneToFile("res://Scenes/Credits.tscn");
+    // }
 }
