@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://daomjft5pieje"]
+
+[ext_resource type="Texture2D" uid="uid://b2juilpuv5a0l" path="res://art/Level3_TopRoom.png" id="1_1dfwl"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_8a7et"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_8a7et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dfwl"]
+size = Vector2(48, 562)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a7et"]
+size = Vector2(33, 562)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1dfwl"]
+radius = 38.0
+height = 516.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8a7et"]
+radius = 27.000004
+height = 538.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qes20"]
+radius = 31.0
+height = 454.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irfq7"]
+radius = 36.0
+height = 478.0
+
+[node name="TopRoom3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(578, 327.00003)
+scale = Vector2(0.5639649, 0.47765565)
+texture = ExtResource("1_1dfwl")
+
+[node name="LeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(73, 303.00003)
+rotation = 0.034906585
+shape = SubResource("RectangleShape2D_1dfwl")
+
+[node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1077.9999, 319.00003)
+rotation = -0.034906585
+shape = SubResource("RectangleShape2D_8a7et")
+
+[node name="TopLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(252, 25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_1dfwl")
+
+[node name="TopRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(918, 35)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_8a7et")
+
+[node name="BottomLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(259, 578)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qes20")
+
+[node name="BottomRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(905, 583)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_irfq7")
+
+[node name="Node2D" parent="." instance=ExtResource("2_8a7et")]
+position = Vector2(586, 540)
+
+[node name="Door" parent="." instance=ExtResource("3_8a7et")]
+position = Vector2(577, 658)
+TargetScene = "res://Level_3/MainRoom3.tscn"
+TargetSpawnPoint = "SpawnFromTopRoom3"
+
+[node name="Door2" parent="." instance=ExtResource("3_8a7et")]
+position = Vector2(577, 37)

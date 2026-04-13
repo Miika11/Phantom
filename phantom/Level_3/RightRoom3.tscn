@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://lnwcyltl3usu"]
+
+[ext_resource type="Texture2D" uid="uid://x6hbgnjcai6v" path="res://art/Level3_RightRoom.png" id="1_i6oww"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ge4jb"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_v1dik"]
+[ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_fm7d5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6oww"]
+size = Vector2(1033, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge4jb"]
+size = Vector2(54.646606, 602)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1dik"]
+size = Vector2(1137, 63)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fm7d5"]
+radius = 54.0
+height = 310.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_we6qj"]
+radius = 47.0
+height = 240.0
+
+[node name="RightRoom3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(579.5, 328.00003)
+scale = Vector2(0.72333753, 0.6592293)
+texture = ExtResource("1_i6oww")
+
+[node name="TopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(574, 53)
+shape = SubResource("RectangleShape2D_i6oww")
+
+[node name="RightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1074, 324.00003)
+rotation = -0.034906585
+shape = SubResource("RectangleShape2D_ge4jb")
+
+[node name="BottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(572.5, 595)
+shape = SubResource("RectangleShape2D_v1dik")
+
+[node name="LeftBottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(65, 480)
+rotation = 0.04363323
+shape = SubResource("CapsuleShape2D_fm7d5")
+
+[node name="LeftTopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(85, 123)
+rotation = 0.04363323
+shape = SubResource("CapsuleShape2D_we6qj")
+
+[node name="Node2D" parent="." instance=ExtResource("2_ge4jb")]
+position = Vector2(194, 330)
+
+[node name="Door" parent="." instance=ExtResource("3_v1dik")]
+visible = false
+position = Vector2(23, 324)
+TargetScene = "res://Level_3/MainRoom3.tscn"
+TargetSpawnPoint = "SpawnFromRightRoom3"
+
+[node name="Key" parent="." instance=ExtResource("4_fm7d5")]
+position = Vector2(989, 349)
+
+[node name="SpawnFromMainRoom3" type="Marker2D" parent="."]
+position = Vector2(131, 288)

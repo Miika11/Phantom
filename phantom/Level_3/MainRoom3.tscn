@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://cfbulfkhpgq4v"]
+
+[ext_resource type="Texture2D" uid="uid://ba031l2o8twek" path="res://art/Level3_MainRoom.png" id="1_xmdyo"]
+[ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_oxx7w"]
+[ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_orpya"]
+[ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="4_kvlvd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xmdyo"]
+radius = 33.0
+height = 486.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oxx7w"]
+radius = 40.0
+height = 506.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_orpya"]
+radius = 45.0
+height = 282.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kvlvd"]
+radius = 45.0
+height = 234.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvy13"]
+radius = 50.0
+height = 508.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4jhqp"]
+radius = 51.0
+height = 430.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pygnr"]
+radius = 50.0
+height = 246.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_smvis"]
+radius = 56.0
+height = 270.0
+
+[node name="MainRoom3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(578.0533, 325.0985)
+scale = Vector2(0.7251528, 0.6590294)
+texture = ExtResource("1_xmdyo")
+
+[node name="BottomRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(887, 592)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xmdyo")
+
+[node name="BottomLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(263, 602)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oxx7w")
+
+[node name="LeftBottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(68, 464)
+rotation = 3.1415927
+shape = SubResource("CapsuleShape2D_orpya")
+
+[node name="LeftTopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(80, 124)
+shape = SubResource("CapsuleShape2D_kvlvd")
+
+[node name="TopLeftWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(280, 28)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_lvy13")
+
+[node name="TopRightWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(876, 33)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4jhqp")
+
+[node name="RightTopWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1085, 131)
+shape = SubResource("CapsuleShape2D_pygnr")
+
+[node name="RightBottomWall" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1095, 468)
+shape = SubResource("CapsuleShape2D_smvis")
+
+[node name="Node2D" parent="." instance=ExtResource("2_oxx7w")]
+position = Vector2(584, 554)
+
+[node name="Door" parent="." instance=ExtResource("3_orpya")]
+visible = false
+position = Vector2(28, 326)
+TargetScene = "res://Level_3/QuestRoom3.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom3"
+
+[node name="Door2" parent="." instance=ExtResource("3_orpya")]
+visible = false
+position = Vector2(1139, 333)
+TargetScene = "res://Level_3/RightRoom3.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom3"
+
+[node name="Door3" parent="." instance=ExtResource("3_orpya")]
+visible = false
+position = Vector2(600, 72)
+TargetScene = "res://Level_3/TopRoom3.tscn"
+TargetSpawnPoint = "SpawnFromMainRoom3"
+KeysRequired = 2
+ConsumeKeysOnOpen = true
+
+[node name="SpawnFromQuestRoom3" type="Marker2D" parent="."]
+position = Vector2(139, 295)
+
+[node name="SpawnFromRightRoom3" type="Marker2D" parent="."]
+position = Vector2(1045, 299)
+
+[node name="SpawnFromTopRoom2" type="Marker2D" parent="."]
+position = Vector2(588, 564)
+
+[node name="SpawnFromTopRoom3" type="Marker2D" parent="."]
+position = Vector2(591, 175)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(594, 29.00001)
+scale = Vector2(2.8450708, 1.5555553)
+texture = ExtResource("4_kvlvd")
+region_enabled = true
+region_rect = Rect2(24.5, 184.25, 71.5, 72.5)

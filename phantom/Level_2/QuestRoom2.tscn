@@ -55,7 +55,7 @@ position = Vector2(1091, 471)
 shape = SubResource("RectangleShape2D_efeu3")
 
 [node name="Node2D" parent="." instance=ExtResource("2_8fcdl")]
-position = Vector2(976, 354)
+position = Vector2(997, 357)
 
 [node name="Door" parent="." instance=ExtResource("3_hai6r")]
 visible = false
@@ -71,21 +71,28 @@ position = Vector2(185, 334)
 
 [node name="EnemyShooter" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(263, 175)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(448, 136)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(621, 134)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(863, 143)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter5" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(328, 509)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter6" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(556, 517)
+EnemySpriteFrames = null
 
 [node name="EnemyShooter7" parent="." instance=ExtResource("5_efeu3")]
 position = Vector2(747, 515)
+EnemySpriteFrames = null
