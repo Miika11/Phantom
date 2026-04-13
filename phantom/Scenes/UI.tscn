@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://j2fj8q1ug4ih" path="res://art/hitpoint_empty.png" id="3_48q88"]
 [ext_resource type="Script" uid="uid://c3m2sj3uefx4c" path="res://Scripts/KeyUI.cs" id="4_xjg7p"]
 [ext_resource type="Texture2D" uid="uid://dca2yw7g505yi" path="res://art/key1.png" id="5_qwshj"]
-[ext_resource type="Texture2D" uid="uid://c8vosc727b2qa" path="res://art/boost_normal.tres" id="6_mg6lk"]
 [ext_resource type="Script" uid="uid://cqpxudahnwn2l" path="res://Scenes/BoostButton.cs" id="6_wunin"]
-[ext_resource type="Texture2D" uid="uid://bvhlrnmn505pm" path="res://art/boost_pressed.tres" id="7_wunin"]
+[ext_resource type="Texture2D" uid="uid://cwy0cok1fwdbq" path="res://art/boostyellow.png" id="7_wunin"]
 [ext_resource type="Texture2D" uid="uid://cana03lclq5w5" path="res://art/boost_progress.tres" id="8_j04uc"]
+[ext_resource type="Texture2D" uid="uid://cbht8g3yhyyyk" path="res://art/boostorange.png" id="8_vqx31"]
 
 [node name="UI" type="CanvasLayer" groups=["GameHUD"]]
 
@@ -59,8 +59,8 @@ offset_bottom = 187.0
 grow_vertical = 0
 scale = Vector2(0.17793608, 0.19490999)
 script = ExtResource("6_wunin")
-NormalTexture = ExtResource("6_mg6lk")
-PressedTexture = ExtResource("7_wunin")
+NormalTexture = ExtResource("7_wunin")
+PressedTexture = ExtResource("8_vqx31")
 
 [node name="TextureRect" type="TextureRect" parent="BoostButton"]
 layout_mode = 1

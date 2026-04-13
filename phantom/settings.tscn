@@ -17,7 +17,7 @@ offset_right = 247.0
 offset_bottom = 307.5
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.06666667, 0.03529412, 0.003921569, 0.2509804)
+color = Color(1, 0, 0.003921569, 0)
 
 [node name="BACKTOMENU" type="Button" parent="ColorRect"]
 layout_mode = 0

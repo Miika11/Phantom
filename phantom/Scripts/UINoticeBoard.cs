@@ -3,21 +3,22 @@ using Godot;
 public partial class UINoticeBoard : CanvasLayer
 {
     private TextureRect noticeImage;
-    private Button closeButton;
+    [Export] public Texture2D TextureEN;
+    [Export] public Texture2D TextureFI;
+    private TextureButton closeButton;
 
     public override void _Ready()
     {
         noticeImage = GetNode<TextureRect>("NoticeImage");
-        closeButton = GetNode<Button>("CloseButton");
-
+        closeButton = GetNode<TextureButton>("CloseButton");
         closeButton.Pressed += OnClosePressed;
-
         Visible = false;
     }
 
-    public void ShowNotice(Texture2D texture)
+    public void ShowNotice()
     {
-        noticeImage.Texture = texture;
+        bool isFinnish = GlobalSettings.Instance.GetLocale() == "fi";
+        noticeImage.Texture = isFinnish ? TextureFI : TextureEN;
         Visible = true;
     }
 

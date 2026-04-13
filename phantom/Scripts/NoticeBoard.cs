@@ -15,7 +15,7 @@ public partial class NoticeBoard : Node2D
     {
         if (body.IsInGroup("player"))
         {
-            NoticeUI.ShowNotice(NoticeTexture);
+            NoticeUI.ShowNotice();
         }
     }
 }
