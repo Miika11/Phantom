@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://6758811t1qn1"]
+[gd_scene load_steps=11 format=3 uid="uid://6758811t1qn1"]
 
 [ext_resource type="Texture2D" uid="uid://rrfetncti3cc" path="res://art/Level3_QuestRoom.png" id="1_vtse3"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_somrn"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_yo7qo"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_hnm1h"]
+[ext_resource type="PackedScene" uid="uid://cnc5vgfqhwpwa" path="res://Scenes/enemy_shooterDesert.tscn" id="5_ofweu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vtse3"]
 size = Vector2(46.5, 658.0322)
@@ -67,3 +68,15 @@ position = Vector2(1018, 305)
 
 [node name="Key" parent="." instance=ExtResource("4_hnm1h")]
 position = Vector2(166, 337)
+
+[node name="EnemyShooter" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(271, 118)
+
+[node name="EnemyShooter2" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(471, 118)
+
+[node name="EnemyShooter3" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(671, 118)
+
+[node name="EnemyShooter4" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(895, 119)

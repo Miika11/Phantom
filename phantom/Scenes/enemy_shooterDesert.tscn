@@ -1,0 +1,97 @@
+[gd_scene load_steps=12 format=3 uid="uid://cnc5vgfqhwpwa"]
+
+[ext_resource type="Script" uid="uid://cukxitt3d50x6" path="res://Scripts/EnemyShooter.cs" id="1_h6ru4"]
+[ext_resource type="PackedScene" uid="uid://dxrtnychuffqs" path="res://Scenes/bulletdesert.tscn" id="2_454gs"]
+[ext_resource type="Texture2D" uid="uid://dfbxc5khut4u5" path="res://art/spirit_attack1.png" id="3_454gs"]
+[ext_resource type="Texture2D" uid="uid://bnsa1btqwqpwc" path="res://art/spirit_attack2.png" id="4_iuvtt"]
+[ext_resource type="Texture2D" uid="uid://dmjia2hqmpx1r" path="res://art/spirit_attack3.png" id="5_ta8yh"]
+[ext_resource type="Texture2D" uid="uid://0df80swgl1i0" path="res://art/spirit_attack4.png" id="6_4clff"]
+[ext_resource type="Texture2D" uid="uid://cust6cycgssju" path="res://art/spirit_attack5.png" id="7_vryq8"]
+[ext_resource type="Texture2D" uid="uid://dy8j3ikddmsg5" path="res://art/spirit_attack6.png" id="8_txxcc"]
+[ext_resource type="Texture2D" uid="uid://bo48jh4d0qmqo" path="res://art/spirit_attack7.png" id="9_i63if"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agqaf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_454gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iuvtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ta8yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4clff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vryq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_txxcc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i63if")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q7j06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_454gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iuvtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ta8yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4clff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vryq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_txxcc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i63if")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[node name="EnemyShooter" type="Node2D"]
+script = ExtResource("1_h6ru4")
+BulletScene = ExtResource("2_454gs")
+EnemySpriteFrames = SubResource("SpriteFrames_agqaf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 2.0000076)
+scale = Vector2(0.48194945, 0.41484186)
+sprite_frames = SubResource("SpriteFrames_q7j06")
+animation = &"idle"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(-47, -23)
