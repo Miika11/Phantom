@@ -158,7 +158,7 @@ position = Vector2(3.9999998, -41)
 scale = Vector2(0.103703715, 0.082098775)
 sprite_frames = SubResource("SpriteFrames_4s2po")
 animation = &"idle"
-frame_progress = 0.8125651
+frame_progress = 0.25372875
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -40)
@@ -178,12 +178,12 @@ limit_bottom = 652
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 z_index = 1
-anchors_preset = -1
-anchor_bottom = 0.082
-offset_left = 1196.0001
-offset_top = -2.0
-offset_right = 1324.0001
-offset_bottom = 66.96
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 93.0
+grow_horizontal = 0
 scale = Vector2(0.80185145, 0.7698188)
 texture_normal = ExtResource("11_qk2y7")
 
