@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://lnwcyltl3usu"]
+[gd_scene load_steps=12 format=3 uid="uid://lnwcyltl3usu"]
 
 [ext_resource type="Texture2D" uid="uid://x6hbgnjcai6v" path="res://art/Level3_RightRoom.png" id="1_i6oww"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ge4jb"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_v1dik"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_fm7d5"]
 [ext_resource type="PackedScene" uid="uid://b10rw8d8hdo8c" path="res://Scenes/enemy_mummy.tscn" id="5_fm7d5"]
+[ext_resource type="PackedScene" uid="uid://c55g3vkxgrkop" path="res://Scenes/enemy_anubis.tscn" id="6_we6qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6oww"]
 size = Vector2(1033, 33)
@@ -71,4 +72,12 @@ position = Vector2(989, 349)
 position = Vector2(131, 288)
 
 [node name="Enemy" parent="." instance=ExtResource("5_fm7d5")]
-position = Vector2(745, 206)
+position = Vector2(757, 203)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_we6qj")]
+position = Vector2(592, 433)
+
+[node name="Marker2D" parent="Enemy2" index="2"]
+position = Vector2(-380, 26)
+
+[editable path="Enemy2"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://c55g3vkxgrkop"]
+
+[ext_resource type="Script" uid="uid://djjixdswsusxd" path="res://Scripts/Enemy.cs" id="1_xe7m5"]
+[ext_resource type="Texture2D" uid="uid://khmkf0ee46fd" path="res://art/anubis_idle.png" id="2_g2fw8"]
+[ext_resource type="Texture2D" uid="uid://bkgp8hfxvasbo" path="res://art/anubis_walk1.png" id="3_h4pso"]
+[ext_resource type="Texture2D" uid="uid://d2m1stfq115qc" path="res://art/anubis_walk2.png" id="4_76jl4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2fw8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2fw8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h4pso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_76jl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g2fw8")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(118.5, 140.125)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0830c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2fw8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_h4pso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_76jl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g2fw8")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_xe7m5")
+Speed = 150.0
+EnemySpriteFrames = SubResource("SpriteFrames_g2fw8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 7)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.31944847, 0.30827823)
+sprite_frames = SubResource("SpriteFrames_0830c")
+animation = &"move"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-305, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
