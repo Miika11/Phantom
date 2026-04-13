@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://b10rw8d8hdo8c"]
+
+[ext_resource type="Script" uid="uid://bvahdr683rwon" path="res://Scenes/EnemyMummy.cs" id="1_v5d7h"]
+[ext_resource type="Texture2D" uid="uid://brimatp6vffl0" path="res://art/mummy_idle.png" id="2_aq4qm"]
+[ext_resource type="Texture2D" uid="uid://cpfqjx0ln016a" path="res://art/mummy_walk1.png" id="3_nd8bg"]
+[ext_resource type="Texture2D" uid="uid://bqlp25lpx3a01" path="res://art/mummy_walk2.png" id="4_atrm0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iifgy"]
+size = Vector2(58, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0830c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aq4qm")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_aq4qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nd8bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_atrm0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Enemy" type="Area2D"]
+position = Vector2(960, 234)
+script = ExtResource("1_v5d7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_iifgy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.31944847, 0.30827823)
+sprite_frames = SubResource("SpriteFrames_0830c")
+animation = &"walk"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-305, 4)
+
+[node name="Marker2D2" type="Marker2D" parent="."]

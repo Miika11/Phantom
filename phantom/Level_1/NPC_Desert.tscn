@@ -1,7 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://buq5seaws1025"]
+[gd_scene load_steps=11 format=3 uid="uid://buq5seaws1025"]
 
 [ext_resource type="Script" uid="uid://781l3oewdlow" path="res://Scripts/NPC_Desert.cs" id="1_f8uko"]
-[ext_resource type="Texture2D" uid="uid://dovsyso24wvwf" path="res://art/oldmentor_original.png" id="2_126g6"]
+[ext_resource type="Texture2D" uid="uid://fvaxsuvtinup" path="res://art/desertmentor1.png" id="2_dymfs"]
+[ext_resource type="Texture2D" uid="uid://c3x2r2l4204fj" path="res://art/desertmentor2.png" id="3_dby5l"]
+[ext_resource type="Texture2D" uid="uid://bqxugcpk01l02" path="res://art/desertmentor3.png" id="4_sp4md"]
+[ext_resource type="Texture2D" uid="uid://sreehc30ieyw" path="res://art/desertmentor4.png" id="5_cwrkv"]
+[ext_resource type="Texture2D" uid="uid://cr47mmwx3hva" path="res://art/desertmentor5.png" id="6_kxgcb"]
+[ext_resource type="Texture2D" uid="uid://bl8gc23x2o18l" path="res://art/desertmentor6.png" id="7_122do"]
+[ext_resource type="Texture2D" uid="uid://dqp3woyvy823e" path="res://art/desertmentor7.png" id="8_507al"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ng0gq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dymfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dby5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sp4md")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cwrkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kxgcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_122do")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_507al")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68jwh"]
 size = Vector2(134, 171)
@@ -9,10 +44,12 @@ size = Vector2(134, 171)
 [node name="NPC_Desert" type="Node2D"]
 script = ExtResource("1_f8uko")
 
-[node name="Mentori" type="Sprite2D" parent="."]
+[node name="Mentori" type="AnimatedSprite2D" parent="."]
 position = Vector2(18, -75)
 scale = Vector2(0.26174223, 0.253668)
-texture = ExtResource("2_126g6")
+sprite_frames = SubResource("SpriteFrames_ng0gq")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 

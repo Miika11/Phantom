@@ -14,7 +14,7 @@ script = ExtResource("1_853f1")
 _play = NodePath("PanelContainer/VBoxContainer/PlayButton")
 _quit = NodePath("PanelContainer/VBoxContainer/QuitButton")
 _settings = NodePath("PanelContainer/VBoxContainer/SettingsButton")
-_settingsmenu = NodePath("Node2D")
+_settingsmenu = NodePath("SettingsUI")
 
 [node name="Mainmenu3" type="TextureRect" parent="."]
 texture_filter = 1
@@ -146,4 +146,4 @@ texture = ExtResource("7_xim88")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="Node2D" parent="." instance=ExtResource("8_koqhg")]
+[node name="SettingsUI" parent="." instance=ExtResource("8_koqhg")]

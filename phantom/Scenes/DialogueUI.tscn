@@ -62,10 +62,10 @@ offset_bottom = 404.75955
 
 [node name="ResultLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 108.49263
-offset_right = 251.0
-offset_bottom = 131.49263
+offset_left = 54.0
+offset_top = 105.47893
+offset_right = 94.0
+offset_bottom = 128.47893
 
 [node name="CloseButton" type="Button" parent="Panel"]
 layout_mode = 0

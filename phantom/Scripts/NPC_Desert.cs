@@ -5,6 +5,7 @@ public partial class NPC_Desert : Node2D
 {
     private Area2D _area;
     [Export] public NodePath DialogueUIPath;
+    [Export] public Texture2D DialogueBackground;
     private DialogueUI _dialogueUI;
     private bool _used = false;
 
@@ -40,6 +41,9 @@ public partial class NPC_Desert : Node2D
         if (!_used && body is CharacterBody2D)
         {
             _used = true;
+
+             _dialogueUI.SetBackground(DialogueBackground);
+             
             _dialogueUI.StartDialogue(_questions);
         }
     }
