@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cb6ofbtpwcmeq" path="res://art/firemain9.png" id="12_4rbl8"]
 [ext_resource type="Texture2D" uid="uid://7a33s4tw4e33" path="res://art/firemain10.png" id="13_dg0to"]
 [ext_resource type="Texture2D" uid="uid://cd33a0qd336l" path="res://art/firemain11.png" id="14_7o33w"]
-[ext_resource type="AudioStream" uid="uid://dmqlacgj1jipv" path="res://audio/fire track.ogg" id="15_36by6"]
+[ext_resource type="AudioStream" uid="uid://dmqlacgj1jipv" path="res://audio/fire_level.ogg" id="15_36by6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7q2k"]
 animations = [{

@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cfbulfkhpgq4v"]
+[gd_scene load_steps=15 format=3 uid="uid://cfbulfkhpgq4v"]
 
+[ext_resource type="Script" uid="uid://c6cw6ao86eav7" path="res://Level_3/MainRoom3.cs" id="1_lvy13"]
 [ext_resource type="Texture2D" uid="uid://ba031l2o8twek" path="res://art/Level3_MainRoom.png" id="1_xmdyo"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_oxx7w"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_orpya"]
@@ -41,6 +42,7 @@ height = 270.0
 size = Vector2(167.75, 55)
 
 [node name="MainRoom3" type="Node2D"]
+script = ExtResource("1_lvy13")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwm26jjf7i7ce"]
+
+[ext_resource type="Script" uid="uid://kvkfggp53tff" path="res://IceLevel.cs" id="1_4sto7"]
+[ext_resource type="PackedScene" uid="uid://duxmvcdvhfymk" path="res://Level_2/MainRoom2.tscn" id="2_kmc7d"]
+[ext_resource type="PackedScene" uid="uid://dfxtxyol0alsb" path="res://Level_2/QuestRoom2.tscn" id="3_7fsm2"]
+[ext_resource type="PackedScene" uid="uid://1ig6yu0lid6s" path="res://Level_2/RightRoom.tscn" id="4_4x848"]
+[ext_resource type="PackedScene" uid="uid://do5bi78sjkwxq" path="res://Level_2/TopRoom2.tscn" id="5_f6t7n"]
+
+[node name="IceLevel" type="Node2D"]
+script = ExtResource("1_4sto7")
+
+[node name="MainRoom2" parent="." instance=ExtResource("2_kmc7d")]
+
+[node name="QuestRoom2" parent="." instance=ExtResource("3_7fsm2")]
+
+[node name="RightRoom" parent="." instance=ExtResource("4_4x848")]
+
+[node name="TopRoom2" parent="." instance=ExtResource("5_f6t7n")]

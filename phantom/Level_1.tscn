@@ -1,0 +1,21 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0moixgcrcfxa"]
+
+[ext_resource type="Script" uid="uid://bmmg4p7mng6hv" path="res://Level1.cs" id="1_u16a4"]
+[ext_resource type="PackedScene" uid="uid://dw6ic3jljqssl" path="res://intro.tscn" id="2_smwyr"]
+[ext_resource type="PackedScene" uid="uid://wgofbr78ok3g" path="res://Level_1/MainRoom.tscn" id="3_tedvs"]
+[ext_resource type="PackedScene" uid="uid://cdjicnefnr82f" path="res://Level_1/QuestRoom.tscn" id="4_gyeet"]
+[ext_resource type="PackedScene" uid="uid://dovl7ttwbgqpq" path="res://Level_1/EnemyRoomRight.tscn" id="5_2wi7h"]
+[ext_resource type="PackedScene" uid="uid://cliian5uad5qo" path="res://Level_1/TopRoom.tscn" id="6_4s4xf"]
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_u16a4")
+
+[node name="Intro" parent="." instance=ExtResource("2_smwyr")]
+
+[node name="MainRoom" parent="." instance=ExtResource("3_tedvs")]
+
+[node name="QuestRoom" parent="." instance=ExtResource("4_gyeet")]
+
+[node name="QuestRoom2" parent="." instance=ExtResource("5_2wi7h")]
+
+[node name="QuestRoom3" parent="." instance=ExtResource("6_4s4xf")]

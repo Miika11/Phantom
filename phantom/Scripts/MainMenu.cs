@@ -20,6 +20,8 @@ public partial class MainMenu : CanvasLayer
 
 	public override void _Ready()
 	{
+        GetNode<MusicManager>("/root/MusicManager")
+        .PlayMusic("res://audio/MainMenu.ogg");
 		GetTree().CallGroup("GameHUD", "hide");
 		_settingsmenu.Visible = false;
 		_settings.Pressed += OnSettingsPressed;

@@ -20,6 +20,7 @@ config/icon="res://art/icon.svg"
 GameManager="*res://Scripts/GameManager.cs"
 UI="*res://Scenes/UI.tscn"
 GlobalSettings="*res://Scripts/GlobalSettings.cs"
+MusicManager="*res://MusicManager.tscn"
 
 [display]
 
