@@ -175,6 +175,11 @@ limit_bottom = 652
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Joystick" parent="CanvasLayer" instance=ExtResource("10_11r81")]
+anchors_preset = -1
+offset_left = 158.0
+offset_top = 496.0
+offset_right = 158.0
+offset_bottom = 496.0
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 z_index = 1
