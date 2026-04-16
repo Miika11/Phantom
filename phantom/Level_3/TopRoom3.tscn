@@ -72,12 +72,16 @@ shape = SubResource("CapsuleShape2D_irfq7")
 position = Vector2(586, 540)
 
 [node name="Door" parent="." instance=ExtResource("3_8a7et")]
+visible = false
 position = Vector2(577, 658)
 TargetScene = "res://Level_3/MainRoom3.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom3"
 
 [node name="Door2" parent="." instance=ExtResource("3_8a7et")]
+visible = false
 position = Vector2(577, 37)
+TargetScene = "res://Top_of_pyramid/TopOfPyramid.tscn"
+TargetSpawnPoint = "SpawnFromTopRoom3"
 
 [node name="NPC_Desert" parent="." instance=ExtResource("4_qes20")]
 position = Vector2(450, 394)
