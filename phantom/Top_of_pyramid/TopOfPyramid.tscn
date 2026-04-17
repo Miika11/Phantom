@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkfaroc8xc7va"]
+[gd_scene load_steps=10 format=3 uid="uid://dkfaroc8xc7va"]
 
 [ext_resource type="Texture2D" uid="uid://ybth0wu60jem" path="res://art/PyramidiTOP.png" id="1_si5nc"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_eo0t4"]
+[ext_resource type="PackedScene" uid="uid://xbqcnlwmybr2" path="res://Level_1/Result_Npc.tscn" id="3_gb8uf"]
+[ext_resource type="Texture2D" uid="uid://c412e257nshvm" path="res://art/finalmentor_talks.png" id="4_7j2gk"]
+[ext_resource type="PackedScene" uid="uid://crl35b24ry6dv" path="res://Scenes/DialogueUI.tscn" id="5_e2s84"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x1cv6"]
 size = Vector2(797, 37)
@@ -49,3 +52,11 @@ position = Vector2(308, 197)
 
 [node name="SpawnFromTopRoom3" type="Marker2D" parent="."]
 position = Vector2(306, 196)
+
+[node name="Result_Npc" parent="." instance=ExtResource("3_gb8uf")]
+position = Vector2(664, 199)
+DialogueUIPath = NodePath("../DialogueUi")
+DialogueBackground = ExtResource("4_7j2gk")
+
+[node name="DialogueUi" parent="." instance=ExtResource("5_e2s84")]
+visible = false
