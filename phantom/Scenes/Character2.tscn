@@ -50,6 +50,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_oi8w5")
+}],
+"loop": true,
+"name": &"hurt_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_lt7hq")
 }, {
 "duration": 1.0,
@@ -233,7 +241,7 @@ JoystickPath = NodePath("CanvasLayer/Joystick")
 position = Vector2(3.9999998, -41)
 scale = Vector2(0.103703715, 0.082098775)
 sprite_frames = SubResource("SpriteFrames_4s2po")
-animation = &"hurt_down"
+animation = &"hurt_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -40)

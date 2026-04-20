@@ -34,7 +34,7 @@ public partial class CharacterController2 : CharacterBody2D
     private bool _isHurt = false;
     private Timer _hurtTimer;
     [Export] public float HurtDuration = 0.5f;
-    private Vector2 _lastDirection = Vector2.Down;
+    private Vector2 _lastDirection = Vector2.Up;
 
     public override void _Ready()
     {
@@ -175,7 +175,9 @@ public partial class CharacterController2 : CharacterBody2D
 
         if (_isHurt)
         {
-            if (Mathf.Abs(_lastDirection.X) > Mathf.Abs(_lastDirection.Y))
+            if (direction == Vector2.Zero)
+                _player.Play(ConfigAnimation.HurtIdle);
+            else if (Mathf.Abs(_lastDirection.X) > Mathf.Abs(_lastDirection.Y))
                 _player.Play(_lastDirection.X > 0 ? ConfigAnimation.HurtRight : ConfigAnimation.HurtLeft);
             else
                 _player.Play(_lastDirection.Y > 0 ? ConfigAnimation.HurtDown : ConfigAnimation.HurtUp);
