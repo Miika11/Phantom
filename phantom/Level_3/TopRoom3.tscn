@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://daomjft5pieje"]
+[gd_scene load_steps=15 format=3 uid="uid://daomjft5pieje"]
 
 [ext_resource type="Texture2D" uid="uid://b2juilpuv5a0l" path="res://art/Level3_TopRoom.png" id="1_1dfwl"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_8a7et"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://buq5seaws1025" path="res://Level_1/NPC_Desert.tscn" id="4_qes20"]
 [ext_resource type="Texture2D" uid="uid://cillc30hgevgu" path="res://art/desertmentortalks.png" id="5_wbqur"]
 [ext_resource type="PackedScene" uid="uid://crl35b24ry6dv" path="res://Scenes/DialogueUI.tscn" id="6_6rsc6"]
+[ext_resource type="Texture2D" uid="uid://25o3aialalac" path="res://art/pharaoh_statue.png" id="7_6rsc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dfwl"]
 size = Vector2(48, 562)
@@ -28,6 +29,10 @@ height = 454.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_irfq7"]
 radius = 36.0
 height = 478.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rsc6"]
+radius = 45.8667
+height = 139.32886
 
 [node name="TopRoom3" type="Node2D"]
 
@@ -67,6 +72,26 @@ shape = SubResource("CapsuleShape2D_qes20")
 position = Vector2(905, 583)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_irfq7")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(429, 94.0625)
+scale = Vector2(0.6744183, 0.65823704)
+texture = ExtResource("7_6rsc6")
+
+[node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(718, 94.00001)
+scale = Vector2(0.6744183, 0.65823704)
+texture = ExtResource("7_6rsc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(430.00003, 85.00001)
+scale = Vector2(0.6976744, 0.6459538)
+shape = SubResource("CapsuleShape2D_6rsc6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(721, 83)
+scale = Vector2(0.6976744, 0.6459538)
+shape = SubResource("CapsuleShape2D_6rsc6")
 
 [node name="Node2D" parent="." instance=ExtResource("2_8a7et")]
 position = Vector2(586, 540)
