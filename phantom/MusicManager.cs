@@ -7,23 +7,14 @@ public partial class MusicManager : Node
 
     public override void _Ready()
 {
-    GD.Print("✔ MusicManager _Ready() called");
 
     _player = GetNodeOrNull<AudioStreamPlayer>("AudioStreamPlayer");
 
-    if (_player == null)
-    {
-        GD.PrintErr("❌ AudioStreamPlayer NOT FOUND");
-    }
-    else
-    {
-        GD.Print("✔ AudioStreamPlayer found");
-    }
 }
 
     public void PlayMusic(string trackPath)
     {
-        // Don't restart if the same track is already playing
+
         if (_currentTrack == trackPath)
             return;
 
