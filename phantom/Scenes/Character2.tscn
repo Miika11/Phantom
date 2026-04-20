@@ -1,9 +1,17 @@
-[gd_scene load_steps=23 format=3 uid="uid://bpxkeptkblxfr"]
+[gd_scene load_steps=31 format=3 uid="uid://bpxkeptkblxfr"]
 
 [ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://Scripts/CharacterController2.cs" id="1_6ludh"]
+[ext_resource type="Texture2D" uid="uid://bf26lxviilccd" path="res://art/Päähahmo_konsepti2.png" id="2_lt7hq"]
+[ext_resource type="Texture2D" uid="uid://jokkggglmo5j" path="res://art/Päähahmo_vasen2.png" id="3_yorra"]
+[ext_resource type="Texture2D" uid="uid://cqkx5o3ay4jln" path="res://art/Päähahmo_vasen3.png" id="4_gt68k"]
+[ext_resource type="Texture2D" uid="uid://b6c51rla1p6yx" path="res://art/Päähahmo_vasen4.png" id="5_7n3i2"]
 [ext_resource type="Texture2D" uid="uid://qu1nm1ovq5d3" path="res://art/left01.png" id="6_g2ofy"]
+[ext_resource type="Texture2D" uid="uid://c22lspp7hrtcq" path="res://art/Päähahmo_konspeti.png" id="6_oi8w5"]
 [ext_resource type="Texture2D" uid="uid://dt2eod2urqdqc" path="res://art/left02.png" id="7_04ear"]
+[ext_resource type="Texture2D" uid="uid://dp2lv5ifduyk" path="res://art/Päähahmo_oikea2.png" id="7_uko2m"]
 [ext_resource type="Texture2D" uid="uid://c3wuo5sk8jw4r" path="res://art/left03.png" id="8_4ri28"]
+[ext_resource type="Texture2D" uid="uid://cgvt073g1skit" path="res://art/Päähahmo_oikea3.png" id="8_s5mei"]
+[ext_resource type="Texture2D" uid="uid://b3y0lphinsh82" path="res://art/Päähahmo_oikea4.png" id="9_b1n3f"]
 [ext_resource type="Texture2D" uid="uid://ibk0i6tm7of" path="res://art/left04.png" id="9_lt7hq"]
 [ext_resource type="Texture2D" uid="uid://dvblo8hpaj4pl" path="res://art/right.01.png" id="10_2v30p"]
 [ext_resource type="PackedScene" uid="uid://bu4rte6cof6r1" path="res://Scenes/Joystick.tscn" id="10_11r81"]
@@ -23,6 +31,74 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4s2po"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lt7hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yorra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gt68k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7n3i2")
+}],
+"loop": true,
+"name": &"hurt_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lt7hq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yorra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gt68k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7n3i2")
+}],
+"loop": true,
+"name": &"hurt_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oi8w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uko2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s5mei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b1n3f")
+}],
+"loop": true,
+"name": &"hurt_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oi8w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uko2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s5mei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b1n3f")
+}],
+"loop": true,
+"name": &"hurt_up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_2v30p")
@@ -157,8 +233,7 @@ JoystickPath = NodePath("CanvasLayer/Joystick")
 position = Vector2(3.9999998, -41)
 scale = Vector2(0.103703715, 0.082098775)
 sprite_frames = SubResource("SpriteFrames_4s2po")
-animation = &"idle"
-frame_progress = 0.25372875
+animation = &"hurt_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -40)

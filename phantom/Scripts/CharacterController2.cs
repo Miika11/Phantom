@@ -18,7 +18,6 @@ public partial class CharacterController2 : CharacterBody2D
     [Export] public int MaxHealth = 3;
     private int _currentHealth;
 
-
     [Export] public float BoostMultiplier = 1.8f;
     [Export] public float MaxBoost = 100f;
     [Export] public float BoostDrain = 40f;
@@ -31,6 +30,11 @@ public partial class CharacterController2 : CharacterBody2D
 
     private TextureProgressBar BoostBar;
     private BoostButton BoostButton;
+
+    private bool _isHurt = false;
+    private Timer _hurtTimer;
+    [Export] public float HurtDuration = 0.5f;
+    private Vector2 _lastDirection = Vector2.Down;
 
     public override void _Ready()
     {
@@ -46,6 +50,7 @@ public partial class CharacterController2 : CharacterBody2D
         BoostButton = uiRoot.GetNode<BoostButton>("BoostButton");
         BoostButton.BoostStarted += StartBoost;
         BoostButton.BoostStopped += StopBoost;
+
         // Load values from GameManager
         _currentHealth = GameManager.Instance.CurrentHealth;
         _keys = GameManager.Instance.Keys;
@@ -54,7 +59,6 @@ public partial class CharacterController2 : CharacterBody2D
 
         HeartsUI.UpdateHearts(_currentHealth);
         KeyUI.UpdateKeys(_keys);
-
 
         _boost = MaxBoost;
         BoostBar.MaxValue = MaxBoost;
@@ -71,6 +75,13 @@ public partial class CharacterController2 : CharacterBody2D
 
         _pauseMenu = GetNode<PauseMenu>("PauseMenu");
         GetNode<TextureButton>("CanvasLayer/TextureButton").Pressed += OnPausePressed;
+
+        // Hurt timer
+        _hurtTimer = new Timer();
+        _hurtTimer.OneShot = true;
+        _hurtTimer.WaitTime = HurtDuration;
+        _hurtTimer.Timeout += () => _isHurt = false;
+        AddChild(_hurtTimer);
     }
 
     private void OnPausePressed()
@@ -85,6 +96,7 @@ public partial class CharacterController2 : CharacterBody2D
             _pauseMenu.TogglePause();
         }
     }
+
     public void AddKey(int amount = 1)
     {
         _keys += amount;
@@ -92,10 +104,9 @@ public partial class CharacterController2 : CharacterBody2D
         KeyUI.UpdateKeys(_keys);
     }
 
-            public override void _PhysicsProcess(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         float dt = (float)delta;
-
 
         _Movement = _joystick.GetDirection();
 
@@ -141,7 +152,6 @@ public partial class CharacterController2 : CharacterBody2D
 
         BoostBar.Value = _boost;
 
-
         if (_boost < MaxBoost * 0.2f)
             BoostBar.Modulate = Colors.Red;
         else
@@ -160,6 +170,18 @@ public partial class CharacterController2 : CharacterBody2D
 
     private void UpdateAnimation(Vector2 direction)
     {
+        if (direction != Vector2.Zero)
+            _lastDirection = direction;
+
+        if (_isHurt)
+        {
+            if (Mathf.Abs(_lastDirection.X) > Mathf.Abs(_lastDirection.Y))
+                _player.Play(_lastDirection.X > 0 ? ConfigAnimation.HurtRight : ConfigAnimation.HurtLeft);
+            else
+                _player.Play(_lastDirection.Y > 0 ? ConfigAnimation.HurtDown : ConfigAnimation.HurtUp);
+            return;
+        }
+
         if (direction == Vector2.Zero)
         {
             _player.Play(ConfigAnimation.Idle);
@@ -181,6 +203,9 @@ public partial class CharacterController2 : CharacterBody2D
 
         GameManager.Instance.CurrentHealth = _currentHealth;
         HeartsUI.UpdateHearts(_currentHealth);
+
+        _isHurt = true;
+        _hurtTimer.Start();
 
         GD.Print("Elämät: " + _currentHealth);
 
