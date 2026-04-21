@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://4ga1k2t8j1xf"]
+[gd_scene load_steps=16 format=3 uid="uid://4ga1k2t8j1xf"]
 
 [ext_resource type="Script" uid="uid://cl60gv2sb5jf0" path="res://Scripts/MainMenu.cs" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://dqvptnvg858wu" path="res://art/CreditsFIN.png" id="2_8e205"]
 [ext_resource type="Texture2D" uid="uid://bee5d85f4bv6g" path="res://art/startgame.png" id="2_8saeu"]
 [ext_resource type="Texture2D" uid="uid://r7xtlbv2yg2n" path="res://art/aloitapeli.png" id="2_if7li"]
 [ext_resource type="Texture2D" uid="uid://hyua11el1r33" path="res://art/menusettings.png" id="3_8um5k"]
+[ext_resource type="Texture2D" uid="uid://ceklj4tlflw3g" path="res://art/CreditsENG.png" id="3_7467j"]
 [ext_resource type="Texture2D" uid="uid://dr2dtnwt6o67x" path="res://art/exitgame.png" id="3_ghw46"]
 [ext_resource type="Texture2D" uid="uid://o2f7e5sgj5rf" path="res://art/poistu.png" id="3_rrcx7"]
 [ext_resource type="Texture2D" uid="uid://b1htv0aqns37p" path="res://art/asetukset.png" id="4_fh7cp"]
@@ -12,14 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://bq42c1x5mbisi" path="res://art/mainmenupyramid.png" id="6_xim88"]
 [ext_resource type="Texture2D" uid="uid://b2d4firodbb1b" path="res://art/poelogo.png" id="7_xim88"]
 [ext_resource type="PackedScene" uid="uid://d1baw26kjc38w" path="res://settings.tscn" id="8_koqhg"]
+[ext_resource type="Texture2D" uid="uid://bsk4nh6c3mop6" path="res://art/exit_button.png" id="15_7467j"]
 
-[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("_play", "_quit", "_settings", "_credits", "_settingsmenu")]
+[node name="MainMenu" type="CanvasLayer" node_paths=PackedStringArray("_play", "_quit", "_settings", "_credits", "_settingsmenu", "_creditsmenu", "_creditsClose", "_creditsImage")]
 script = ExtResource("1_853f1")
 _play = NodePath("Control/VBoxContainer/PlayButton")
 _quit = NodePath("Control/VBoxContainer/QuitButton")
 _settings = NodePath("Control/VBoxContainer/SettingsButton")
 _credits = NodePath("Control/VBoxContainer/CreditsButton")
 _settingsmenu = NodePath("SettingsUI")
+_creditsmenu = NodePath("CreditsMenu")
+_creditsClose = NodePath("CreditsMenu/TextureButton")
+_creditsImageFI = ExtResource("2_8e205")
+_creditsImageEN = ExtResource("3_7467j")
+_creditsImage = NodePath("CreditsMenu/TextureRect")
 _playFI = ExtResource("2_if7li")
 _quitFI = ExtResource("3_rrcx7")
 _settingsFI = ExtResource("4_fh7cp")
@@ -158,3 +166,21 @@ stretch_mode = 4
 
 [node name="SettingsUI" parent="." instance=ExtResource("8_koqhg")]
 visible = false
+
+[node name="CreditsMenu" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CreditsMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CreditsMenu"]
+offset_left = 1128.0
+offset_top = 47.0
+offset_right = 1188.0
+offset_bottom = 107.0
+scale = Vector2(1.44, 1.3600005)
+texture_normal = ExtResource("15_7467j")
