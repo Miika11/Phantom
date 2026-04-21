@@ -24,6 +24,7 @@ size = Vector2(48, 86)
 size = Vector2(282, 23)
 
 [node name="Intro" type="Node2D"]
+scale = Vector2(1.0165371, 0.9963795)
 script = ExtResource("1_ycuhu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

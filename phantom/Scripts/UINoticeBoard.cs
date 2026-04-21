@@ -6,9 +6,12 @@ public partial class UINoticeBoard : CanvasLayer
     [Export] public Texture2D TextureEN;
     [Export] public Texture2D TextureFI;
     private TextureButton closeButton;
+    private SFXManager _sfx;
 
     public override void _Ready()
     {
+        _sfx = GetNode<SFXManager>("/root/SFXManager");
+
         noticeImage = GetNode<TextureRect>("NoticeImage");
         closeButton = GetNode<TextureButton>("CloseButton");
         closeButton.Pressed += OnClosePressed;
@@ -24,6 +27,7 @@ public partial class UINoticeBoard : CanvasLayer
 
     private void OnClosePressed()
     {
+        _sfx.PlayClick();
         Visible = false;
     }
 }

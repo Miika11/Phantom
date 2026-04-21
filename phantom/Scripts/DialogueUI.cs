@@ -7,29 +7,27 @@ public partial class DialogueUI : CanvasLayer
     private Button _a, _b, _c;
     private Label _resultLabel;
     private TextureRect _backgroundImage;
-
-    private Button _closeButton; 
+    private Button _closeButton;
+    private SFXManager _sfx;
 
     private List<Question> _questions;
     private int _currentQuestion = 0;
 
     public override void _Ready()
     {
+        _sfx = GetNode<SFXManager>("/root/SFXManager");
+
         _backgroundImage = GetNode<TextureRect>("Panel/BackgroundImage");
         _questionLabel = GetNode<Label>("Panel/QuestionLabel");
         _a = GetNode<Button>("Panel/AnswerA");
         _b = GetNode<Button>("Panel/AnswerB");
         _c = GetNode<Button>("Panel/AnswerC");
         _resultLabel = GetNode<Label>("Panel/ResultLabel");
-        
-
-        _closeButton = GetNode<Button>("Panel/CloseButton"); 
+        _closeButton = GetNode<Button>("Panel/CloseButton");
 
         _a.Pressed += () => Answer(0);
         _b.Pressed += () => Answer(1);
         _c.Pressed += () => Answer(2);
-        
-
         _closeButton.Pressed += OnClosePressed;
 
         Hide();
@@ -48,7 +46,7 @@ public partial class DialogueUI : CanvasLayer
         _currentQuestion = 0;
 
         _resultLabel.Hide();
-        _closeButton.Hide(); // Hide close button during questions
+        _closeButton.Hide();
         _a.Show(); _b.Show(); _c.Show();
 
         Show();
@@ -66,17 +64,14 @@ public partial class DialogueUI : CanvasLayer
 
     private void Answer(int index)
     {
+        _sfx.PlayClick();
         GameManager.Instance.SaveAnswer(index);
         _currentQuestion++;
 
         if (_currentQuestion >= _questions.Count)
-        {
             Hide();
-        }
         else
-        {
             ShowQuestion();
-        }
     }
 
     public void ShowFinalResult(string result)
@@ -99,10 +94,9 @@ public partial class DialogueUI : CanvasLayer
         _resultLabel.AddThemeColorOverride("font_color", Colors.Black);
     }
 
-
     private void OnClosePressed()
     {
+        _sfx.PlayClick();
         Hide();
-
     }
 }

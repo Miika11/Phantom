@@ -35,6 +35,7 @@ public partial class CharacterController2 : CharacterBody2D
     private Timer _hurtTimer;
     [Export] public float HurtDuration = 0.5f;
     private Vector2 _lastDirection = Vector2.Up;
+    private SFXManager _sfx;
 
     public override void _Ready()
     {
@@ -43,6 +44,7 @@ public partial class CharacterController2 : CharacterBody2D
 
         // UI from autoload
         var uiRoot = GetNode("/root/UI");
+        _sfx = GetNode<SFXManager>("/root/SFXManager");
 
         HeartsUI = uiRoot.GetNode<HeartsUI>("HeartsContainer");
         KeyUI = uiRoot.GetNode<KeyUI>("KeyUI");
@@ -86,6 +88,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     private void OnPausePressed()
     {
+        _sfx.PlayClick();
         _pauseMenu.TogglePause();
     }
 
@@ -160,6 +163,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void StartBoost()
     {
+        _sfx.PlayBoost();
         _isBoosting = true;
     }
 
@@ -200,6 +204,7 @@ public partial class CharacterController2 : CharacterBody2D
 
     public void TakeDamage(int damage)
     {
+        _sfx.PlayHurt();
         _currentHealth -= damage;
         _currentHealth = Mathf.Max(_currentHealth, 0);
 

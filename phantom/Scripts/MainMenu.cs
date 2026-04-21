@@ -25,10 +25,14 @@ public partial class MainMenu : CanvasLayer
     [Export] public Texture2D _settingsEN;
     [Export] public Texture2D _creditsEN;
 
+    private SFXManager _sfx;
+
     public override void _Ready()
     {
         GetNode<MusicManager>("/root/MusicManager")
             .PlayMusic("res://audio/MainMenu.ogg");
+
+        _sfx = GetNode<SFXManager>("/root/SFXManager");
 
         GetTree().CallGroup("GameHUD", "hide");
 
@@ -62,15 +66,34 @@ public partial class MainMenu : CanvasLayer
             _creditsImage.Texture = isFinnish ? _creditsImageFI : _creditsImageEN;
     }
 
-    private void OnSettingsPressed() => _settingsmenu.Visible = true;
-    private void OnCreditsPressed() => _creditsmenu.Visible = true;
-    private void OnCreditsClosePressed() => _creditsmenu.Visible = false;
+    private void OnSettingsPressed()
+    {
+        _sfx.PlayClick();
+        _settingsmenu.Visible = true;
+    }
+
+    private void OnCreditsPressed()
+    {
+        _sfx.PlayClick();
+        _creditsmenu.Visible = true;
+    }
+
+    private void OnCreditsClosePressed()
+    {
+        _sfx.PlayClick();
+        _creditsmenu.Visible = false;
+    }
 
     private void OnPlayPressed()
     {
+        _sfx.PlayClick();
         GetTree().CallGroup("GameHUD", "show");
         GetTree().ChangeSceneToFile("res://intro.tscn");
     }
 
-    private void OnQuitPressed() => GetTree().Quit();
+    private void OnQuitPressed()
+    {
+        _sfx.PlayClick();
+        GetTree().Quit();
+    }
 }
