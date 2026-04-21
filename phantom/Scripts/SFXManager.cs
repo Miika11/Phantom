@@ -6,30 +6,32 @@ public partial class SFXManager : Node
     private int _poolIndex = 0;
     private const int PoolSize = 4;
 
-   private static readonly AudioStream Click = GD.Load<AudioStream>("res://audio/click.wav");
-	private static readonly AudioStream Hurt = GD.Load<AudioStream>("res://audio/hurt.wav");
-	private static readonly AudioStream Boost = GD.Load<AudioStream>("res://audio/boost.wav");
+    private static readonly AudioStream Click = GD.Load<AudioStream>("res://audio/click.wav");
+    private static readonly AudioStream Hurt = GD.Load<AudioStream>("res://audio/hurt.wav");
+    private static readonly AudioStream Boost = GD.Load<AudioStream>("res://audio/boost.wav");
 
     public override void _Ready()
     {
-		ProcessMode = ProcessModeEnum.Always;
+        ProcessMode = ProcessModeEnum.Always;
+
         _pool = new AudioStreamPlayer[PoolSize];
         for (int i = 0; i < PoolSize; i++)
         {
             _pool[i] = new AudioStreamPlayer();
-			_pool[i].ProcessMode = ProcessModeEnum.Always;
+            _pool[i].Bus = "SFX";
+            _pool[i].ProcessMode = ProcessModeEnum.Always;
             AddChild(_pool[i]);
         }
     }
 
     public void PlayClick() => Play(Click, -5f);
-    public void PlayHurt() => Play(Hurt, -20f);
-    public void PlayBoost() => Play(Boost, -30f);
+    public void PlayHurt() => Play(Hurt, 0f);
+    public void PlayBoost() => Play(Boost, -3f);
 
-    public void SetVolume(float volumeDb)
+    public void SetSFXVolume(float volumeDb)
     {
-        foreach (var player in _pool)
-            player.VolumeDb = volumeDb;
+        int busIndex = AudioServer.GetBusIndex("SFX");
+        AudioServer.SetBusVolumeDb(busIndex, volumeDb);
     }
 
     private void Play(AudioStream stream, float volumeDb = 0f)

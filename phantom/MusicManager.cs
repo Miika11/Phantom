@@ -6,15 +6,13 @@ public partial class MusicManager : Node
     private string _currentTrack = "";
 
     public override void _Ready()
-{
-
-    _player = GetNodeOrNull<AudioStreamPlayer>("AudioStreamPlayer");
-
-}
+    {
+        _player = GetNodeOrNull<AudioStreamPlayer>("AudioStreamPlayer");
+        _player.Bus = "Music";
+    }
 
     public void PlayMusic(string trackPath)
     {
-
         if (_currentTrack == trackPath)
             return;
 
