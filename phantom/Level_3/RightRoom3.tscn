@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://lnwcyltl3usu"]
+[gd_scene load_steps=13 format=3 uid="uid://lnwcyltl3usu"]
 
 [ext_resource type="Texture2D" uid="uid://x6hbgnjcai6v" path="res://art/Level3_RightRoom.png" id="1_i6oww"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_ge4jb"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_fm7d5"]
 [ext_resource type="PackedScene" uid="uid://b10rw8d8hdo8c" path="res://Scenes/enemy_mummy.tscn" id="5_fm7d5"]
 [ext_resource type="PackedScene" uid="uid://c55g3vkxgrkop" path="res://Scenes/enemy_anubis.tscn" id="6_we6qj"]
+[ext_resource type="Texture2D" uid="uid://xpitcoeiv2gg" path="res://art/spikeblock_short.png" id="7_ke3ht"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6oww"]
 size = Vector2(1033, 33)
@@ -72,12 +73,106 @@ position = Vector2(989, 349)
 position = Vector2(131, 288)
 
 [node name="Enemy" parent="." instance=ExtResource("5_fm7d5")]
-position = Vector2(757, 203)
+position = Vector2(1023, 128)
+scale = Vector2(0.74651504, 0.7185185)
+
+[node name="Marker2D" parent="Enemy" index="2"]
+position = Vector2(0, 2)
+
+[node name="Marker2D2" parent="Enemy" index="3"]
+position = Vector2(-1, 4)
+
+[node name="Enemy7" parent="." instance=ExtResource("5_fm7d5")]
+position = Vector2(607, 96)
+scale = Vector2(0.74651504, 0.7185185)
+
+[node name="Marker2D" parent="Enemy7" index="2"]
+position = Vector2(0, 2)
+
+[node name="Marker2D2" parent="Enemy7" index="3"]
+position = Vector2(-1, 4)
+
+[node name="Enemy5" parent="." instance=ExtResource("5_fm7d5")]
+position = Vector2(505.99997, 354)
+scale = Vector2(0.74651504, 0.7185185)
+
+[node name="Marker2D" parent="Enemy5" index="2"]
+position = Vector2(0, 2)
+
+[node name="Marker2D2" parent="Enemy5" index="3"]
+position = Vector2(-1, 4)
+
+[node name="Enemy6" parent="." instance=ExtResource("5_fm7d5")]
+position = Vector2(1048.0001, 303)
+scale = Vector2(0.74651504, 0.7185185)
+
+[node name="Marker2D" parent="Enemy6" index="2"]
+position = Vector2(0, 2)
+
+[node name="Marker2D2" parent="Enemy6" index="3"]
+position = Vector2(-1, 4)
+
+[node name="Enemy4" parent="." instance=ExtResource("5_fm7d5")]
+position = Vector2(1048, 468.00003)
+scale = Vector2(0.7358505, 0.7249577)
+
+[node name="CollisionShape2D" parent="Enemy4" index="0"]
+position = Vector2(-1.5, 11.5)
+
+[node name="Marker2D" parent="Enemy4" index="2"]
+position = Vector2(2, 3)
+
+[node name="Marker2D2" parent="Enemy4" index="3"]
+position = Vector2(3, 4)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_we6qj")]
-position = Vector2(592, 433)
+position = Vector2(919, 474)
+Speed = 80.0
+
+[node name="CollisionShape2D" parent="Enemy2" index="0"]
+position = Vector2(2, 9)
 
 [node name="Marker2D" parent="Enemy2" index="2"]
-position = Vector2(-380, 26)
+position = Vector2(18, 13)
 
+[node name="Marker2D2" parent="Enemy2" index="3"]
+position = Vector2(-600, 5)
+
+[node name="Marker2D3" type="Marker2D" parent="Enemy2"]
+position = Vector2(-313, -326)
+
+[node name="Enemy3" parent="." instance=ExtResource("6_we6qj")]
+position = Vector2(345, 145)
+Speed = 80.0
+
+[node name="CollisionShape2D" parent="Enemy3" index="0"]
+position = Vector2(6, 2.9335938)
+
+[node name="Marker2D" parent="Enemy3" index="2"]
+position = Vector2(18, 13)
+
+[node name="Marker2D2" parent="Enemy3" index="3"]
+position = Vector2(-1, 338)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(557, 359)
+scale = Vector2(0.6911764, 0.6572165)
+texture = ExtResource("7_ke3ht")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(782.00006, 220)
+scale = Vector2(0.6911764, 0.6572165)
+texture = ExtResource("7_ke3ht")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(275.00003, 493)
+scale = Vector2(0.6911764, 0.6572165)
+texture = ExtResource("7_ke3ht")
+
+[editable path="Enemy"]
+[editable path="Enemy7"]
+[editable path="Enemy5"]
+[editable path="Enemy6"]
+[editable path="Enemy4"]
 [editable path="Enemy2"]
+[editable path="Enemy3"]

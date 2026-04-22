@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cb4cd1liq30vh" path="res://art/ice_projectile.png" id="2_n8pt1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oduel"]
-radius = 7.0
+radius = 8.0
 height = 34.0
 
 [node name="Bullet" type="Area2D"]
@@ -12,14 +12,14 @@ collision_layer = 2
 script = ExtResource("1_n8pt1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5.4519625, 4.7662564e-07)
+position = Vector2(8.059919, -1.6187273)
 rotation = 3.1415927
-scale = Vector2(0.26600567, 0.47727272)
+scale = Vector2(0.30380213, 0.5889091)
 texture = ExtResource("2_n8pt1")
 region_enabled = true
 region_rect = Rect2(-1.6679993, 1.4139996, 138, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, 0)
+position = Vector2(9, -2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_oduel")

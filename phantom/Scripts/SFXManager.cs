@@ -9,6 +9,8 @@ public partial class SFXManager : Node
     private static readonly AudioStream Click = GD.Load<AudioStream>("res://audio/click.wav");
     private static readonly AudioStream Hurt = GD.Load<AudioStream>("res://audio/hurt.wav");
     private static readonly AudioStream Boost = GD.Load<AudioStream>("res://audio/boost.wav");
+    private static readonly AudioStream Key = GD.Load<AudioStream>("res://audio/key.wav");
+
 
     public override void _Ready()
     {
@@ -26,7 +28,8 @@ public partial class SFXManager : Node
 
     public void PlayClick() => Play(Click, -5f);
     public void PlayHurt() => Play(Hurt, 0f);
-    public void PlayBoost() => Play(Boost, -3f);
+    public void PlayBoost() => Play(Boost, -15f);
+    public void PlayKey() => Play(Key, -5f);
 
     public void SetSFXVolume(float volumeDb)
     {

@@ -70,14 +70,16 @@ position = Vector2(133, 319)
 position = Vector2(981, 332)
 
 [node name="Enemy" parent="." instance=ExtResource("5_bvy25")]
-position = Vector2(745, 142)
+position = Vector2(858, 165)
+scale = Vector2(0.7163136, 0.80182743)
 Speed = 100.0
 
 [node name="Marker2D" parent="Enemy" index="2"]
-position = Vector2(1, 322)
+position = Vector2(9.772263, 392.8526)
 
 [node name="Enemy2" parent="." instance=ExtResource("6_mblsu")]
-position = Vector2(361, 466)
+position = Vector2(727, 463)
+scale = Vector2(0.7881076, 0.844389)
 Speed = 50.0
 ChaseSpeed = 80.0
 DetectRange = 160.0
@@ -88,7 +90,8 @@ AttackCooldown = 1.0
 position = Vector2(-14, -279)
 
 [node name="Enemy3" parent="." instance=ExtResource("6_mblsu")]
-position = Vector2(541, 164)
+position = Vector2(558, 170)
+scale = Vector2(0.8069706, 0.8233657)
 Speed = 50.0
 ChaseSpeed = 80.0
 DetectRange = 150.0
@@ -98,16 +101,44 @@ AttackRange = 60.0
 position = Vector2(-14, 325)
 
 [node name="Enemy4" parent="." instance=ExtResource("6_mblsu")]
-position = Vector2(896, 157)
+position = Vector2(327.00003, 170)
+scale = Vector2(0.49252117, 0.6435046)
 Speed = 50.0
 ChaseSpeed = 80.0
-DetectRange = 150.0
+DetectRange = 100.0
 AttackRange = 60.0
 
 [node name="Marker2D" parent="Enemy4" index="2"]
-position = Vector2(-22, 313)
+position = Vector2(-4.060773, 6.2160034)
+
+[node name="Marker2D2" parent="Enemy4" index="3"]
+position = Vector2(144.15617, 245.53049)
+
+[node name="Marker2D3" type="Marker2D" parent="Enemy4"]
+position = Vector2(-2.030428, 501.9389)
+
+[node name="Enemy5" parent="." instance=ExtResource("6_mblsu")]
+position = Vector2(451.00003, 476)
+scale = Vector2(0.49252117, 0.6435046)
+Speed = 50.0
+ChaseSpeed = 80.0
+DetectRange = 100.0
+AttackRange = 60.0
+
+[node name="Marker2D" parent="Enemy5" index="2"]
+position = Vector2(2.0303955, -1.5539856)
+
+[node name="Marker2D2" parent="Enemy5" index="3"]
+position = Vector2(-296.43396, -208.23471)
+
+[node name="Marker2D3" type="Marker2D" parent="Enemy5"]
+position = Vector2(-22.334122, -391.6056)
+
+[node name="Marker2D4" type="Marker2D" parent="Enemy5"]
+position = Vector2(194.91548, -214.45068)
 
 [editable path="Enemy"]
 [editable path="Enemy2"]
 [editable path="Enemy3"]
 [editable path="Enemy4"]
+[editable path="Enemy5"]

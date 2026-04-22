@@ -63,6 +63,7 @@ shape = SubResource("RectangleShape2D_a1waa")
 position = Vector2(124, 392)
 
 [node name="Door" parent="." instance=ExtResource("3_30thy")]
+visible = false
 position = Vector2(-9, 384)
 TargetScene = "res://Level_1/MainRoom.tscn"
 TargetSpawnPoint = "SpawnFromRightRoom"
@@ -77,13 +78,16 @@ position = Vector2(933, 354)
 position = Vector2(960, 164)
 
 [node name="Marker2D" parent="Enemy" index="2"]
-position = Vector2(-272, 132)
+position = Vector2(-714, 376)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_30thy")]
-position = Vector2(987, 542)
+position = Vector2(1006, 546)
+
+[node name="AnimatedSprite2D" parent="Enemy2" index="1"]
+position = Vector2(-10, -1)
 
 [node name="Marker2D" parent="Enemy2" index="2"]
-position = Vector2(-299, -105)
+position = Vector2(-788, -362)
 
 [node name="Marker2D2" parent="Enemy2" index="3"]
 position = Vector2(6, -4)
@@ -92,13 +96,13 @@ position = Vector2(6, -4)
 position = Vector2(190, 144)
 
 [node name="Marker2D" parent="Enemy3" index="2"]
-position = Vector2(448, 407)
+position = Vector2(581, 408)
 
 [node name="Enemy4" parent="." instance=ExtResource("5_30thy")]
 position = Vector2(131, 524)
 
 [node name="Marker2D" parent="Enemy4" index="2"]
-position = Vector2(950, -182)
+position = Vector2(629, -377)
 
 [editable path="Enemy"]
 [editable path="Enemy2"]

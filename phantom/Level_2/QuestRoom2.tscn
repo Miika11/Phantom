@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfxtxyol0alsb"]
+[gd_scene load_steps=14 format=3 uid="uid://dfxtxyol0alsb"]
 
 [ext_resource type="Texture2D" uid="uid://ulkepft3r4kq" path="res://art/Level2_QuestRoom.png" id="1_gvndk"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_8fcdl"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_hai6r"]
 [ext_resource type="PackedScene" uid="uid://bks4q36l13lc7" path="res://Scenes/Key.tscn" id="4_gfa76"]
 [ext_resource type="PackedScene" uid="uid://dkwm4klp7lrgb" path="res://Scenes/enemy_shooterIce.tscn" id="5_efeu3"]
+[ext_resource type="Texture2D" uid="uid://mcirqgj3plfn" path="res://art/icetrap1.png" id="6_1d8pw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8fcdl"]
 
@@ -22,6 +23,9 @@ size = Vector2(102, 189)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efeu3"]
 size = Vector2(100, 202)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d8pw"]
+size = Vector2(177.01054, 58.270267)
 
 [node name="QuestRoom2" type="Node2D"]
 
@@ -54,6 +58,11 @@ shape = SubResource("RectangleShape2D_gfa76")
 position = Vector2(1091, 471)
 shape = SubResource("RectangleShape2D_efeu3")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(554, 325)
+scale = Vector2(0.5592887, 0.75510204)
+shape = SubResource("RectangleShape2D_1d8pw")
+
 [node name="Node2D" parent="." instance=ExtResource("2_8fcdl")]
 position = Vector2(997, 357)
 
@@ -70,29 +79,27 @@ position = Vector2(1044, 316)
 position = Vector2(185, 334)
 
 [node name="EnemyShooter" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(263, 175)
+position = Vector2(198, 130)
 EnemySpriteFrames = null
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(448, 136)
+position = Vector2(570, 128)
 EnemySpriteFrames = null
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(621, 134)
+position = Vector2(863, 132)
 EnemySpriteFrames = null
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(863, 143)
+position = Vector2(789, 523)
 EnemySpriteFrames = null
 
 [node name="EnemyShooter5" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(328, 509)
+position = Vector2(309, 526)
 EnemySpriteFrames = null
 
-[node name="EnemyShooter6" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(556, 517)
-EnemySpriteFrames = null
-
-[node name="EnemyShooter7" parent="." instance=ExtResource("5_efeu3")]
-position = Vector2(747, 515)
-EnemySpriteFrames = null
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(552, 343.00003)
+scale = Vector2(0.55928856, 0.75510204)
+texture = ExtResource("6_1d8pw")

@@ -63,6 +63,7 @@ shape = SubResource("RectangleShape2D_a1waa")
 position = Vector2(581, 574)
 
 [node name="Door" parent="." instance=ExtResource("3_if0v0")]
+visible = false
 position = Vector2(575, 709)
 TargetScene = "res://Level_1/MainRoom.tscn"
 TargetSpawnPoint = "SpawnFromTopRoom"
