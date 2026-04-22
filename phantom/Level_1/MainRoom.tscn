@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://wgofbr78ok3g"]
+[gd_scene load_steps=27 format=3 uid="uid://wgofbr78ok3g"]
 
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="1_prgri"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="2_8hsoe"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://7a33s4tw4e33" path="res://art/firemain10.png" id="13_dg0to"]
 [ext_resource type="Texture2D" uid="uid://cd33a0qd336l" path="res://art/firemain11.png" id="14_7o33w"]
 [ext_resource type="AudioStream" uid="uid://dmqlacgj1jipv" path="res://audio/fire_level.ogg" id="15_36by6"]
+[ext_resource type="Texture2D" uid="uid://d1bf13ptlse4n" path="res://art/arrowSign.png" id="16_ptm8v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y7q2k"]
 animations = [{
@@ -184,3 +185,16 @@ position = Vector2(567, 637)
 stream = ExtResource("15_36by6")
 volume_db = -15.294
 autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(871.12506, 191.87502)
+scale = Vector2(0.037963867, 0.037963886)
+texture = ExtResource("16_ptm8v")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(293, 178)
+scale = Vector2(0.039428715, 0.036010757)
+texture = ExtResource("16_ptm8v")
+flip_h = true

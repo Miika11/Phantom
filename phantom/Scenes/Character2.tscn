@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bpxkeptkblxfr"]
+[gd_scene load_steps=30 format=3 uid="uid://bpxkeptkblxfr"]
 
 [ext_resource type="Script" uid="uid://ccqms3fld1cb3" path="res://Scripts/CharacterController2.cs" id="1_6ludh"]
 [ext_resource type="Texture2D" uid="uid://bf26lxviilccd" path="res://art/Päähahmo_konsepti2.png" id="2_lt7hq"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b3y0lphinsh82" path="res://art/Päähahmo_oikea4.png" id="9_b1n3f"]
 [ext_resource type="Texture2D" uid="uid://ibk0i6tm7of" path="res://art/left04.png" id="9_lt7hq"]
 [ext_resource type="Texture2D" uid="uid://dvblo8hpaj4pl" path="res://art/right.01.png" id="10_2v30p"]
-[ext_resource type="PackedScene" uid="uid://bu4rte6cof6r1" path="res://Scenes/Joystick.tscn" id="10_11r81"]
 [ext_resource type="Texture2D" uid="uid://bf1eatph0fg5e" path="res://art/left05.png" id="10_yorra"]
 [ext_resource type="Texture2D" uid="uid://dshkqdcfvshp6" path="res://art/left06.png" id="11_gt68k"]
 [ext_resource type="Texture2D" uid="uid://bbmp2ogv633ii" path="res://art/right.02.png" id="11_j6hkr"]
@@ -235,7 +234,6 @@ height = 78.0
 
 [node name="Node2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_6ludh")
-JoystickPath = NodePath("CanvasLayer/Joystick")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(3.9999998, -41)
@@ -256,13 +254,6 @@ limit_right = 1155
 limit_bottom = 652
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Joystick" parent="CanvasLayer" instance=ExtResource("10_11r81")]
-anchors_preset = -1
-offset_left = 356.0
-offset_top = 470.0
-offset_right = 356.0
-offset_bottom = 470.0
 
 [node name="TextureButton" type="TextureButton" parent="CanvasLayer"]
 z_index = 1

@@ -3,7 +3,6 @@ using Godot;
 public partial class CharacterController2 : CharacterBody2D
 {
     [Export] public float Speed = 100.0f;
-    [Export] public NodePath JoystickPath;
 
     private Vector2 _Movement = Vector2.Zero;
     private AnimatedSprite2D _player;
@@ -40,7 +39,7 @@ public partial class CharacterController2 : CharacterBody2D
     public override void _Ready()
     {
         _player = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        _joystick = GetNode<Joystick>(JoystickPath);
+        _joystick = GetNode<Joystick>("/root/UI/Joystick");
 
         // UI from autoload
         var uiRoot = GetNode("/root/UI");

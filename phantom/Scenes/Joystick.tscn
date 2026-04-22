@@ -1,23 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu4rte6cof6r1"]
+[gd_scene load_steps=4 format=3 uid="uid://bu4rte6cof6r1"]
 
 [ext_resource type="Script" uid="uid://bly6jd5so7oex" path="res://Scripts/Joystick.cs" id="1_b2c2x"]
-[ext_resource type="Texture2D" uid="uid://c5bikwyw0xaq0" path="res://art/Joystick.png" id="2_aegyi"]
+[ext_resource type="Texture2D" uid="uid://dwjm5yu03omvm" path="res://art/joystick_handle (1).svg" id="2_m4s77"]
+[ext_resource type="Texture2D" uid="uid://dwqw8fc0prjpb" path="res://art/joystick_background (1).svg" id="3_gjgsg"]
 
 [node name="Joystick" type="Control"]
+custom_minimum_size = Vector2(120, 120)
 layout_mode = 3
-anchors_preset = 0
-offset_left = 311.0
-offset_top = 460.0
-offset_right = 311.0
-offset_bottom = 460.0
+anchor_left = 0.916
+anchor_top = 0.84
+anchor_right = 0.916
+anchor_bottom = 0.84
+offset_left = -120.0
+offset_top = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.3323209, 1.2470461)
 mouse_filter = 1
 script = ExtResource("1_b2c2x")
 
 [node name="Handle" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 917.00006
-offset_top = 32.999992
-offset_right = 1288.2173
-offset_bottom = 434.64758
-scale = Vector2(0.371234, 0.23079813)
-texture = ExtResource("2_aegyi")
+offset_left = 44.0
+offset_top = 41.0
+offset_right = 84.0
+offset_bottom = 81.0
+scale = Vector2(0.91302925, 0.87750894)
+mouse_filter = 2
+texture = ExtResource("2_m4s77")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 120.0
+mouse_filter = 2
+texture = ExtResource("3_gjgsg")

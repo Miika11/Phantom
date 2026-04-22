@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyy42xcfm4wwr"]
+[gd_scene load_steps=11 format=3 uid="uid://cyy42xcfm4wwr"]
 
 [ext_resource type="Script" uid="uid://c2ansbdkc2h3j" path="res://Scripts/HeartsUI.cs" id="1_w371h"]
 [ext_resource type="Texture2D" uid="uid://cqrj48bilp6e1" path="res://art/hitpoint_full.png" id="2_qwshj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwy0cok1fwdbq" path="res://art/boostyellow.png" id="7_wunin"]
 [ext_resource type="Texture2D" uid="uid://cana03lclq5w5" path="res://art/boost_progress.tres" id="8_j04uc"]
 [ext_resource type="Texture2D" uid="uid://cbht8g3yhyyyk" path="res://art/boostorange.png" id="8_vqx31"]
+[ext_resource type="PackedScene" uid="uid://bu4rte6cof6r1" path="res://Scenes/Joystick.tscn" id="10_j04uc"]
 
 [node name="UI" type="CanvasLayer" groups=["GameHUD"]]
 
@@ -83,3 +84,5 @@ grow_vertical = 0
 scale = Vector2(0.047960404, 0.12247137)
 nine_patch_stretch = true
 texture_progress = ExtResource("8_j04uc")
+
+[node name="Joystick" parent="." instance=ExtResource("10_j04uc")]

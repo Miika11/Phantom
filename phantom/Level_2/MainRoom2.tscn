@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://duxmvcdvhfymk"]
+[gd_scene load_steps=16 format=3 uid="uid://duxmvcdvhfymk"]
 
 [ext_resource type="Script" uid="uid://dv2uho3ksgmce" path="res://Level_2/MainRoom2.cs" id="1_teuyq"]
 [ext_resource type="Texture2D" uid="uid://dvffcjyoijoj7" path="res://art/mainroom2fix.png" id="2_teuyq"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_vfoem"]
 [ext_resource type="PackedScene" uid="uid://br2gsbxo13baw" path="res://Scenes/Door.tscn" id="3_qo18q"]
 [ext_resource type="Texture2D" uid="uid://c4aqqyfnlsjyq" path="res://art/doorskeyslocks.png" id="4_xh4ni"]
+[ext_resource type="Texture2D" uid="uid://c1ov420gkdhpn" path="res://art/arrowSignIcefix.png" id="6_l8cq3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfoem"]
 size = Vector2(421, 241)
@@ -125,3 +126,14 @@ scale = Vector2(2.1551712, 1.0892856)
 texture = ExtResource("4_xh4ni")
 region_enabled = true
 region_rect = Rect2(111.12097, 194.0244, 58.10138, 56.829086)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(887.84375, 188.48438)
+scale = Vector2(0.052886996, 0.04347229)
+texture = ExtResource("6_l8cq3")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(293, 194)
+scale = Vector2(0.052398697, 0.04444885)
+texture = ExtResource("6_l8cq3")
+flip_h = true
