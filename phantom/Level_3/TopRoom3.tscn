@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://daomjft5pieje"]
+[gd_scene load_steps=16 format=3 uid="uid://daomjft5pieje"]
 
 [ext_resource type="Texture2D" uid="uid://b2juilpuv5a0l" path="res://art/Level3_TopRoom.png" id="1_1dfwl"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_8a7et"]
@@ -33,6 +33,9 @@ height = 478.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rsc6"]
 radius = 45.8667
 height = 139.32886
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6rsc6"]
+size = Vector2(43, 117)
 
 [node name="TopRoom3" type="Node2D"]
 
@@ -112,6 +115,12 @@ TargetSpawnPoint = "SpawnFromTopRoom3"
 position = Vector2(450, 394)
 DialogueUIPath = NodePath("../DialogueUi")
 DialogueBackground = ExtResource("5_wbqur")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC_Desert"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Desert/StaticBody2D"]
+position = Vector2(8.5, -80)
+shape = SubResource("RectangleShape2D_6rsc6")
 
 [node name="DialogueUi" parent="." instance=ExtResource("6_6rsc6")]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkfaroc8xc7va"]
+[gd_scene load_steps=11 format=3 uid="uid://dkfaroc8xc7va"]
 
 [ext_resource type="Texture2D" uid="uid://ybth0wu60jem" path="res://art/PyramidiTOP.png" id="1_si5nc"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_eo0t4"]
@@ -17,6 +17,9 @@ size = Vector2(40.102234, 536.5963)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2s84"]
 size = Vector2(20, 711.42944)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wangc"]
+size = Vector2(57, 99)
 
 [node name="TopOfPyramid" type="Node2D"]
 
@@ -59,6 +62,12 @@ position = Vector2(306, 196)
 position = Vector2(664, 199)
 DialogueUIPath = NodePath("../DialogueUi")
 DialogueBackground = ExtResource("4_7j2gk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Result_Npc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Result_Npc/StaticBody2D"]
+position = Vector2(23.5, -64.5)
+shape = SubResource("RectangleShape2D_wangc")
 
 [node name="DialogueUi" parent="." instance=ExtResource("5_e2s84")]
 visible = false

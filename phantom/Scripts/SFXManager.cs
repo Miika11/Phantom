@@ -27,8 +27,8 @@ public partial class SFXManager : Node
     }
 
     public void PlayClick() => Play(Click, -5f);
-    public void PlayHurt() => Play(Hurt, 0f);
-    public void PlayBoost() => Play(Boost, -15f);
+    public void PlayHurt() => Play(Hurt, -5f);
+    public void PlayBoost() => Play(Boost, -30f);
     public void PlayKey() => Play(Key, -5f);
 
     public void SetSFXVolume(float volumeDb)

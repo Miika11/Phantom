@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cliian5uad5qo"]
+[gd_scene load_steps=13 format=3 uid="uid://cliian5uad5qo"]
 
 [ext_resource type="Texture2D" uid="uid://bjqaoijcwfb1l" path="res://art/TopRoomFinal.png" id="1_2jiu2"]
 [ext_resource type="PackedScene" uid="uid://bpxkeptkblxfr" path="res://Scenes/Character2.tscn" id="2_d8h1x"]
@@ -22,6 +22,9 @@ size = Vector2(44, 493)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a1waa"]
 size = Vector2(46, 501)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_if0v0"]
+size = Vector2(43, 107)
 
 [node name="QuestRoom" type="Node2D"]
 
@@ -86,3 +89,9 @@ visible = false
 [node name="NPC_Fire" parent="." instance=ExtResource("7_m8ty7")]
 position = Vector2(445, 403)
 DialogueUIPath = NodePath("../DialogueUi")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="NPC_Fire"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_Fire/StaticBody2D"]
+position = Vector2(12, -78)
+shape = SubResource("RectangleShape2D_if0v0")
