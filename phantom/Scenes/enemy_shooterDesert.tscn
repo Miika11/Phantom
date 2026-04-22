@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnc5vgfqhwpwa"]
+[gd_scene load_steps=17 format=3 uid="uid://cnc5vgfqhwpwa"]
 
 [ext_resource type="Script" uid="uid://cukxitt3d50x6" path="res://Scripts/EnemyShooter.cs" id="1_h6ru4"]
 [ext_resource type="PackedScene" uid="uid://dxrtnychuffqs" path="res://Scenes/bulletdesert.tscn" id="2_454gs"]
@@ -9,6 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cust6cycgssju" path="res://art/spirit_attack5.png" id="7_vryq8"]
 [ext_resource type="Texture2D" uid="uid://dy8j3ikddmsg5" path="res://art/spirit_attack6.png" id="8_txxcc"]
 [ext_resource type="Texture2D" uid="uid://bo48jh4d0qmqo" path="res://art/spirit_attack7.png" id="9_i63if"]
+[ext_resource type="Texture2D" uid="uid://d3d3yupc4ajnx" path="res://art/spirit_lamp.png" id="10_txxcc"]
+[ext_resource type="Texture2D" uid="uid://dk1aqhsft13af" path="res://art/spirit_appears1.png" id="11_i63if"]
+[ext_resource type="Texture2D" uid="uid://b0121kmtrtjeo" path="res://art/spirit_appears2.png" id="12_qfgmr"]
+[ext_resource type="Texture2D" uid="uid://cev7moye6yt67" path="res://art/spirit_appears3.png" id="13_hw4q6"]
+[ext_resource type="Texture2D" uid="uid://bmqsm7ja516lo" path="res://art/spirit_appears4.png" id="14_ku33v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_agqaf"]
 animations = [{
@@ -37,10 +42,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_i63if")
+"texture": ExtResource("10_txxcc")
 }],
 "loop": true,
+"name": &"lamp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i63if")
+}],
+"loop": false,
 "name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_i63if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qfgmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hw4q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ku33v")
+}],
+"loop": false,
+"name": &"spawn",
 "speed": 5.0
 }]
 
@@ -71,10 +101,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_i63if")
+"texture": ExtResource("10_txxcc")
 }],
 "loop": true,
+"name": &"lamp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_i63if")
+}],
+"loop": false,
 "name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_i63if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qfgmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hw4q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ku33v")
+}],
+"loop": false,
+"name": &"spawn",
 "speed": 5.0
 }]
 
@@ -87,7 +142,7 @@ EnemySpriteFrames = SubResource("SpriteFrames_agqaf")
 position = Vector2(0, 2.0000076)
 scale = Vector2(0.48194945, 0.41484186)
 sprite_frames = SubResource("SpriteFrames_q7j06")
-animation = &"idle"
+animation = &"spawn"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5

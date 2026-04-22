@@ -88,13 +88,19 @@ position = Vector2(166, 337)
 position = Vector2(258, 518)
 
 [node name="EnemyShooter2" parent="." instance=ExtResource("5_ofweu")]
-position = Vector2(470, 98)
+position = Vector2(513, 113)
 
 [node name="EnemyShooter3" parent="." instance=ExtResource("5_ofweu")]
 position = Vector2(702, 527)
 
 [node name="EnemyShooter4" parent="." instance=ExtResource("5_ofweu")]
-position = Vector2(868, 82)
+position = Vector2(815, 116)
+
+[node name="EnemyShooter5" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(156, 156)
+
+[node name="EnemyShooter6" parent="." instance=ExtResource("5_ofweu")]
+position = Vector2(127, 443)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(717, 459)
